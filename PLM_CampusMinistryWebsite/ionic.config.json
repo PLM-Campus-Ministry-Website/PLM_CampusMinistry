@@ -1,0 +1,7 @@
+{
+  "name": "PLM_CampusMiniistryWebsite",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
