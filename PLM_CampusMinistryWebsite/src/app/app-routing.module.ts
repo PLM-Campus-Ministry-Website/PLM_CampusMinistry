@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { HomePage } from './home/home.page';  // Import HomePage component
+import { PrayerPage } from './prayer/prayer.page';  // Import PrayerPage component
 
 const routes: Routes = [
   {
@@ -11,12 +13,15 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'prayer',
+    loadChildren: () => import('./prayer/prayer.module').then( m => m.PrayerPageModule)
+  },
+
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

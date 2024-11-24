@@ -1,27 +1,60 @@
-#container {
-  text-align: center;
+ion-content {
+  --background:#d7ccc0;
+}
 
+/* Set a semi-transparent background for the navbar */
+ion-header {
+  background: rgba(236, 225, 164, 0.5); 
+  --background: rgba(236, 225, 164, 0.5); /* Ensure the background color is set */
+}
+
+/* Ensure the toolbar icons remain fully opaque */
+ion-toolbar {
+  --background: transparent; /* Toolbar background should be transparent */
+}
+
+/* Transparent Box */
+.transparent-box {
   position: absolute;
+  top: 50%; /* Centering vertically */
+  left: 50%; /* Centering horizontally */
+  transform: translate(-50%, -50%); /* Center the element */
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white with 70% opacity */
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%; /* Adjust as needed */
+  text-align: center;
+}
+
+/* Heading (h1) Text Styling */
+.transparent-box h1 {
+  font-size: 2rem;
+  color: black; /* Change text color to black */
+  margin-bottom: 10px;
+}
+
+/* Paragraph (p) Text Styling */
+.transparent-box p {
+  font-size: 1.2rem;
+  color: black; /* Change text color to black */
+}
+
+/* Additional styles for icon container (centered) */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute; 
   left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+  top: 0;
   margin: 0;
+  background: transparent;
+  padding: 10px 0;
 }
 
-#container a {
-  text-decoration: none;
+.icon-container ion-button {
+  margin: 0 8px;
+  --background: transparent; /* Make the buttons transparent */
+  --border-radius: 50%; /* Circular buttons */
+  color: white; /* White icon color */
 }

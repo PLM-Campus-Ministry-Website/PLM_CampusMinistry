@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <!-- Logo on the left side -->
+    <ion-buttons slot="start">
+      <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-left: 10px;" />
+    </ion-buttons>
+
+    <!-- Navigation Icons in the center -->
+    <div class="icon-container">
+      <ion-button routerLink="/home">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="openSearch()">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button routerLink="/prayer">
+        <ion-icon name="book-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button routerLink="/meditation">
+        <ion-icon name="leaf-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button routerLink="/music">
+        <ion-icon name="musical-notes-outline"></ion-icon>
+      </ion-button>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <!-- Transparent Box on Top -->
+  <div class="transparent-box">
+    <h1>Welcome to the Homepage</h1>
+    <p>This is your starting point for prayer, meditation, and music.</p>
   </div>
 </ion-content>

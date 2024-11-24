@@ -1,0 +1,63 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <div class="header-container">
+      <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-left: 10px;" />
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<div class="icon-container">
+  <ion-button routerLink="/home">
+    <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button (click)="openSearch()">
+    <ion-icon name="search-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button routerLink="/prayer">
+    <ion-icon name="book-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button routerLink="/meditation">
+    <ion-icon name="leaf-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button routerLink="/music">
+    <ion-icon name="musical-notes-outline"></ion-icon>
+  </ion-button>
+</div>
+
+<ion-content class="page-content">
+  <!-- Page Banner -->
+  <div class="banner">
+    <img src="assets/image.png" alt="Praying Hands" class="banner-image" />
+    <h1 class="banner-title">PRAYING</h1>
+    <p class="banner-subtitle">"Empowering Souls, Strengthening Faith"</p>
+  </div>
+
+  <!-- Prayer Descriptions -->
+  <p class="description">
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  </p>
+
+  <!-- Prayer Categories -->
+  <div class="prayer-categories">
+    <div class="prayer-box">
+      <img src="assets/morning-prayer.jpg" alt="Morning Prayer" class="prayer-image" />
+      <p class="prayer-text">Morning Prayer</p>
+    </div>
+    <div class="prayer-box">
+      <img src="assets/evening-prayer.jpg" alt="Evening Prayer" class="prayer-image" />
+      <p class="prayer-text">Evening Prayer</p>
+    </div>
+    <div class="prayer-box">
+      <img src="assets/thanksgiving-prayer.jpg" alt="Thanksgiving Prayer" class="prayer-image" />
+      <p class="prayer-text">Thanksgiving Prayer</p>
+    </div>
+    <div class="prayer-box">
+      <img src="assets/peace-prayer.jpg" alt="Prayer for Peace" class="prayer-image" />
+      <p class="prayer-text">Prayer for Peace</p>
+    </div>
+  </div>
+</ion-content>

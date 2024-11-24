@@ -1,0 +1,75 @@
+ion-content {
+    --background:#d7ccc0;
+}
+
+/* Header Styling */
+ion-header {
+    background: rgba(236, 225, 164, 0.5);
+    backdrop-filter: blur(10px); /* Smooth blur effect */
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: auto;
+  }
+  
+  /* Icon Container Styling (Centered) */
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 10px 0;
+    z-index: 10; /* Ensure it appears above other elements */
+  }
+  
+  .icon-container ion-button {
+    margin: 0 8px;
+    --background: transparent; /* Transparent buttons */
+    --border-radius: 50%; /* Circular buttons */
+    color: white; /* White icon color */
+  }
+  
+  /* Banner Styling */
+  .banner-image {
+    width: 100%;
+    max-height: 650px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .banner-title {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: 50px; /* Added px unit */
+    margin-bottom: 10px; /* Add spacing below the title */
+  }
+  
+  .banner-subtitle {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 18px; /* Optional: Add font size for consistency */
+  }
+  
+  /* Description Paragraph Styling */
+  p.description {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    margin: 0 auto; /* Center align if the paragraph has a container */
+    max-width: 600px; /* Restrict width for better readability */
+  }
+  
