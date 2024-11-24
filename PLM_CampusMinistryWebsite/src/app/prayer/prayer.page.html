@@ -1,76 +1,98 @@
-<ion-header>
-  <ion-toolbar>
-    <!-- Logo on the left side -->
-    <ion-buttons slot="start">
-      <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-left: 10px;" />
-    </ion-buttons>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-left: 10px;" />
+      </ion-buttons>
 
-<div class="icon-container">
-  <ion-button routerLink="/home">
-    <ion-icon slot="icon-only" name="home-outline"></ion-icon>
-  </ion-button>
+      <div class="icon-container">
+        <ion-button routerLink="/home">
+          <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="openSearch()">
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-button>
+        <ion-button routerLink="/prayer">
+          <ion-icon name="book-outline"></ion-icon>
+        </ion-button>
+        <ion-button routerLink="/meditation">
+          <ion-icon name="leaf-outline"></ion-icon>
+        </ion-button>
+        <ion-button routerLink="/music">
+          <ion-icon name="musical-notes-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-header>
 
-  <ion-button (click)="openSearch()">
-    <ion-icon name="search-outline"></ion-icon>
-  </ion-button>
+  <ion-content class="page-content">
+    <div class="banner">
+      <img src="assets/image.png" alt="Praying Hands" class="banner-image" />
+      <h1 class="banner-title">PRAYING</h1>
+      <p class="banner-subtitle">Empowering Souls, Strengthening Faith</p>
+    </div>
 
-  <ion-button routerLink="/prayer">
-    <ion-icon name="book-outline"></ion-icon>
-  </ion-button>
+    <p class="description">
+      "In prayer, we find strength, clarity, and connection. It is a bridge to the divine, a path to inner peace, and a source of hope for all."
+    </p>
 
-  <ion-button routerLink="/meditation">
-    <ion-icon name="leaf-outline"></ion-icon>
-  </ion-button>
+    <div class="prayer-categories-container">
+      <div class="prayer-categories">
+      <div class="prayer-box" (click)="openModal('Morning Prayer: Embracing a New Day', morningPrayer)">
+        <img src="assets/1.png" alt="Morning Prayer" class="prayer-image" />
+        <p class="prayer-text">Morning Prayer</p>
+        <div class="prayer-details">
+          Start your day with gratitude and inspiration through our morning prayers.
+        </div>
+      </div>
 
-  <ion-button routerLink="/music">
-    <ion-icon name="musical-notes-outline"></ion-icon>
-  </ion-button>
-</div>
-</ion-toolbar>
-</ion-header>
+      <div class="prayer-box" (click)="openModal('Evening Prayer: Reflecting on the Day', eveningPrayer)">
+        <img src="assets/2.png" alt="Evening Prayer" class="prayer-image" />
+        <p class="prayer-text">Evening Prayer</p>
+        <div class="prayer-details">
+          Reflect and seek peace at the end of your day with our evening prayers.
+        </div>
+      </div>
 
-<ion-content class="page-content">
-  <!-- Page Banner -->
-  <div class="banner">
-    <img src="assets/image.png" alt="Praying Hands" class="banner-image" />
-    <h1 class="banner-title">PRAYING</h1>
-    <p class="banner-subtitle">Empowering Souls, Strengthening Faith</p>
+      <div class="prayer-box" (click)="openModal('Thanksgiving Prayer: A Heart Full of Gratitude', thanksgivingPrayer)">
+        <img src="assets/3.png" alt="Thanksgiving Prayer" class="prayer-image" />
+        <p class="prayer-text">Thanksgiving Prayer</p>
+        <div class="prayer-details">
+          Offer gratitude for life’s blessings through our thanksgiving prayers.
+        </div>
+      </div>
+
+      <div class="prayer-box" (click)="openModal('Prayer for Peace: Calm Amid Chaos', peacePrayer)">
+        <img src="assets/4.png" alt="Prayer for Peace" class="prayer-image" />
+        <p class="prayer-text">Prayer for Peace</p>
+        <div class="prayer-details">
+          Pray for harmony, understanding, and calm in your life and the world.
+        </div>
+      </div>
+
+      <div class="prayer-box" (click)="openModal('Prayer for Forgiveness: Seeking and Extending Grace', forgivenessPrayer)">
+        <img src="assets/5.png" alt="Prayer for Forgiveness" class="prayer-image" />
+        <p class="prayer-text">Prayer for Forgiveness</p>
+        <div class="prayer-details">
+          Seek forgiveness and renewal through heartfelt prayer.
+        </div>
+      </div>
+
+      <div class="prayer-box" (click)="openModal('Healing Prayer: Strength and Renewal', healingPrayer)">
+        <img src="assets/6.png" alt="Healing Prayer" class="prayer-image" />
+        <p class="prayer-text">Healing Prayer</p>
+        <div class="prayer-details">
+          Pray for healing and strength in times of need.
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!-- Prayer Descriptions -->
-  <p class="description">
-    "In prayer, we find strength, clarity, and connection. It is a bridge to the divine, a path to inner peace, and a source of hope for all."
-  </p>
-
-
-<div class="prayer-categories-container">
-  <!-- First Row -->
-  <div class="prayer-categories">
-    <div class="prayer-box">
-      <img src="assets/1.png" alt="Morning Prayer" class="prayer-image" />
-      <p class="prayer-text">Morning Prayer</p>
-    </div>
-    <div class="prayer-box">
-      <img src="assets/2.png" alt="Evening Prayer" class="prayer-image" />
-      <p class="prayer-text">Evening Prayer</p>
-    </div>
-    <div class="prayer-box">
-      <img src="assets/3.png" alt="Thanksgiving Prayer" class="prayer-image" />
-      <p class="prayer-text">Thanksgiving Prayer</p>
-    </div>
-
-    <!-- Second Row -->
-    <div class="prayer-box">
-      <img src="assets/4.png" alt="Prayer for Peace" class="prayer-image" />
-      <p class="prayer-text">Prayer for Peace</p>
-    </div>
-    <div class="prayer-box">
-      <img src="assets/5.png" alt="Prayer for Forgiveness" class="prayer-image" />
-      <p class="prayer-text">Prayer for Forgiveness</p>
-    </div>
-    <div class="prayer-box">
-      <img src="assets/6.png" alt="Healing Prayer" class="prayer-image" />
-      <p class="prayer-text">Healing Prayer</p>
-    </div>
-  </div>
-</div>
+    <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+      <ng-template>
+        <div class="modal-content">
+          <h2>{{ modalTitle }}</h2>
+          <p>{{ modalDetails }}</p>
+          <ion-button expand="full" (click)="closeModal()">Close</ion-button>
+        </div>
+      </ng-template>
+    </ion-modal>
+  </ion-content>
