@@ -35,7 +35,8 @@
       "In prayer, we find strength, clarity, and connection. It is a bridge to the divine, a path to inner peace, and a source of hope for all."
     </p>
 
-    <div class="prayer-categories">
+    <div class="prayer-categories-container">
+      <div class="prayer-categories">
       <div class="prayer-box" (click)="openModal('Morning Prayer: Embracing a New Day', morningPrayer)">
         <img src="assets/1.png" alt="Morning Prayer" class="prayer-image" />
         <p class="prayer-text">Morning Prayer</p>
@@ -84,7 +85,7 @@
         </div>
       </div>
     </div>
-
+  </div>
     <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
       <ng-template>
         <div class="modal-content">
