@@ -1,0 +1,152 @@
+ion-content {
+  --background:#d7ccc0;
+}
+
+/* Set a semi-transparent background for the navbar */
+ion-header {
+  background: rgba(236, 225, 164, 0.5); 
+  --background: rgba(236, 225, 164, 0.5); /* Ensure the background color is set */
+}
+
+/* Ensure the toolbar icons remain fully opaque */
+ion-toolbar {
+  --background: transparent; /* Toolbar background should be transparent */
+}
+
+/* Transparent Box */
+.transparent-box {
+  position: absolute;
+  top: 50%; /* Centering vertically */
+  left: 50%; /* Centering horizontally */
+  transform: translate(-50%, -50%); /* Center the element */
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white with 70% opacity */
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%; /* Adjust as needed */
+  text-align: center;
+}
+
+/* Heading (h1) Text Styling */
+.transparent-box h1 {
+  font-size: 2rem;
+  color: black; /* Change text color to black */
+  margin-bottom: 10px;
+}
+
+/* Paragraph (p) Text Styling */
+.transparent-box p {
+  font-size: 1.2rem;
+  color: black; /* Change text color to black */
+}
+
+/* Additional styles for icon container (centered) */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute; 
+  left: 0;
+  top: 0;
+  margin: 0;
+  background: transparent;
+  padding: 10px 0;
+}
+
+.icon-container ion-button {
+  margin: 0 8px;
+  --background: transparent; /* Make the buttons transparent */
+  --border-radius: 50%; /* Circular buttons */
+  color: white; /* White icon color */
+}
+
+
+/* Additional styles for icon container (centered) */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute; 
+  left: 0;
+  top: 0;
+  margin: 0;
+  background: transparent;
+  padding: 10px 0;
+}
+
+.icon-container ion-button {
+  margin: 0 8px;
+  --background: transparent; /* Make the buttons transparent */
+  color: white; /* White icon color */
+}
+
+/* Banner Styling */
+.banner-image {
+  width: 100%;
+  max-height: 650px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.banner-title {
+  text-align: center;
+  font-weight: bold;
+  color: #4e4c45;
+  letter-spacing: 10px;
+  font-size: 70px; /* Added px unit */
+  margin-bottom: 10px; /* Add spacing below the title */
+}
+
+/* Description Paragraph Styling */
+p.description {
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.5;
+  color: black;
+  margin: 0 auto; /* Center align if the paragraph has a container */
+  max-width: 600px; /* Restrict width for better readability */
+}
+
+/* Prayer Categories Container with Background */
+.prayer-categories-container {
+  background: url('/assets/bg.png') no-repeat center center;
+  background-size: cover; /* Ensure the image covers the area */
+  padding: 20px; /* Add spacing around the content */
+}
+
+/* Prayer Categories Styling */
+.prayer-categories {
+  display: grid; /* Use grid layout for easy row creation */
+  grid-template-columns: repeat(3, 1fr); /* Four images per row */
+  gap: 20px; /* Add spacing between the images */
+  margin-top: -10px; /* Add spacing above the container */
+
+}
+
+.prayer-box {
+  text-align: center; /* Center the text below the image */
+}
+
+.prayer-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: Rounded corners for the images */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better appearance */
+}
+
+.prayer-text {
+  margin-top: 10px;
+  font-size: 14px; /* Adjust text size */
+  color: #ffffff; /* Change text color if needed */
+  font-weight: bold;
+}
+
+
+.transparent-box {
+  border: 2px solid #ccc; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px; /* Space inside the box */
+  margin: 16px 0; /* Space around the box */
+  background-color: #f9f9f9; /* Light background color */
+  text-align: center; /* Center the text */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}

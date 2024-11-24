@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Logo on the left side -->
+    <ion-buttons slot="start">
+      <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-left: 10px;" />
+    </ion-buttons>
+
+    <!-- Navigation Icons in the center -->
+    <div class="icon-container">
+      <ion-button routerLink="/home">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="openSearch()">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button routerLink="/prayer">
+        <ion-icon name="book-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button routerLink="/meditation">
+        <ion-icon name="leaf-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button routerLink="/music">
+        <ion-icon name="musical-notes-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="page-content">
+  <!-- Page Banner -->
+  <div class="banner">
+    <img src="assets/meditation_banner.png" alt="Meditation For Healing" class="banner-image" />
+  </div>
+
+  <ion-content>
+    <!-- Transparent Box on Top -->
+    <h1 class="banner-title">MEDITATION</h1>
+    <div class="transparent-box">
+      <h1>Empower Your Soul, Embrace Your Faith.</h1>
+      <p>"In meditation, we uncover tranquility, wisdom, and presence. It is a journey inward, fostering peace, mindfulness, and spiritual growth. Embrace the stillness, and let your soul find its true harmony."</p>
+    </div>
+  </ion-content>
+
+
+<div class="prayer-categories-container">
+  <!-- First Row -->
+  <div class="prayer-categories">
+    <div class="prayer-box">
+      <img src="assets/morning_brew.jpg" alt="Brew in the Morning" class="prayer-image" />
+      <p class="prayer-text">Morning Brew</p>
+    </div>
+    <div class="prayer-box">
+      <img src="assets/relieve_stress.png" alt="Smiling Man" class="prayer-image" />
+      <p class="prayer-text">Relieve Stress</p>
+    </div>
+    <div class="prayer-box">
+      <img src="assets/concentration.jpg" alt="Meditating Woman" class="prayer-image" />
+      <p class="prayer-text">For Concentration</p>
+    </div>
+
+    <!-- Second Row -->
+    <div class="prayer-box">
+      <img src="assets/evening_reset.jpg" alt="Girl Relaxed" class="prayer-image" />
+      <p class="prayer-text">Evening Reset</p>
+    </div>
+    <div class="prayer-box">
+      <img src="assets/sleep_well.jpg" alt="Sleeping Girl" class="prayer-image" />
+      <p class="prayer-text">Sleep Well</p>
+    </div>
+    <div class="prayer-box">
+      <img src="assets/lift_your_mood.jpg" alt="Happy Girl" class="prayer-image" />
+      <p class="prayer-text">Lift Your Mood</p>
+    </div>
+  </div>
+</div>

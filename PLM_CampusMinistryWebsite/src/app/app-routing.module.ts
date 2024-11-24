@@ -16,7 +16,11 @@ const routes: Routes = [
   {
     path: 'prayer',
     loadChildren: () => import('./prayer/prayer.module').then( m => m.PrayerPageModule)
+  },  {
+    path: 'meditation',
+    loadChildren: () => import('./meditation/meditation.module').then( m => m.MeditationPageModule)
   },
+
 
 ];
 
