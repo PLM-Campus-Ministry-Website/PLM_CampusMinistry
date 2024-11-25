@@ -73,7 +73,7 @@ forgivenessPrayer = `
 Divine Spirit of Compassion, I stand before You with a heart that seeks forgiveness. I know I have made mistakes, spoken words I regret, and acted in ways that may have caused harm to others or myself. I ask for Your understanding and grace to cleanse me of these burdens.
 Help me to learn from my shortcomings and to grow into a better version of myself. Teach me to forgive not only others but also myself, so that I may move forward with a heart unburdened by guilt or resentment.
 May I also extend forgiveness to those who have hurt me. Though it is not always easy, I know that forgiveness is a gift I give to myself as well as to them. Let my spirit be free from anger and bitterness, and let love and understanding take their place.
-Thank You for Your constant mercy and for the chance to begin anew each day. Guide me as I seek to live with integrity, kindness, and humility.</p>
+Thank You for Your constant mercy and for the chance to begin anew each day. Guide me as I seek to live with integrity, kindness, and humility.
 `;
 
 peacePrayer = `
