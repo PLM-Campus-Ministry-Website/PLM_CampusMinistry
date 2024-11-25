@@ -1,60 +1,97 @@
 ion-content {
-  --background:#d7ccc0;
+  --background: #ffffff;
+  --color: black;
 }
 
-/* Set a semi-transparent background for the navbar */
-ion-header {
-  background: rgba(236, 225, 164, 0.5); 
-  --background: rgba(236, 225, 164, 0.5); /* Ensure the background color is set */
-}
-
-/* Ensure the toolbar icons remain fully opaque */
 ion-toolbar {
-  --background: transparent; /* Toolbar background should be transparent */
+  --background: rgba(236, 225, 164, 0.5) !important;
 }
 
-/* Transparent Box */
-.transparent-box {
-  position: absolute;
-  top: 50%; /* Centering vertically */
-  left: 50%; /* Centering horizontally */
-  transform: translate(-50%, -50%); /* Center the element */
-  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white with 70% opacity */
-  border-radius: 8px;
-  padding: 20px;
-  width: 80%; /* Adjust as needed */
-  text-align: center;
-}
-
-/* Heading (h1) Text Styling */
-.transparent-box h1 {
-  font-size: 2rem;
-  color: black; /* Change text color to black */
-  margin-bottom: 10px;
-}
-
-/* Paragraph (p) Text Styling */
-.transparent-box p {
-  font-size: 1.2rem;
-  color: black; /* Change text color to black */
-}
-
-/* Additional styles for icon container (centered) */
+/* Icon container for larger screens */
 .icon-container {
   display: flex;
   justify-content: center;
   width: 100%;
-  position: absolute; 
-  left: 0;
-  top: 0;
+  position: relative;
   margin: 0;
   background: transparent;
   padding: 10px 0;
 }
 
 .icon-container ion-button {
-  margin: 0 8px;
-  --background: transparent; /* Make the buttons transparent */
-  --border-radius: 50%; /* Circular buttons */
-  color: white; /* White icon color */
+  --background: #8D6E63; /* Button background: Coffee Brown */
+  --color: #FFFFFF; /* Icon/Text: White */
+}
+
+/* Hover Effect */
+.icon-container ion-button:hover {
+  --background: #A1887F; /* Lighter brown on hover */
+}
+
+.icon-container ion-button-inner {
+  color: #FFFFFF; /* Set button-inner to white */
+}
+
+@media (max-width: 768px) {
+  .icon-container {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block; /* Show hamburger menu for smaller screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none; /* Hide hamburger menu for larger screens */
+  }
+}
+
+/* Menu Styles */
+ion-menu {
+  --width: 300px;
+  --background: #FFF8E1; /* Light beige menu background */
+  --border-color: transparent; /* Remove borders */
+  --box-shadow: none; /* Eliminate black shadows */
+}
+
+ion-menu::part(container) {
+  background-color: #FFF8E1 !important; /* Ensure consistent background color */
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Menu Item Styles */
+ion-menu ion-item {
+  font-size: 16px;
+  --background: #D7CCC8; /* Light coffee color */
+  --color: #5D4037; /* Text: Dark coffee brown */
+  border-radius: 8px;
+  margin: 5px 10px;
+}
+
+ion-menu ion-item:hover {
+  --background: #A1887F; /* Lighter brown on hover */
+  --color: #FFFFFF; /* White text on hover */
+}
+
+ion-menu ion-icon {
+  font-size: 24px;
+  color: #795548; /* Medium brown for icons */
+}
+
+ion-menu ion-icon:hover {
+  color: #4E342E; /* Darker brown on hover */
+}
+
+.list-md {
+  --background: #EFEBE9; /* Light beige */
+  border-radius: 10px;
+}
+
+.list-md hydrated {
+  font-size: 14px;
+  --color: #4E342E; /* Dark coffee brown text */
+  padding: 10px 15px;
 }
