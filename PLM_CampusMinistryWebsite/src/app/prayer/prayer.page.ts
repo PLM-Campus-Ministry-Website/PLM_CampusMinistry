@@ -44,6 +44,7 @@ export class PrayerPage {
 
 // Prayer Details
 morningPrayer = `
+    <span style='font-size:100px;'>&#10015;</span>
 <p>In the name of the Father, and of the Son, and of the Holy Spirit.</p>
 <p>As the sun rises and fills the world with light, I pause to acknowledge the gift of this new day. Thank You, Divine Source, for the breath in my lungs and the strength in my body. Grant me the wisdom to make choices that bring goodness into the world, the courage to face challenges with grace, and the humility to accept help when I need it. </p>
 <p>May my actions today reflect kindness and understanding. Let my words be a source of comfort and encouragement to others. Help me to find joy in the small moments—a warm smile, a kind word, or the beauty of nature. </p>
@@ -52,6 +53,7 @@ morningPrayer = `
 `;
 
 eveningPrayer = `
+    <span style='font-size:100px;'>&#10015;</span>
 <p>In the name of the Father, and of the Son, and of the Holy Spirit.</p>
 <p>As the sun sets and the world grows quiet, I take this moment to reflect on the day that has passed. Thank You, Divine Presence, for the experiences I encountered—both the moments of joy and the lessons in challenge. I am grateful for the people I met, the opportunities I received, and the strength I found within myself.</p>
 <p>For the times I fell short, I ask for forgiveness. Help me to learn from my mistakes and strive to be better tomorrow. For the blessings I received, I offer my thanks. May I carry these moments in my heart as reminders of Your constant care and guidance.</p>
@@ -60,6 +62,7 @@ eveningPrayer = `
 `;
 
 thanksgivingPrayer = `
+  <span style='font-size:100px;'>&#10015;</span>
 <p>In the name of the Father, and of the Son, and of the Holy Spirit.</p>
 <p>Divine Creator, today I come before You with a heart overflowing with gratitude. Thank You for the many blessings You have bestowed upon me—some I see clearly, and others I may not even recognize.
 <p>I am grateful for the love and support of those around me, the opportunities to grow and learn, and the moments of peace that remind me of Your presence. Thank You for the beauty of the world—the sunrise, the laughter of children, the kindness of strangers, and the warmth of friendship.</p>
@@ -69,6 +72,7 @@ thanksgivingPrayer = `
 `;
 
 healingPrayer = `
+    <span style='font-size:100px;'>&#10015;</span>
 <p>In the name of the Father, and of the Son, and of the Holy Spirit.</p>
 <p>Divine Healer, I come to You with a heart that seeks comfort and restoration. You know the pain I carry, whether it is of the body, mind, or spirit. I ask for Your healing touch to soothe my wounds and renew my strength.</p>
 <p>Grant me patience as I navigate this journey toward wholeness. Teach me to trust the process of healing, even when progress feels slow. Surround me with people who bring encouragement, care, and hope. May I find peace in their presence and strength in their words.</p>
@@ -78,6 +82,7 @@ healingPrayer = `
 `;
 
 forgivenessPrayer = `
+    <span style='font-size:100px;'>&#10015;</span>
 <p>In the name of the Father, and of the Son, and of the Holy Spirit.</p>
 <p>Divine Spirit of Compassion, I stand before You with a heart that seeks forgiveness. I know I have made mistakes, spoken words I regret, and acted in ways that may have caused harm to others or myself. I ask for Your understanding and grace to cleanse me of these burdens.</p>
 <p>Help me to learn from my shortcomings and to grow into a better version of myself. Teach me to forgive not only others but also myself, so that I may move forward with a heart unburdened by guilt or resentment.</p>
@@ -87,6 +92,7 @@ forgivenessPrayer = `
 `;
 
 peacePrayer = `
+    <span style='font-size:100px;'>&#10015;</span>
 <p>In the name of the Father, and of the Son, and of the Holy Spirit.</p>
 <p>Source of Peace and Harmony, in this moment, I turn to You seeking calm for my restless heart and mind. The world around me feels heavy with chaos, and I long for the tranquility that comes from Your presence.</p>
 <p>Teach me to let go of the worries I cannot control and to trust in the unfolding of Your greater plan. Fill me with a deep and abiding sense of peace that transcends all circumstances. May this peace radiate outward, touching the lives of those around me and fostering harmony in my relationships.</p>
