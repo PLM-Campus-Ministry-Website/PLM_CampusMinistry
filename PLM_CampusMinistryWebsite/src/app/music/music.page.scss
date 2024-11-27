@@ -1,14 +1,15 @@
+/* Default Styles */
 ion-content {
-    --background:  #8D6E63;
+    --background: #8D6E63;
     --color: rgb(253, 253, 253);
-  }
-  
-  ion-toolbar {
+}
+
+ion-toolbar {
     --background: rgba(236, 225, 164, 0.5) !important;
-  }
-  
-  /* Icon container for larger screens */
-  .icon-container {
+}
+
+/* Icon container for larger screens */
+.icon-container {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -16,166 +17,137 @@ ion-content {
     margin: 0;
     background: transparent;
     padding: 10px 0;
-  }
-  
-  .icon-container ion-button {
+}
+
+.icon-container ion-button {
     --background: #8D6E63; /* Button background: Coffee Brown */
     --color: #FFFFFF; /* Icon/Text: White */
-  }
-  
-  /* Hover Effect */
-  .icon-container ion-button:hover {
+}
+
+/* Hover Effect */
+.icon-container ion-button:hover {
     --background: #A1887F; /* Lighter brown on hover */
-  }
-  
-  .icon-container ion-button-inner {
+}
+
+.icon-container ion-button-inner {
     color: #FFFFFF; /* Set button-inner to white */
-  }
-  
-  @media (max-width: 768px) {
-    .icon-container {
-      display: none;
-    }
-  
-    .hamburger-menu {
-      display: block; /* Show hamburger menu for smaller screens */
-    }
-  }
-  
-  @media (min-width: 769px) {
-    .hamburger-menu {
-      display: none; /* Hide hamburger menu for larger screens */
-    }
-  }
-  
-  /* Menu Styles */
-  ion-menu {
+}
+
+/* Menu Styles */
+ion-menu {
     --width: 300px;
     --background: #FFF8E1; /* Light beige menu background */
     --border-color: transparent; /* Remove borders */
     --box-shadow: none; /* Eliminate black shadows */
-  }
-  
-  ion-menu::part(container) {
+}
+
+ion-menu::part(container) {
     background-color: #d0a30e !important; /* Ensure consistent background color */
     border: none !important;
     box-shadow: none !important;
-  }
-  
-  /* Menu Item Styles */
-  ion-menu ion-item {
+}
+
+/* Menu Item Styles */
+ion-menu ion-item {
     font-size: 16px;
     --background: #D7CCC8; /* Light coffee color */
     --color: #5D4037; /* Text: Dark coffee brown */
     border-radius: 8px;
     margin: 5px 10px;
-  }
-  
-  ion-menu ion-item:hover {
+}
+
+ion-menu ion-item:hover {
     --background: #A1887F; /* Lighter brown on hover */
     --color: #FFFFFF; /* White text on hover */
-  }
-  
-  ion-menu ion-icon {
+}
+
+ion-menu ion-icon {
     font-size: 24px;
     color: #795548; /* Medium brown for icons */
-  }
-  
-  ion-menu ion-icon:hover {
-    color: #4E342E; /* Darker brown on hover */
-  }
-  
-  .list-md {
-    --background: #EFEBE9; /* Light beige */
-    border-radius: 10px;
-  }
-  
-  .list-md hydrated {
-    font-size: 14px;
-    --color: #4E342E; /* Dark coffee brown text */
-    padding: 10px 15px;
-  }
+}
 
-  .small-card {
+ion-menu ion-icon:hover {
+    color: #4E342E; /* Darker brown on hover */
+}
+
+/* Card Styles */
+.small-card {
     width: 350px;   /* Adjust width */
     height: 300px;  /* Adjust height */
     border-radius: 12px;  /* Rounded corners */
     margin: 5px;
     padding: 10px;
-  
-    /* Card Background Color */
     background-color: #ffffff; /* White background or change to any color like #f4f4f4 */
-  
-    /* Box Shadow */
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);  /* Darker shadow for a more prominent effect */
-    
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
-  }
-  
-  /* Add hover effect for a more interactive design */
-  .small-card:hover {
+}
+
+/* Add hover effect for a more interactive design */
+.small-card:hover {
     transform: scale(1.05); /* Slightly enlarge the card on hover */
     box-shadow: 0px 6px 16px rgb(3, 3, 3);  /* Increased shadow on hover */
-  }
-  
-  .card-col {
+}
+
+.card-col {
     display: flex;
     justify-content: center;  /* Center cards within columns */
     align-items: center;
-  }
-  
-  ion-card-header {
+}
+
+ion-card-header {
     text-align: center;  /* Center the title */
     font-size: 14px;  /* Smaller font for content */
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #d27b5b;
-  }
-  
-  ion-card-content {
+}
+
+ion-card-content {
     font-size: 14px;  /* Smaller font for content */
     font-style: oblique;
     color: #795548;
     text-align: center;  /* Center the content text */
-  }
-  
-  
-  .quote-section {
-    background-color: #f9f9f9; // Light grey background for a professional look
-    padding: 60px 20px; // Adequate padding for a spacious, clean layout
-    text-align: center;
-  
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-  
-    .quote {
-      font-style: italic;
-      font-size: 2rem;
-      color: #5D4037; // Rich brown color for the quote text
-      position: relative;
-      padding: 30px 40px;
-      background-color: #ffffff; // White background for the quote box
-      border-left: 6px solid #A1887F; // Decorative left border with soft brown color
-      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); // Light shadow to make the quote pop
-      border-radius: 10px; // Rounded corners for the quote box
-      margin: 0 auto;
-      max-width: 90%;
-      
-      p {
-        margin: 0;
-      }
-  
-      footer {
-        margin-top: 15px;
-        font-size: 1.25rem;
-        font-weight: bold;
-        color: #4E342E; // Deep brown color for the author name
-      }
-    }
-  }
+}
 
-  /* Transparent Box */
+/* Quote Section */
+.quote-section {
+    background-color: #f9f9f9; /* Light grey background for a professional look */
+    padding: 60px 20px; /* Adequate padding for a spacious, clean layout */
+    text-align: center;
+}
+
+.quote-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-section .quote {
+    font-style: italic;
+    font-size: 2rem;
+    color: #5D4037; /* Rich brown color for the quote text */
+    position: relative;
+    padding: 30px 40px;
+    background-color: #ffffff; /* White background for the quote box */
+    border-left: 6px solid #A1887F; /* Decorative left border with soft brown color */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow to make the quote pop */
+    border-radius: 10px; /* Rounded corners for the quote box */
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.quote-section .quote footer {
+    margin-top: 15px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #4E342E; /* Deep brown color for the author name */
+}
+
+ /* Spotify iframe responsiveness */
+ .spotifywrapper iframe {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  
+/* Transparent Box */
 .transparent-box {
     position: absolute;
     top: 50%; /* Centering vertically */
@@ -186,22 +158,21 @@ ion-content {
     padding: 20px;
     width: 80%; /* Adjust as needed */
     text-align: center;
-  }
-  
-  /* Heading (h1) Text Styling */
-  .transparent-box h1 {
+}
+
+/* Heading (h1) Text Styling */
+.transparent-box h1 {
     font-size: 2rem;
     color: black; /* Change text color to black */
     margin-bottom: 10px;
-  }
-  
-  /* Paragraph (p) Text Styling */
-  .transparent-box p {
+}
+
+/* Paragraph (p) Text Styling */
+.transparent-box p {
     font-size: 1.2rem;
     color: black; /* Change text color to black */
-  }
+}
 
-  
 .transparent-box {
     border: 2px solid #ccc; /* Border color */
     border-radius: 8px; /* Rounded corners */
@@ -210,5 +181,86 @@ ion-content {
     background-color: #f9f9f9; /* Light background color */
     text-align: center; /* Center the text */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+
+    /* Icon container */
+    .icon-container {
+        display: none; /* Hide icon container on smaller screens */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu for smaller screens */
+    }
+
+    /* Menu Item Styles */
+    ion-menu ion-item {
+        font-size: 14px;  /* Smaller font size for menu items */
+    }
+
+    /* Card Styles */
+    .small-card {
+        width: 100%;  /* Make card width responsive */
+        height: auto; /* Adjust height based on content */
+        padding: 5px;
+        margin: 10px 0; /* Add margin between cards */
+    }
+
+    .quote-section {
+        padding: 40px 10px; /* Reduce padding on smaller screens */
+    }
+
+    .quote-section .quote {
+        font-size: 1.5rem;  /* Smaller font size for quotes */
+        padding: 20px 30px; /* Adjust padding for smaller screens */
+    }
+
+    .transparent-box {
+        width: 90%; /* Make transparent box take up 90% of the screen width */
+        padding: 10px;  /* Less padding on smaller screens */
+    }
+
+    /* Adjust font sizes for text */
+    .transparent-box h1 {
+        font-size: 1.8rem; /* Slightly smaller font size */
+    }
+
+    .transparent-box p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+}
+
+/* Larger Screen Styles (Tablet and above) */
+@media (min-width: 769px) {
+
+    /* Adjust Icon container */
+    .icon-container {
+        display: flex; /* Show icon container on larger screens */
+    }
+
+    .hamburger-menu {
+        display: none; /* Hide hamburger menu on larger screens */
+    }
+
+    /* Keep card styles as is */
+    .small-card {
+        width: 350px;
+        height: 300px;
+    }
+
+    .quote-section {
+        padding: 60px 20px; /* Keep original padding */
+    }
+
+    .quote-section .quote {
+        font-size: 2rem;
+        padding: 30px 40px;
+    }
+
+    .transparent-box {
+        width: 80%; /* Keep original width */
+        padding: 20px;
+    }
+}
