@@ -597,3 +597,86 @@ form {
     }
   }
 }
+
+
+
+
+
+
+/* Footer Container */
+.footer {
+  background-color: #4e3629;;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Logos Section */
+  .logo-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .footer-logo {
+      max-width: 150px;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  /* Links Section */
+  .links-container {
+    margin: 20px 0;
+  }
+
+  .footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #3498db;
+      }
+    }
+  }
+
+  /* Social Media Section */
+  .social-media-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

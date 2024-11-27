@@ -12,7 +12,7 @@ export class HomePage {
   request = {
     name: '',
     college: '',
-    dateTime: '',
+    dateTime: '', // datetime input from the form
     event: '',
     place: '',
     customPlace: '',  // For custom place input
@@ -21,8 +21,17 @@ export class HomePage {
     notes: ''
   };
 
-  // Using an array instead of a fixed object type
-  visibleAnswers: boolean[] = new Array(8).fill(false);
+  // Use a better type for handling visibility of FAQ answers
+  visibleAnswers: { [key: number]: boolean } = {
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+    6: false,
+    7: false,
+    8: false
+  };
 
   constructor(private alertCtrl: AlertController) {}
 
@@ -39,6 +48,9 @@ export class HomePage {
       // Handle custom place
       const place = this.request.place === 'Other' && this.request.customPlace ? this.request.customPlace : this.request.place;
 
+      // Format date and time for email (make it human-readable)
+      const formattedDateTime = this.formatDateTime(this.request.dateTime);
+
       // Construct the email body in a formal letter format
       const emailBody = `
         Dear Ms. Angel Macasaet,
@@ -49,7 +61,7 @@ export class HomePage {
 
         College: ${this.request.college}
         Event: ${this.request.event}
-        Date and Time: ${this.request.dateTime}
+        Date and Time: ${formattedDateTime}
         Number of Attendees: ${this.request.attendees}
         Place: ${place}
         Additional Notes: ${this.request.notes || 'None'}
@@ -119,11 +131,26 @@ export class HomePage {
 
   // Toggle visibility of FAQ answers
   toggleAnswer(questionNumber: number) {
-    this.visibleAnswers[questionNumber - 1] = !this.visibleAnswers[questionNumber - 1];
+    this.visibleAnswers[questionNumber] = !this.visibleAnswers[questionNumber];
   }
 
   // Check if an FAQ answer is visible
   isAnswerVisible(questionNumber: number): boolean {
-    return this.visibleAnswers[questionNumber - 1];
+    return this.visibleAnswers[questionNumber];
+  }
+
+  // Helper function to format dateTime into AM/PM format
+  formatDateTime(dateTime: string): string {
+    const date = new Date(dateTime);
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,  // Use 12-hour format (AM/PM)
+    };
+    return date.toLocaleString('en-US', options);
   }
 }
