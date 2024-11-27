@@ -16,10 +16,13 @@ export class HomePage {
     event: '',
     place: '',
     customPlace: '',  // For custom place input
-    attendees: 1,     // Added attendees property
+    attendees: 1,     // Added attendees property with a default value of 1
     otherPlace: '',   // Added otherPlace property for custom places
     notes: ''
   };
+
+  // Using an array instead of a fixed object type
+  visibleAnswers: boolean[] = new Array(8).fill(false);
 
   constructor(private alertCtrl: AlertController) {}
 
@@ -34,7 +37,7 @@ export class HomePage {
       const formattedDate = currentDate.toLocaleString();
 
       // Handle custom place
-      const place = this.request.place === 'other' ? this.request.customPlace : this.request.place;
+      const place = this.request.place === 'Other' && this.request.customPlace ? this.request.customPlace : this.request.place;
 
       // Construct the email body in a formal letter format
       const emailBody = `
@@ -44,7 +47,6 @@ export class HomePage {
 
         I am writing to request the scheduling of a mass for the following details:
 
-        Name: ${this.request.name}
         College: ${this.request.college}
         Event: ${this.request.event}
         Date and Time: ${this.request.dateTime}
@@ -64,7 +66,7 @@ export class HomePage {
 
       // Construct the mailto link with the subject and body
       const mailToLink = `mailto:yurialfrance05@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-      
+
       // Trigger the email client to open with the pre-filled message
       window.location.href = mailToLink;
 
@@ -113,5 +115,15 @@ export class HomePage {
     });
 
     await alert.present();
+  }
+
+  // Toggle visibility of FAQ answers
+  toggleAnswer(questionNumber: number) {
+    this.visibleAnswers[questionNumber - 1] = !this.visibleAnswers[questionNumber - 1];
+  }
+
+  // Check if an FAQ answer is visible
+  isAnswerVisible(questionNumber: number): boolean {
+    return this.visibleAnswers[questionNumber - 1];
   }
 }

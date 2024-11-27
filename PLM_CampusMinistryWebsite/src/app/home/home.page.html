@@ -159,12 +159,33 @@
   </div>
 
   <div>
-    <label for="college">College</label>
+    <label for="college">College/Office</label>
     <select id="college" [(ngModel)]="request.college" name="college" required>
       <option value="">Select College</option>
+      <option value="College of Architecture and Sustainable Built Environments (CASBE)">College of Architecture and Sustainable Built Environments (CASBE)</option>
+      <option value="College of Business Administration (CBA)">College of Business Administration (CBA)</option>
+      <option value="College of Accountancy">College of Accountancy</option>
+      <option value="College of Tourism and Hospitality Management">College of Tourism and Hospitality Management</option>
+      <option value="College of Education">College of Education</option>
       <option value="College of Engineering">College of Engineering</option>
-      <option value="College of Arts and Sciences">College of Arts and Sciences</option>
-      <option value="College of Business">College of Business</option>
+      <option value="College of Information Systems & Technology Management">College of Information Systems & Technology Management</option>
+      <option value="College of Humanities, Arts and Social Sciences (CHASS)">College of Humanities, Arts and Social Sciences (CHASS)</option>
+      <option value="College of Nursing">College of Nursing</option>
+      <option value="College of Physical Therapy">College of Physical Therapy</option>
+      <option value="College of Science">College of Science</option>
+      <option value="College of Law">College of Law</option>
+      <option value="College of Medicine">College of Medicine</option>
+      <option value="College of Business School">College of Business School</option>
+      <option value="Graduate School of Law">Graduate School of Law</option>
+      <option value="College of Public Health">College of Public Health</option>
+      <option value="College of Public Administration">College of Public Administration</option>
+      <option value="Accounting Office">Accounting Office</option>
+      <option value="Office of Student Development Services">Office of Student Development Services</option>
+      <option value="Office of Graduate/Professional Studies">Office of Graduate/Professional Studies</option>
+      <option value="Office of the VP for Research">Office of the VP for Research</option>
+      <option value="University Health Services">University Health Services</option>
+      <option value="Office of NSTP">Office of NSTP</option>
+      <option value="Other">Other (Specify on the Note)</option>
       <!-- Add more colleges as needed -->
     </select>
   </div>
@@ -207,6 +228,90 @@
   <button type="submit">Submit</button>
 </form>
 
+<!-- FAQ Section -->
+<section class="faq-section">
+  <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(1)">What is Ministry on Campus?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(1)">
+      <p>… an extension of the ministry of the Archdiocese of Manila to educational institutions</p>
+      <p>… to provide pastoral care and nurturance of the spiritual life and moral development of the students and adults on campus</p>
+      <p>… one of the five (5) sectors of the Archdiocesan Commission on Youth</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(2)">What are the Public state colleges and Universities under Campus Ministry in RCAM?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(2)">
+      <p>Pamantasan ng Lungsod ng Maynila</p>
+      <p>Polytechnic University of the Philippines</p>
+      <p>Philippine Normal University</p>
+      <p>Universidad De Manila</p>
+      <p>Technological University of the Philippines</p>
+      <p>Eulogio "Amang" Rodriguez Institute of Science and Technology</p>
+      <p>University of Makati</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(3)">Private non-sectarian colleges</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(3)">
+      <p>Philippine College of Criminology</p>
+      <p>Far Eastern University</p>
+      <p>Lyceum of the Philippines University</p>
+      <p>Mapua University</p>
+      <p>Centro Escolar University</p>
+      <p>University of the East</p>
+      <p>Jose Rizal University</p>
+      <p>National University</p>
+      <p>Philippine School of Business Administration</p>
+      <p>Philippine Women’s University</p>
+      <p>FEATI University</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(4)">Catholic colleges and universities in partnership with the Ministry</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(4)">
+      <p>Colegio de San Juan de Letran</p>
+      <p>St. Scholastica’s College Manila</p>
+      <p>San Beda University</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(5)">Who is the current RCAM Campus Ministry Director?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(5)">
+      <p>Rev. Fr. Rany Geraldino</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(6)">What is the role of Student in Campus Ministry?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(6)">
+      <p>Assists in forming a faith-community on campus, specifically in the peacemaking activities and programs of Campus Ministry.</p>
+      <p>Assists in campus-wide programs of Campus Ministry in peace information, prayer groups, liturgical celebrations, interfaith programs and orientation to the Campus Ministry.</p>
+      <p>Forms, supports, and nurtures at least one prayer community on campus.</p>
+      <p>Plans, coordinates, and executes all assigned functions in collaboration with the Campus Minister.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(7)">Can a Professor/Instructor/University Employee be Part of campus ministry?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(7)">
+      <p>Yes. A Collaborator is an employee of PLM. Under the guidance and supervision of the Campus Minister, they are tasked with aiding in the building of a faith-community on campus and assisting in campus ministry programs.</p>
+      <p>They are commissioned by the Campus Ministry Office and the Archdiocese of Manila to serve as a catalyst within his/her school community, ensuring the fulfillment of the Vision, Mission, and Goals of the Campus Ministry, so that presence of God may be magnified.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(8)">How Can I Join Campus Ministry in PLM?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(8)">
+      <p>You can answer the membership form above this website or go to the Ministry on Campus Office in PLM beside the PLM Chapel. Just find Ms. Angel Macasaet or ask the volunteers there. Welcome to the Fam!</p>
+    </div>
+  </div>
+</section>
 
 
 </ion-content>
