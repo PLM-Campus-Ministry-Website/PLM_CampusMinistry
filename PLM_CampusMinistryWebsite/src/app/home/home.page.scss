@@ -486,3 +486,70 @@ ion-menu ion-icon:hover {
     }
   }
 }
+
+// --------------------------------------
+/* Local World Youth Day Section */
+// --------------------------------------
+
+.local-world-youth-day {
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  color: #fff;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6);  /* Dark overlay for better text visibility */
+    padding: 30px;
+    border-radius: 15px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .video-container {
+    margin-top: 30px;
+
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .section-description {
+      font-size: 1rem;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
