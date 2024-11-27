@@ -540,6 +540,13 @@ form {
   }
 }
 
+
+
+
+// --------------------------------------
+/* FAQs Section */
+// --------------------------------------
+
 .faq-section {
   background-color: #f4f1ec; /* Light brownish background */
   padding: 20px;
@@ -598,12 +605,64 @@ form {
   }
 }
 
+// --------------------------------------
+/* Facebook Page Plugin Section */
+// --------------------------------------
+.facebook-page-section {
+  background-color: #f8f1e5; /* Soft warm beige background */
+  padding: 50px 20px;  /* Top and bottom padding */
+  margin-top: 40px;  /* Add margin at the top */
+  text-align: center;
+  border-top: 5px solid #c49a6c; /* Brownish border on top for visual appeal */
+  
+  /* Heading styling */
+  h2 {
+    font-size: 30px;
+    color: #5c3d32;  /* Dark brown color for heading */
+    font-weight: bold;
+    margin-bottom: 40px; /* Larger margin bottom for spacing */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Slight letter spacing for a modern look */
+  }
+
+  /* Facebook Plugin Container */
+  .facebook-plugin-container {
+    display: inline-block;
+    width: 340px;  /* Fixed width */
+    max-width: 100%;
+    height: 125px;  /* Increased height for better display */
+    border-radius: 12px; /* Softer rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow with higher opacity */
+    background-color: #ffffff;  /* White background for the plugin */
+    margin: 0 auto; /* Center the plugin */
+  }
+
+  /* Ensure iframe is fully responsive */
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .facebook-plugin-container {
+      width: 100%;
+      height: 115px;  /* Adjust height for mobile */
+    }
+  }
+}
 
 
 
 
 
+
+
+// --------------------------------------
 /* Footer Container */
+// --------------------------------------
 .footer {
   background-color: #4e3629;;
   color: white;
