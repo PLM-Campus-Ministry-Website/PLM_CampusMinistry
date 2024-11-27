@@ -100,7 +100,39 @@ peacePrayer = `
 <p>Thank You for being a steady anchor in times of turmoil. With You, I find the courage to face challenges, the wisdom to seek solutions, and the love to heal wounds. May Your peace guide me today and always.</p>
 <p>Amen.</p>
 `;
-  
+
+examPrayer = `
+    <span style='font-size:100px;'>&#10015;</span>
+<p>In the name of the Father, and of the Son, and of the Holy Spirit.</p>
+<p>Lord, I come before You today with a humble heart, asking for Your guidance and wisdom. As I prepare for my exams, I pray for clarity of mind and focus. </p>
+<p>Help me to recall all that I have studied and give me the strength to do my best. May Your peace surround me, calming my nerves and easing my anxieties.</p>
+<p>I trust that with Your help, I will face this challenge with confidence and grace.</p>
+<p></p>Grant me the ability to stay calm, think clearly, and perform to the best of my ability. Thank You, Lord, for being with me in this journey. I trust that You will guide me every step of the way.</p>
+<p>Amen.</p>
+`;
+
+deceasedPrayer = `
+    <span style='font-size:100px;'>&#10015;</span>
+<p>In the name of the Father, and of the Son, and of the Holy Spirit.</p>
+<p>Heavenly Father, we lift up to you the souls of our departed loved ones. We ask for Your mercy and grace upon them. </p>
+<p>May they find rest in Your eternal embrace and peace in Your presence. </p>
+<p>Comfort those who mourn their passing and help them to find solace in the hope of eternal life.</p>
+<p>Lord, may Your love surround all who are grieving. Give them strength and the peace that surpasses all understanding. </p>
+<p>We trust that our loved ones are now in Your care, free from pain and sorrow. May they rest in Your eternal light.</p>
+<p>Amen.</p>
+`;
+
+healthPrayer = `
+    <span style='font-size:100px;'>&#10015;</span>
+<p>In the name of the Father, and of the Son, and of the Holy Spirit.</p>
+<p>Lord, I come before You today asking for Your healing touch. You are the Great Physician, and I trust in Your power to heal both body and spirit. </p>
+<p>Please grant me strength and patience as I face this illness or health challenge. </p>
+<p>Fill me with hope and peace, knowing that You are with me every step of the way.</p>
+<p>May Your healing hands be upon me, bringing comfort and restoration. I ask for the grace to trust in Your timing, and for the strength to endure the process. </p>
+<p>I also pray for all those who are sick, that they may experience Your healing power and recover fully. </p>
+<p>Amen.</p>
+`;
+
   // Opens the modal with specific prayer details
   openModal(title: string, details: string): void {
     this.modalTitle = title;

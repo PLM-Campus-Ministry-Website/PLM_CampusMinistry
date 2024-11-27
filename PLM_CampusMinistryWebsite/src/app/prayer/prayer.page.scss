@@ -280,3 +280,120 @@ ion-modal ion-button {
     height: auto;
   }
 }
+
+/* Banner Styling */
+.additional-banner-title {
+  text-align: center;
+  font-weight: bold;
+  color: #4e4c45;
+  letter-spacing: 20px;
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+
+
+// -------------------------------------- 
+/* Gospel of the Day Section */
+// --------------------------------------
+
+.gospel-of-the-day {
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  color: #fff;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #4e4c45;
+    padding: 30px;
+    border-radius: 15px;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .video-container {
+    margin-top: 30px;
+
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  }
+
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .section-title {
+      font-size: 2.2rem;
+    }
+
+    .section-description {
+      font-size: 1.05rem;
+    }
+    
+    /* Adjust additional banner font size on smaller screens */
+    .additional-banner-title {
+      font-size: 5rem;
+    }
+
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .section-description {
+      font-size: 1rem;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Adjust additional banner font size for mobile */
+    .additional-banner-title {
+      font-size: 2.5rem;
+      padding: 15px; /* Reduced padding for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.6rem;
+    }
+
+    .section-description {
+      font-size: 0.95rem;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Further reduce banner font size and padding for smaller phones */
+    .additional-banner-title {
+      font-size: 2.5rem;
+      padding: 10px; /* Less padding for very small devices */
+    }
+  }

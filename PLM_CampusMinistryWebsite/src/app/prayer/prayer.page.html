@@ -1,3 +1,4 @@
+<ion-content>
 <ion-header>
   <ion-toolbar>
     <!-- Logo on the left -->
@@ -134,8 +135,38 @@
           Pray for healing and strength in times of need.
         </div>
       </div>
+
+      <!-- Exam Prayer -->
+<div class="prayer-box" (click)="openModal('A Prayer for Success in Exams', examPrayer)">
+  <img src="assets/7.png" alt="Prayer for Exam" class="prayer-image" />
+  <p class="prayer-text">Prayer for Exam</p>
+  <div class="prayer-details">
+    Pray for wisdom, focus, and confidence as you prepare and take exams. 
+  </div>
+</div>
+
+<!-- Prayer For Deceased-->
+<div class="prayer-box" (click)="openModal('A Prayer for the Souls of the Departed', deceasedPrayer)">
+  <img src="assets/8.png" alt="Prayer For Deceased" class="prayer-image" />
+  <p class="prayer-text">Prayer For Deceased</p>
+  <div class="prayer-details">
+    Pray for the souls of the departed, that they may find eternal rest with God. 
+  </div>
+</div>
+
+<!-- Prayer For Health-->
+<div class="prayer-box" (click)="openModal('A Prayer for the Souls of the Departed', healthPrayer)">
+  <img src="assets/9.png" alt="Prayer For Health" class="prayer-image" />
+  <p class="prayer-text"> Prayer For Health</p>
+  <div class="prayer-details">
+    Pray for healing, strength, and peace during times of illness or health challenges. 
+  </div>
+</div>
+
     </div>
   </div>
+
+
 
   <!-- Modal -->
   <ion-modal [isOpen]="isModalOpen" (willDismiss)="closeModal()">
@@ -155,4 +186,26 @@
       </ion-content>
     </ng-template>
   </ion-modal>
-</ion-content>
+
+  <!-- Additional Banner -->
+  <div class="additional-banner">
+    <h2 class="additional-banner-title">GOSPEL'S FOR TODAY</h2>
+  </div>
+
+<!---------------------->
+<!-- Gospel of the Day Section -->
+<!---------------------->
+<section class="gospel-of-the-day">
+  <div class="container">
+    <div class="section-content">
+      <h2 class="section-title">Reflect on Today’s Gospel</h2>
+      <p class="section-description">
+        Reflect on today's Gospel reading and embrace the teachings of love, faith, and hope. Let the message of the Gospel guide your day and inspire you to live with purpose and compassion.
+      </p>
+      
+      <!-- Video Embed -->
+      <div class="video-container">
+        <iframe src="https://www.awitatpapuri.com/?fbclid=IwY2xjawG0ERJleHRuA2FlbQIxMAABHQrWJZIsEyoR9szoOuZ4Uk9ZmckhkNRErzYu3w2w_TDLOB1-Knv-fz8r3Q_aem_aEkuiYGgxKcA0fbF-f3LXQ#today-tag" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+      </div>
+    </div>
+    </div>
