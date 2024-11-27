@@ -134,7 +134,7 @@
     <div class="section-content">
       <h2 class="section-title">Local World Youth Day 2024</h2>
       <p class="section-description">
-        Join us for an inspiring event filled with prayer, community, and reflections on the values that bind us together. Be part of this global celebration of youth, faith, and service.
+        An inspiring event filled with prayer, community, and reflections on the values that bind us together. The PLM Campus Ministry has been part of this global celebration of youth, faith, and service.
       </p>
       
       <!-- Video Embed -->
@@ -146,7 +146,66 @@
   </div>
 </section>
 
+<!---------------------->
+<!-- Mass Schedule Request Form -->
+ <!---------------------->
+<div class="form-title">
+  <h2>Mass Schedule Request</h2>
+</div>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" [(ngModel)]="request.name" name="name" required />
+  </div>
 
+  <div>
+    <label for="college">College</label>
+    <select id="college" [(ngModel)]="request.college" name="college" required>
+      <option value="">Select College</option>
+      <option value="College of Engineering">College of Engineering</option>
+      <option value="College of Arts and Sciences">College of Arts and Sciences</option>
+      <option value="College of Business">College of Business</option>
+      <!-- Add more colleges as needed -->
+    </select>
+  </div>
+
+  <div>
+    <label for="dateTime">Date and Time</label>
+    <input type="datetime-local" id="dateTime" [(ngModel)]="request.dateTime" name="dateTime" required />
+  </div>
+
+  <div>
+    <label for="event">Event</label>
+    <input type="text" id="event" [(ngModel)]="request.event" name="event" required />
+  </div>
+
+  <div>
+    <label for="attendees">Number of Attendees</label>
+    <input type="number" id="attendees" [(ngModel)]="request.attendees" name="attendees" required min="1" />
+  </div>
+
+  <div>
+    <label for="place">Place</label>
+    <select id="place" [(ngModel)]="request.place" name="place" required>
+      <option value="">Select Place</option>
+      <option value="PLM Chapel">PLM Chapel</option>
+      <option value="Manila Cathedral">Manila Cathedral</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div *ngIf="request.place === 'Other'">
+    <label for="otherPlace">Please specify the place</label>
+    <input type="text" id="otherPlace" [(ngModel)]="request.otherPlace" name="otherPlace" />
+  </div>
+
+  <div>
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" [(ngModel)]="request.notes" name="notes"></textarea>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
 
 
 
