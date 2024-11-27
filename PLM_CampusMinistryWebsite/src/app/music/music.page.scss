@@ -146,42 +146,6 @@ ion-card-content {
     max-width: 100%;
     border-radius: 12px;
   }
-  
-/* Transparent Box */
-.transparent-box {
-    position: absolute;
-    top: 50%; /* Centering vertically */
-    left: 50%; /* Centering horizontally */
-    transform: translate(-50%, -50%); /* Center the element */
-    background: rgba(255, 255, 255, 0.7); /* Semi-transparent white with 70% opacity */
-    border-radius: 8px;
-    padding: 20px;
-    width: 80%; /* Adjust as needed */
-    text-align: center;
-}
-
-/* Heading (h1) Text Styling */
-.transparent-box h1 {
-    font-size: 2rem;
-    color: black; /* Change text color to black */
-    margin-bottom: 10px;
-}
-
-/* Paragraph (p) Text Styling */
-.transparent-box p {
-    font-size: 1.2rem;
-    color: black; /* Change text color to black */
-}
-
-.transparent-box {
-    border: 2px solid #ccc; /* Border color */
-    border-radius: 8px; /* Rounded corners */
-    padding: 16px; /* Space inside the box */
-    margin: 16px 0; /* Space around the box */
-    background-color: #f9f9f9; /* Light background color */
-    text-align: center; /* Center the text */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -262,5 +226,68 @@ ion-card-content {
     .transparent-box {
         width: 80%; /* Keep original width */
         padding: 20px;
+    }
+}
+
+
+.jumbotron {
+    background: url('https://i.pinimg.com/736x/b2/31/4b/b2314bdffbdfc42a47d3740e7a7b597f.jpg') no-repeat center center/cover; 
+    padding: 80px 20px; // Increased padding for spacious look
+    color: #FFFFFF; // Ensure text is visible over the background
+    
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap; // Ensure responsive layout
+      
+      .left-column {
+        flex: 1 1 50%; // Left side (image) takes 50% of the width
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+      }
+      
+      .right-column {
+        flex: 1 1 40%; // Right side (text) takes 40% of the width
+        padding-left: 30px;
+        text-align: left;
+        
+        h1 {
+          font-size: 2.5rem;
+          color: #5D4037; // Rich brown for the heading
+          margin-bottom: 15px;
+          font-weight: bold;
+        }
+        
+        p {
+          font-size: 1rem;
+          color:  #5D4037; // Deep brown for the subheading text
+          margin-bottom: 30px;
+          font-style: italic;
+        }
+        
+        .cta-button {
+          display: inline-block;
+          background-color: #8D6E6E; // Soft brown for the button
+          color: white;
+          padding: 15px 40px;
+          font-size: 1.25rem;
+          text-align: center;
+          border-radius: 50px;
+          text-decoration: none;
+          transition: background-color 0.3s, transform 0.3s;
+          
+          &:hover {
+            background-color: #5D4037; // Darker brown when hovered
+            transform: scale(1.05); // Slight zoom effect on hover
+          }
+        }
+      }
     }
 }
