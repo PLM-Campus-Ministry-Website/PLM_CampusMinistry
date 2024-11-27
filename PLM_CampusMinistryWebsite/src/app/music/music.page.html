@@ -1,0 +1,277 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Logo on the left -->
+    <ion-buttons slot="start">
+      <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-left: 10px;" />
+    </ion-buttons>
+
+    <!-- Hamburger menu for mobile -->
+    <ion-buttons slot="end" class="hamburger-menu">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Navigation bar for larger screens -->
+    <div class="icon-container">
+      <ion-button routerLink="/home" routerLinkActive="active" data-label="Home">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openSearch()" data-label="Search">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+      <ion-button routerLink="/prayer" routerLinkActive="active" data-label="Prayer">
+        <ion-icon slot="icon-only" name="book-outline"></ion-icon>
+      </ion-button>
+      <ion-button routerLink="/meditation" routerLinkActive="active" data-label="Meditation">
+        <ion-icon slot="icon-only" name="leaf-outline"></ion-icon>
+      </ion-button>
+      <ion-button routerLink="/music" routerLinkActive="active" data-label="Music">
+        <ion-icon slot="icon-only" name="musical-notes-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/home">
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-item>
+      <ion-item (click)="openSearch()">
+        <ion-icon name="search-outline" slot="start"></ion-icon>
+        <ion-label>Search</ion-label>
+      </ion-item>
+      <ion-item routerLink="/prayer">
+        <ion-icon name="book-outline" slot="start"></ion-icon>
+        <ion-label>Prayer</ion-label>
+      </ion-item>
+      <ion-item routerLink="/meditation">
+        <ion-icon name="leaf-outline" slot="start"></ion-icon>
+        <ion-label>Meditation</ion-label>
+      </ion-item>
+      <ion-item routerLink="/music">
+        <ion-icon name="musical-notes-outline" slot="start"></ion-icon>
+        <ion-label>Music</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+ <br>
+<ion-router-outlet id="main-content"></ion-router-outlet>
+
+
+<ion-content>
+  <section class="quote-section">
+    <div class="container">
+      <blockquote class="quote">
+        <p>“I will praise the name of God with a song, and will magnify him with thanksgiving.”</p>
+        <footer>- Psalm 69:30</footer>
+      </blockquote>
+    </div>
+  </section>
+  <br>
+
+  <ion-grid>
+    <!-- Row 1 -->
+    <ion-row>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>AMAZING GRACE</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 1 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#000000;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5m0bbbwZxwcH8nSxFhnUKm?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>FARTHER ALONG</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 2 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1rydHmuL3zhFsjaBPEw4MA?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>I WILL SING FOREVER</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 3 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7171hbgVBhBpH8TpueFF0X?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+<br>
+    <!-- Row 2 -->
+    <ion-row>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>OCEANS</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 4 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5SDcksP8En1l6RtTY1wzHc?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>LEAD ME LORD</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 5 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/31Z8a8TVSOK5qMtkCfp05m?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>ON EAGLE'S WINGS</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 6 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0leneXML0z4Si2hqSDBHKw?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+<BR>
+    <!-- Row 3 -->
+    <ion-row>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>HERE I AM LORD</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 7 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#000000;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5IAMr5o8fOUxaiuy4hKuVR?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>WHAT A BEAUTIFUL NAME</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 8 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5XCtjnFMKtCT7ycDwV3Kdh?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>10,000 REASONS</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 9 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0fxpHpK3aw2nFWII6yveDD?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+<BR>
+    <ion-row>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>GOODNESS OF GOD</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 7 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1YlsjDSX79z5cOG6FsckgY?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>BROKEN VESSELS</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 8 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2BuhGnXpqMQ8BvOUZpmaVl?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4" class="card-col">
+        <ion-card class="small-card">
+          <ion-card-header>
+            <ion-card-title>I WILL RISE</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Spotify Embed for Card 9 -->
+            <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7j1e730A8K1my1mM4knYmr?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+<ion-content>
+    <!-- Transparent Box on Top -->
+    <div class="transparent-box">
+      <h1>PRAYER SONGS</h1>
+      <p>"We get nearer to the Lord through music than perhaps through any other thing except prayer". </p>
+    </div>
+</ion-content>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="4" class="card-col">
+      <ion-card class="small-card">
+        <ion-card-header>
+          <ion-card-title>ANIMA CHRISTI</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <!-- Spotify Embed for Card 7 -->
+          <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7ugjOxjIyZS9wsPhDbfsq0?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="4" class="card-col">
+      <ion-card class="small-card">
+        <ion-card-header>
+          <ion-card-title>PAGHAHANDOG NG SARILI</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <!-- Spotify Embed for Card 8 -->
+          <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6G9ggT4mS7CNWk0m5LYhRn?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="4" class="card-col">
+      <ion-card class="small-card">
+        <ion-card-header>
+          <ion-card-title>TAKE AND RECEIVE</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <!-- Spotify Embed for Card 9 -->
+          <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7kfRvs4NHCWlNlQ0FYtlpq?utm_source=generator&theme=0" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+
+
+
