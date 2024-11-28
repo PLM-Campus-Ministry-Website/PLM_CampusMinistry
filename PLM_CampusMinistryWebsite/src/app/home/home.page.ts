@@ -18,6 +18,7 @@ export class HomePage {
     customPlace: '',  // For custom place input
     attendees: 1,     // Added attendees property with a default value of 1
     otherPlace: '',   // Added otherPlace property for custom places
+    contactNumber: '', // Added contactNumber field
     notes: ''
   };
 
@@ -69,6 +70,7 @@ export class HomePage {
         The request was made on: ${formattedDate}
 
         Kindly confirm the scheduled time at your earliest convenience.
+        You can contact me on my phone number: ${this.request.contactNumber}
 
         Thank you for your time and attention to this matter.
 

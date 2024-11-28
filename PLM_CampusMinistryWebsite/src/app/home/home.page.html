@@ -148,7 +148,7 @@
 
 <!---------------------->
 <!-- Mass Schedule Request Form -->
- <!---------------------->
+<!---------------------->
 <div class="form-title">
   <h2>Mass Schedule Request</h2>
 </div>
@@ -162,6 +162,7 @@
     <label for="college">College/Office</label>
     <select id="college" [(ngModel)]="request.college" name="college" required>
       <option value="">Select College</option>
+      <!-- List of colleges -->
       <option value="College of Architecture and Sustainable Built Environments (CASBE)">College of Architecture and Sustainable Built Environments (CASBE)</option>
       <option value="College of Business Administration (CBA)">College of Business Administration (CBA)</option>
       <option value="College of Accountancy">College of Accountancy</option>
@@ -210,7 +211,7 @@
     <select id="place" [(ngModel)]="request.place" name="place" required>
       <option value="">Select Place</option>
       <option value="PLM Chapel">PLM Chapel</option>
-      <option value="Manila Cathedral">Manila Cathedral</option>
+      <option value="The Manila Cathedral">The Manila Cathedral</option>
       <option value="Other">Other</option>
     </select>
   </div>
@@ -218,6 +219,11 @@
   <div *ngIf="request.place === 'Other'">
     <label for="otherPlace">Please specify the place</label>
     <input type="text" id="otherPlace" [(ngModel)]="request.otherPlace" name="otherPlace" />
+  </div>
+
+  <div>
+    <label for="contactNumber">Contact Number</label>
+    <input type="tel" id="contactNumber" [(ngModel)]="request.contactNumber" name="contactNumber" pattern="^\d{10}$" placeholder="e.g. 09123456789" required />
   </div>
 
   <div>
@@ -323,8 +329,8 @@
 <section class="facebook-page-section">
   <h2>Follow Us on Facebook</h2>
   <div class="facebook-plugin-container">
-    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMinistryOnCampusPLM&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-            width="340" height="120"
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMinistryOnCampusPLM&tabs=timeline&width=340&height=499&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId"
+            width="340" height="499"
             style="border:none; overflow:hidden;"
             scrolling="no" frameborder="0" 
             allowfullscreen="true" 
@@ -332,6 +338,8 @@
     </iframe>
   </div>
 </section>
+
+
 
 <!-- Footer Section -->
 <footer class="footer">
