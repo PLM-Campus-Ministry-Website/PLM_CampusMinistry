@@ -319,6 +319,12 @@ ion-modal ion-button {
     border-radius: 15px;
   }
 
+  .section-title {
+    text-align: center;
+    color: #d0a30e;
+    font-weight: bold;
+  }
+
   .section-description {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -388,7 +394,7 @@ ion-modal ion-button {
     .video-container iframe {
       width: 100%;
       max-width: 100%;
-      height: auto;
+      height: 500px;
     }
 
     /* Further reduce banner font size and padding for smaller phones */
