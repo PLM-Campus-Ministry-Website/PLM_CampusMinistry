@@ -134,7 +134,7 @@
     <div class="section-content">
       <h2 class="section-title">Local World Youth Day 2024</h2>
       <p class="section-description">
-        Join us for an inspiring event filled with prayer, community, and reflections on the values that bind us together. Be part of this global celebration of youth, faith, and service.
+        An inspiring event filled with prayer, community, and reflections on the values that bind us together. The PLM Campus Ministry has been part of this global celebration of youth, faith, and service.
       </p>
       
       <!-- Video Embed -->
@@ -146,7 +146,236 @@
   </div>
 </section>
 
+<!---------------------->
+<!-- Mass Schedule Request Form -->
+ <!---------------------->
+<div class="form-title">
+  <h2>Mass Schedule Request</h2>
+</div>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" [(ngModel)]="request.name" name="name" required />
+  </div>
 
+  <div>
+    <label for="college">College/Office</label>
+    <select id="college" [(ngModel)]="request.college" name="college" required>
+      <option value="">Select College</option>
+      <option value="College of Architecture and Sustainable Built Environments (CASBE)">College of Architecture and Sustainable Built Environments (CASBE)</option>
+      <option value="College of Business Administration (CBA)">College of Business Administration (CBA)</option>
+      <option value="College of Accountancy">College of Accountancy</option>
+      <option value="College of Tourism and Hospitality Management">College of Tourism and Hospitality Management</option>
+      <option value="College of Education">College of Education</option>
+      <option value="College of Engineering">College of Engineering</option>
+      <option value="College of Information Systems & Technology Management">College of Information Systems & Technology Management</option>
+      <option value="College of Humanities, Arts and Social Sciences (CHASS)">College of Humanities, Arts and Social Sciences (CHASS)</option>
+      <option value="College of Nursing">College of Nursing</option>
+      <option value="College of Physical Therapy">College of Physical Therapy</option>
+      <option value="College of Science">College of Science</option>
+      <option value="College of Law">College of Law</option>
+      <option value="College of Medicine">College of Medicine</option>
+      <option value="College of Business School">College of Business School</option>
+      <option value="Graduate School of Law">Graduate School of Law</option>
+      <option value="College of Public Health">College of Public Health</option>
+      <option value="College of Public Administration">College of Public Administration</option>
+      <option value="Accounting Office">Accounting Office</option>
+      <option value="Office of Student Development Services">Office of Student Development Services</option>
+      <option value="Office of Graduate/Professional Studies">Office of Graduate/Professional Studies</option>
+      <option value="Office of the VP for Research">Office of the VP for Research</option>
+      <option value="University Health Services">University Health Services</option>
+      <option value="Office of NSTP">Office of NSTP</option>
+      <option value="Other">Other (Specify on the Note)</option>
+      <!-- Add more colleges as needed -->
+    </select>
+  </div>
+
+  <div>
+    <label for="dateTime">Date and Time</label>
+    <input type="datetime-local" id="dateTime" [(ngModel)]="request.dateTime" name="dateTime" required />
+  </div>
+
+  <div>
+    <label for="event">Event</label>
+    <input type="text" id="event" [(ngModel)]="request.event" name="event" required />
+  </div>
+
+  <div>
+    <label for="attendees">Number of Attendees</label>
+    <input type="number" id="attendees" [(ngModel)]="request.attendees" name="attendees" required min="1" />
+  </div>
+
+  <div>
+    <label for="place">Place</label>
+    <select id="place" [(ngModel)]="request.place" name="place" required>
+      <option value="">Select Place</option>
+      <option value="PLM Chapel">PLM Chapel</option>
+      <option value="Manila Cathedral">Manila Cathedral</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div *ngIf="request.place === 'Other'">
+    <label for="otherPlace">Please specify the place</label>
+    <input type="text" id="otherPlace" [(ngModel)]="request.otherPlace" name="otherPlace" />
+  </div>
+
+  <div>
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" [(ngModel)]="request.notes" name="notes"></textarea>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+
+<!---------------------->
+<!-- FAQ Section -->
+ <!---------------------->
+<section class="faq-section">
+  <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(1)">What is Ministry on Campus?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(1)">
+      <p>… an extension of the ministry of the Archdiocese of Manila to educational institutions</p>
+      <p>… to provide pastoral care and nurturance of the spiritual life and moral development of the students and adults on campus</p>
+      <p>… one of the five (5) sectors of the Archdiocesan Commission on Youth</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(2)">What are the Public state colleges and Universities under Campus Ministry in RCAM?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(2)">
+      <p>Pamantasan ng Lungsod ng Maynila</p>
+      <p>Polytechnic University of the Philippines</p>
+      <p>Philippine Normal University</p>
+      <p>Universidad De Manila</p>
+      <p>Technological University of the Philippines</p>
+      <p>Eulogio "Amang" Rodriguez Institute of Science and Technology</p>
+      <p>University of Makati</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(3)">Private non-sectarian colleges</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(3)">
+      <p>Philippine College of Criminology</p>
+      <p>Far Eastern University</p>
+      <p>Lyceum of the Philippines University</p>
+      <p>Mapua University</p>
+      <p>Centro Escolar University</p>
+      <p>University of the East</p>
+      <p>Jose Rizal University</p>
+      <p>National University</p>
+      <p>Philippine School of Business Administration</p>
+      <p>Philippine Women’s University</p>
+      <p>FEATI University</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(4)">Catholic colleges and universities in partnership with the Ministry</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(4)">
+      <p>Colegio de San Juan de Letran</p>
+      <p>St. Scholastica’s College Manila</p>
+      <p>San Beda University</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(5)">Who is the current RCAM Campus Ministry Director?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(5)">
+      <p>Rev. Fr. Rany Geraldino</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(6)">What is the role of Student in Campus Ministry?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(6)">
+      <p>Assists in forming a faith-community on campus, specifically in the peacemaking activities and programs of Campus Ministry.</p>
+      <p>Assists in campus-wide programs of Campus Ministry in peace information, prayer groups, liturgical celebrations, interfaith programs and orientation to the Campus Ministry.</p>
+      <p>Forms, supports, and nurtures at least one prayer community on campus.</p>
+      <p>Plans, coordinates, and executes all assigned functions in collaboration with the Campus Minister.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(7)">Can a Professor/Instructor/University Employee be Part of campus ministry?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(7)">
+      <p>Yes. A Collaborator is an employee of PLM. Under the guidance and supervision of the Campus Minister, they are tasked with aiding in the building of a faith-community on campus and assisting in campus ministry programs.</p>
+      <p>They are commissioned by the Campus Ministry Office and the Archdiocese of Manila to serve as a catalyst within his/her school community, ensuring the fulfillment of the Vision, Mission, and Goals of the Campus Ministry, so that presence of God may be magnified.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" (click)="toggleAnswer(8)">How Can I Join Campus Ministry in PLM?</button>
+    <div class="faq-answer" *ngIf="isAnswerVisible(8)">
+      <p>You can answer the membership form above this website or go to the Ministry on Campus Office in PLM beside the PLM Chapel. Just find Ms. Angel Macasaet or ask the volunteers there. Welcome to the Fam!</p>
+    </div>
+  </div>
+</section>
+
+
+<!---------------------------------->
+<!-- Facebook Page Plugin Section -->
+<!---------------------------------->
+<section class="facebook-page-section">
+  <h2>Follow Us on Facebook</h2>
+  <div class="facebook-plugin-container">
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMinistryOnCampusPLM&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            width="340" height="120"
+            style="border:none; overflow:hidden;"
+            scrolling="no" frameborder="0" 
+            allowfullscreen="true" 
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+    </iframe>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Logos Container -->
+    <div class="logo-container">
+      <a href="https://www.facebook.com/MinistryOnCampusPLM" target="_blank">
+        <img src="https://scontent.fmnl3-1.fna.fbcdn.net/v/t39.30808-6/326483441_1698191700598383_1310377496699924044_n.png?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEYVADGIqAuoPwbAjjnfKfBaeH_mgcAryNp4f-aBwCvI1gDmiDGe-WXBKMfFcO2nt7EIjwgHWkwm9dFHlFR0hXK&_nc_ohc=LklOqxBu9qoQ7kNvgH5tN-o&_nc_zt=23&_nc_ht=scontent.fmnl3-1.fna&_nc_gid=AC9Rp8ddz2OTJqJ5q8XvaVQ&oh=00_AYC1rKoo6wo1ETR1MCAiVQLUlNlUGTv_OvixwXZg0rANZQ&oe=674D3918" 
+        alt="Campus Ministry Logo" class="footer-logo">
+      </a>
+      <a href="https://www.facebook.com/@officialacymanila" target="_blank">
+        <img src="https://scontent.fmnl37-2.fna.fbcdn.net/v/t39.30808-6/271967090_5237429019601950_8287055238800279513_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHMapmVc03ATpBLpmBkxFjj3hqz1KQzZCLeGrPUpDNkIliO8-ZM8zbgpX5z0-H9-vPIekfO0qczokLcIAdUMkDM&_nc_ohc=4mFipt_xflIQ7kNvgGlTE20&_nc_zt=23&_nc_ht=scontent.fmnl37-2.fna&_nc_gid=Am74P-sZzZBTPmGcVA-y7pG&oh=00_AYDkYngaDAKK8qCVHdr1I9U3BlidmW_5DzCShWuq2WwuVQ&oe=674D2A43" 
+        alt="Archdiocesan Commission on Youth Logo" class="footer-logo">
+      </a>
+      <a href="https://www.facebook.com/rcamph" target="_blank">
+        <img src="https://scontent.fmnl3-1.fna.fbcdn.net/v/t39.30808-6/291574445_104850605621863_3512749474094648548_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGe2JnkNzQr7f6wcX-33ic-Yqy2LaLBCr9irLYtosEKv8qbzbphhFd-KI9zvXDiuSO8LCAr5cyNufgax6Keywj8&_nc_ohc=HBWyKrjppvcQ7kNvgHqCEkX&_nc_zt=23&_nc_ht=scontent.fmnl3-1.fna&_nc_gid=AjwGGtxd8idcKkrX2YRifyj&oh=00_AYDT_s_leXMisi4BS7mH6BjATPefn5aXY9b-l7i5CGD52w&oe=674D250B" 
+        alt="RCAM Logo" class="footer-logo">
+      </a>
+    </div>
+
+    <!-- Links Container -->
+    <div class="links-container">
+      <ul class="footer-links">
+        <li><a href="https://cbcpnews.net/" target="_blank">CBCP News</a></li>
+        <li><a href="https://www.facebook.com/@officialacymanila" target="_blank">ACY - Manila</a></li>
+        <li><a href="https://caritasmanila.org.ph/donate/" target="_blank">Donate on Caritas Manila</a></li>
+        <li><a href="http://www.plm.edu.ph/" target="_blank">PLM Website</a></li>
+        <li><a href="https://www.facebook.com/evangelionfoundationinc" target="_blank">Evangelion Foundation</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media Container -->
+    <div class="social-media-container">
+      <a href="https://www.facebook.com/MinistryOnCampusPLM" target="_blank" class="social-icon">
+        <img src="https://static.vecteezy.com/system/resources/previews/023/986/594/non_2x/facebook-logo-facebook-logo-transparent-facebook-icon-transparent-free-free-png.png" 
+        alt="Facebook" />
+      </a>
+      <a href="mailto:plm.ministryoncampus@gmail.com" class="social-icon">
+        <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="Email" />
+      </a>    
+    </div>
+  </div>
+</footer>
 
 
 
