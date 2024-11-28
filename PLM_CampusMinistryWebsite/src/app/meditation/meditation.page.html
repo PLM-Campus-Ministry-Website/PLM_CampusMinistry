@@ -1,79 +1,309 @@
 <ion-header>
   <ion-toolbar>
-    <!-- Logo on the left side -->
+    <!-- Logo on the left -->
     <ion-buttons slot="start">
       <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-left: 10px;" />
     </ion-buttons>
 
-    <!-- Navigation Icons in the center -->
+    <!-- Hamburger menu for mobile -->
+    <ion-buttons slot="end" class="hamburger-menu">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Navigation bar for larger screens -->
     <div class="icon-container">
-      <ion-button routerLink="/home">
-        <ion-icon name="home-outline"></ion-icon>
+      <ion-button routerLink="/home" routerLinkActive="active" data-label="Home">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
       </ion-button>
-
-      <ion-button (click)="openSearch()">
-        <ion-icon name="search-outline"></ion-icon>
+      <ion-button (click)="openSearch()" data-label="Search">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
       </ion-button>
-
-      <ion-button routerLink="/prayer">
-        <ion-icon name="book-outline"></ion-icon>
+      <ion-button routerLink="/prayer" routerLinkActive="active" data-label="Prayer">
+        <ion-icon slot="icon-only" name="book-outline"></ion-icon>
       </ion-button>
-
-      <ion-button routerLink="/meditation">
-        <ion-icon name="leaf-outline"></ion-icon>
+      <ion-button routerLink="/meditation" routerLinkActive="active" data-label="Meditation">
+        <ion-icon slot="icon-only" name="leaf-outline"></ion-icon>
       </ion-button>
-
-      <ion-button routerLink="/music">
-        <ion-icon name="musical-notes-outline"></ion-icon>
+      <ion-button routerLink="/music" routerLinkActive="active" data-label="Music">
+        <ion-icon slot="icon-only" name="musical-notes-outline"></ion-icon>
       </ion-button>
     </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="page-content">
-  <!-- Page Banner -->
-  <div class="banner">
-    <img src="assets/meditation_banner.png" alt="Meditation For Healing" class="banner-image" />
-  </div>
+<ion-menu contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/home">
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-item>
+      <ion-item (click)="openSearch()">
+        <ion-icon name="search-outline" slot="start"></ion-icon>
+        <ion-label>Search</ion-label>
+      </ion-item>
+      <ion-item routerLink="/prayer">
+        <ion-icon name="book-outline" slot="start"></ion-icon>
+        <ion-label>Prayer</ion-label>
+      </ion-item>
+      <ion-item routerLink="/meditation">
+        <ion-icon name="leaf-outline" slot="start"></ion-icon>
+        <ion-label>Meditation</ion-label>
+      </ion-item>
+      <ion-item routerLink="/music">
+        <ion-icon name="musical-notes-outline" slot="start"></ion-icon>
+        <ion-label>Music</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="main-content"></ion-router-outlet>
+   
 
   <ion-content>
-    <!-- Transparent Box on Top -->
-    <h1 class="banner-title">MEDITATION</h1>
-    <div class="transparent-box">
-      <h1>Empower Your Soul, Embrace Your Faith.</h1>
-      <p>"In meditation, we uncover tranquility, wisdom, and presence. It is a journey inward, fostering peace, mindfulness, and spiritual growth. Embrace the stillness, and let your soul find its true harmony."</p>
-    </div>
-  </ion-content>
 
+    <section class="jumbotron">
+      <div class="container">
+        <!-- Left Column (Image) -->
+        <div class="left-column">
+          <img src="assets/meditation1.jpg" alt="Image" />
+        </div>
+        
+        <!-- Right Column (Text) -->
+        <div class="right-column">
+          <h1>MEDITATION IN  <BR> FAITH AND <BR> REFLECTION </h1>
+        </div>
+      </div>
+    </section>
+    
+    <section class="prayer-categories-container">
+      <div class="prayer-categories">
+        <!-- What is Meditation -->
+        <div class="prayer-box" (click)="openModal('What is Meditation?', morningPrayer)">
+          <img src="assets/meditation3.png" alt="What is Meditation?" class="prayer-image" />
+          <p class="prayer-text">What is Meditation?</p>
+          <div class="prayer-details">
+            Learn about Meditation
+          </div>
+        </div>
+        <!-- Benefits of Meditation -->
+        <div class="prayer-box" (click)="openModal('Benefits of Meditation', eveningPrayer)">
+          <img src="assets/benefits1.png" alt="Benefits of Meditaion" class="prayer-image" />
+          <p class="prayer-text">Benefits of Meditation</p>
+          <div class="prayer-details">
+            Know the benefits of Meditation
+          </div>
+        </div>
+        <!-- Breathing Exercises -->
+        <div class="prayer-box" (click)="openModal('Breathing Exercises', thanksgivingPrayer)">
+          <img src="assets/happy.png" alt="Breathing Exercises" class="prayer-image" />
+          <p class="prayer-text">Breathing Exercises</p>
+          <div class="prayer-details">
+            Learn about Breathing Exercises
+          </div>
+        </div>
+    </div>
 
-<div class="prayer-categories-container">
-  <!-- First Row -->
-  <div class="prayer-categories">
-    <div class="prayer-box">
-      <img src="assets/morning_brew.jpg" alt="Brew in the Morning" class="prayer-image" />
-      <p class="prayer-text">Morning Brew</p>
-    </div>
-    <div class="prayer-box">
-      <img src="assets/relieve_stress.png" alt="Smiling Man" class="prayer-image" />
-      <p class="prayer-text">Relieve Stress</p>
-    </div>
-    <div class="prayer-box">
-      <img src="assets/concentration.jpg" alt="Meditating Woman" class="prayer-image" />
-      <p class="prayer-text">For Concentration</p>
-    </div>
+     <!-- Modal -->
+  <ion-modal [isOpen]="isModalOpen" (willDismiss)="closeModal()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{ modalTitle }}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closeModal()" fill="clear">
+              <ion-icon name="close" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div class="modal-content" [innerHTML]="modalDetails"></div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+    </section>
+    
+    
 
-    <!-- Second Row -->
-    <div class="prayer-box">
-      <img src="assets/evening_reset.jpg" alt="Girl Relaxed" class="prayer-image" />
-      <p class="prayer-text">Evening Reset</p>
-    </div>
-    <div class="prayer-box">
-      <img src="assets/sleep_well.jpg" alt="Sleeping Girl" class="prayer-image" />
-      <p class="prayer-text">Sleep Well</p>
-    </div>
-    <div class="prayer-box">
-      <img src="assets/lift_your_mood.jpg" alt="Happy Girl" class="prayer-image" />
-      <p class="prayer-text">Lift Your Mood</p>
-    </div>
-  </div>
-</div>
+    <section class="quote-section">
+      <div class="container">
+        <blockquote class="quote">
+          <p>“Do not conform to the pattern of this world, but be transformed by the renewing of your mind.”</p>
+          <footer>- Romans 12:2</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <ion-grid>
+      <!-- Row 1 -->
+      <ion-row>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>DEEP RELAXATION</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 1 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#000000;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6gRNExpVbQAHTUPu6tnSo4?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>RESTORE</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 2 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3qhPdw0I2VODvWTKZSlk8w?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>FOR FOCUS</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 3 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1sWtm1oJnEAwEnD7SO5IXG?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  <br>
+      <!-- Row 2 -->
+      <ion-row>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>ANXIETY RELIEF</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 4 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2eDMwRcUe83A6WYEYTWLrO?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>FOR MORNING</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 5 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5BORc1Unb7pxS89vM1AHOS?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>FOR SLEEP</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 6 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0NJ3KbtbRxWGRDXLVmkJsH?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  <BR>
+      <!-- Row 3 -->
+      <ion-row>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>AFTERNOON MEDITATION</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 7 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#000000;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0hlVaP4uatib0hKbMX7Yrl?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>FOR STRESS</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 8 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4ZBnzQYerHbAgdM3Xe7OQZ?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>FOR STARTERS</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 9 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3kduhfwr6cZaZcJqUVebPp?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  <BR>
+      <ion-row>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>BREATHING</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 7 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6kk91yMWvSOGnlS9T1T5nU?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>CONNECTING WITH GOD</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 8 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4LBJl62yeGum9rVqtlJvia?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="4" class="card-col">
+          <ion-card class="small-card">
+            <ion-card-header>
+              <ion-card-title>TO HEAL</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Spotify Embed for Card 9 -->
+              <div class="spotifywrapper"><style>.spotifywrapper{background:#fff;position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}</style><a href="https://www.fluxaiimagegenerator.net">flux</a><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0jSS8qyuv7DdkAaGSmmHv5?utm_source=generator" width="290" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <section class="jumbotron">
+      <div class="container">
+        <!-- Left Column (Image) -->
+        <div class="left-column2">
+          <h1>Want to hear more?</h1>
+        </div>
+
+        <!-- Right Column (Text) -->
+        <div class="right-column2">
+          <a href="https://open.spotify.com/album/2O8HUgQaheuGWZhx4dZQEk?si=rOLlP2MmQ-ma1AF8sk719Q" target="_blank" class="cta-button">Hear More</a>
+        </div>
+      </div>
+    </section>
+  
+  
+  
+  
