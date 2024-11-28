@@ -263,7 +263,6 @@ ion-card-content {
   margin: 0 auto;
   width: 400px;
   height: 500px;
-  border: 2px solid #ddd;
   border-radius: 10px;
   transition: transform 0.3s ease;
 
@@ -371,7 +370,7 @@ ion-modal ion-button {
 
 .jumbotron {
   background: url('https://png.pngtree.com/thumb_back/fh260/background/20201111/pngtree-background-of-brown-abstract-watercolor-image_468939.jpg') no-repeat center center/cover; 
-  padding: 80px 20px; // Increased padding for spacious look
+  padding: 130px 70px; // Increased padding for spacious look
   color: #FFFFFF; // Ensure text is visible over the background
   
   .container {
@@ -383,7 +382,7 @@ ion-modal ion-button {
     flex-wrap: wrap; // Ensure responsive layout
     
     .left-column {
-      flex: 1 1 50%; // Left side (image) takes 50% of the width
+      flex: 1 1 60%; // Left side (image) takes 50% of the width
       img {
         width: 100%;
         height: auto;
@@ -414,29 +413,6 @@ ion-modal ion-button {
         font-weight: bold;
       }
       
-      p {
-        font-size: 4rem;
-        color: #5D4037; // Rich brown for the heading
-        margin-bottom: 15px;
-        font-weight: bold;
-      }
-      
-      .cta-button {
-        display: inline-block;
-        background-color: #8D6E6E; // Soft brown for the button
-        color: white;
-        padding: 15px 40px;
-        font-size: 1.25rem;
-        text-align: center;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: background-color 0.3s, transform 0.3s;
-        
-        &:hover {
-          background-color: #5D4037; // Darker brown when hovered
-          transform: scale(1.05); // Slight zoom effect on hover
-        }
-      }
       
     }
 
@@ -447,7 +423,7 @@ ion-modal ion-button {
       
       .cta-button {
         display: inline-block;
-        background-color: #8D6E6E; // Soft brown for the button
+        background-color: #5D4037; // Soft brown for the button
         color: white;
         padding: 15px 40px;
         font-size: 1.25rem;
@@ -457,11 +433,91 @@ ion-modal ion-button {
         transition: background-color 0.3s, transform 0.3s;
         
         &:hover {
-          background-color: #5D4037; // Darker brown when hovered
+          background-color: #48312a; // Darker brown when hovered
           transform: scale(1.05); // Slight zoom effect on hover
         }
       }
       
+    }
+  }
+}
+
+// --------------------------------------
+/* Footer Container */
+// --------------------------------------
+.footer {
+  background-color: #4e3629;;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Logos Section */
+  .logo-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .footer-logo {
+      max-width: 150px;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  /* Links Section */
+  .links-container {
+    margin: 20px 0;
+  }
+
+  .footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #3498db;
+      }
+    }
+  }
+
+  /* Social Media Section */
+  .social-media-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
