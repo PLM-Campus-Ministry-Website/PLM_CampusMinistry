@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePage } from './home/home.page';  // Import HomePage component
-import { PrayerPage } from './prayer/prayer.page';  // Import PrayerPage component
-import { MusicPage } from './music/music.page';  // Import MusicPage component
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -16,22 +13,24 @@ const routes: Routes = [
   },
   {
     path: 'prayer',
-    loadChildren: () => import('./prayer/prayer.module').then( m => m.PrayerPageModule)
+    loadChildren: () => import('./prayer/prayer.module').then(m => m.PrayerPageModule)
   },
   {
     path: 'meditation',
-    loadChildren: () => import('./meditation/meditation.module').then( m => m.MeditationPageModule)
+    loadChildren: () => import('./meditation/meditation.module').then(m => m.MeditationPageModule)
   },
   {
     path: 'music',
-    loadChildren: () => import('./music/music.module').then( m => m.MusicPageModule)
+    loadChildren: () => import('./music/music.module').then(m => m.MusicPageModule)
   },
-
-
+  {
+    path: 'game',  // Add route for the game page
+    loadChildren: () => import('./game/game.module').then(m => m.GameModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
