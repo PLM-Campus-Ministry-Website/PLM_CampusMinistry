@@ -1,6 +1,6 @@
 /* Default Styles */
 ion-content {
-    --background: #8D6E63;
+    --background: #fabda7;
     --color: rgb(253, 253, 253);
 }
 
@@ -72,12 +72,12 @@ ion-menu ion-icon:hover {
 
 /* Card Styles */
 .small-card {
-    width: 350px;   /* Adjust width */
-    height: 300px;  /* Adjust height */
-    border-radius: 12px;  /* Rounded corners */
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* Rounded corners */
     margin: 5px;
     padding: 10px;
-    background-color: #ffffff; /* White background or change to any color like #f4f4f4 */
+    background-color: #00000065; /* White background or change to any color like #f4f4f4 */
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);  /* Darker shadow for a more prominent effect */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
 }
@@ -88,17 +88,26 @@ ion-menu ion-icon:hover {
     box-shadow: 0px 6px 16px rgb(3, 3, 3);  /* Increased shadow on hover */
 }
 
+/* Embed Iframe Styles */
+.spotify-iframe {
+    width: 100%;
+    border-radius: 12px;
+    height: 200px; /* Default height for better responsiveness */
+}
+
 .card-col {
     display: flex;
     justify-content: center;  /* Center cards within columns */
     align-items: center;
 }
 
-ion-card-header {
+
+
+ion-card-title {
     text-align: center;  /* Center the title */
     font-size: 14px;  /* Smaller font for content */
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #d27b5b;
+    color: #ffffff;
 }
 
 ion-card-content {
@@ -141,12 +150,6 @@ ion-card-content {
     color: #4E342E; /* Deep brown color for the author name */
 }
 
- /* Spotify iframe responsiveness */
- .spotifywrapper iframe {
-    max-width: 100%;
-    border-radius: 12px;
-  }
-
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
 
@@ -167,7 +170,7 @@ ion-card-content {
     /* Card Styles */
     .small-card {
         width: 100%;  /* Make card width responsive */
-        height: auto; /* Adjust height based on content */
+        height: 250px; /* Adjust height based on content */
         padding: 5px;
         margin: 10px 0; /* Add margin between cards */
     }
@@ -193,6 +196,25 @@ ion-card-content {
 
     .transparent-box p {
         font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    /* Cards and Iframe adjustments */
+    .small-card {
+        padding: 5px;
+        margin: 10px 0;
+    }
+
+    .spotify-iframe {
+        height: 230px; /* Reduced height on smaller screens */
+    }
+
+    ion-col {
+        size: 12;  /* Full width on mobile for better accessibility */
+    }
+}
+@media (min-width: 768px) {
+    ion-col {
+        size: 4;  /* Display 3 items per row on medium and larger screens */
     }
 }
 
@@ -291,3 +313,125 @@ ion-card-content {
       }
     }
 }
+
+
+.petron {
+    background: url('https://i.pinimg.com/736x/73/0c/ff/730cff2d147105e1547ec10108c8280f.jpg') no-repeat center center/cover; 
+    padding: 80px 20px; // Increased padding for spacious look
+    color: #FFFFFF; // Ensure text is visible over the background
+    
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap; // Ensure responsive layout
+      
+      .left-column {
+        flex: 1 1 50%; // Left side (image) takes 50% of the width
+      }
+      
+      .right-column {
+        flex: 1 1 20%; // Right side (text) takes 40% of the width
+        padding-left: 30px;
+        text-align: left;
+        
+        h1 {
+          font-size: 2.5rem;
+          color: #5D4037; // Rich brown for the heading
+          margin-bottom: 15px;
+          font-weight: bold;
+        }
+        
+        p {
+          font-size: 1rem;
+          color:  #5D4037; // Deep brown for the subheading text
+          margin-bottom: 30px;
+          font-style: italic;
+        }
+      }
+    }
+}
+
+
+// --------------------------------------
+/* Footer Container */
+// --------------------------------------
+.footer {
+    background-color: #4e3629;;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    /* Logos Section */
+    .logo-container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 20px;
+  
+      .footer-logo {
+        max-width: 150px;
+        height: auto;
+        transition: transform 0.3s ease-in-out;
+  
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  
+    /* Links Section */
+    .links-container {
+      margin: 20px 0;
+    }
+  
+    .footer-links {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        margin-bottom: 10px;
+      }
+  
+      a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: #3498db;
+        }
+      }
+    }
+  
+    /* Social Media Section */
+    .social-media-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+  
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease-in-out;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
