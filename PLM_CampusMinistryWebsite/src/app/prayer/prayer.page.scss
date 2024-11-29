@@ -352,9 +352,74 @@ ion-modal ion-button {
 @media (min-width: 1201px) {
   iframe {
     height: 350px;
-    width: 435px;
+    width: 430px;
   }
 }
+
+.jumbotron {
+  background: url('https://media.istockphoto.com/id/471929136/photo/church.jpg?s=612x612&w=0&k=20&c=ieviZPxGysGE6bcCvz4FNzcBDpEvTIYtplc9PgrptQw=') no-repeat center center/cover; 
+  padding: 130px 70px; 
+  color: #FFFFFF; 
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; // Ensure responsive layout
+  }
+
+    .left-column2 {
+      flex: 1 1 50%; // Left side (image) takes 50% of the width
+      h1 {
+        font-size: 4rem;
+        color: #ffffff; 
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+    }
+
+    .right-column {
+      flex: 1 1 40%; // Right side (text) takes 40% of the width
+      padding-left: 30px;
+      text-align: left;
+      
+      h1 {
+        font-size: 4rem;
+        color: #5D4037; // Rich brown for the heading
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      
+      
+    }
+
+    .right-column2 {
+      flex: 1 1 40%; // Right side (text) takes 40% of the width
+      padding-left: 30px;
+      text-align: left;
+      
+      .cta-button {
+        display: inline-block;
+        background-color: #5D4037; // Soft brown for the button
+        color: white;
+        padding: 15px 40px;
+        font-size: 1.25rem;
+        text-align: center;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.3s;
+        
+        &:hover {
+          background-color: #48312a; // Darker brown when hovered
+          transform: scale(1.05); // Slight zoom effect on hover
+        }
+      }
+      
+    }
+
 
    // --------------------------------------
 /* Footer Container */
