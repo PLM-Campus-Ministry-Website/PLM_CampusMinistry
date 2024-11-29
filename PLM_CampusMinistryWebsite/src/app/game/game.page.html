@@ -69,14 +69,75 @@
  
 
 <!---------------------->
-<!--  Section -->
-<!---------------------->
 <!-- Jumbotron Section -->
- <!-- Jumbotron Section -->
- <div class="jumbotron">
+<!---------------------->
+<div class="jumbotron">
+  <img src="https://images.unsplash.com/photo-1689443111384-1cf214df988a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FtaW5nJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D" alt="Game Background" class="jumbotron-img">
   <h1>Welcome to the Game Page!</h1>
   <p>Explore exciting games and new experiences. Immerse yourself in the fun and challenge your skills!</p>
 </div>
+
+<!---------------------->
+<!-- Game Dropdown Section -->
+<!---------------------->
+<div class="game-container">
+  <!-- Dropdown list of games -->
+  <ion-item button (click)="toggleGame('game1')">
+    <ion-label>Game 1: WanderLight: A Pilgrim's Adventure (PC Screen Only)</ion-label>
+    <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+  </ion-item>
+  <div *ngIf="selectedGame === 'game1'">
+    <iframe src="https://demo.wanderlightgame.com/" style="width: 100%; height: 500px;"></iframe>
+    <ion-button expand="full" href="https://demo.wanderlightgame.com/" target="_blank" class="visit-game-btn">
+      Visit Game Website
+    </ion-button>
+  </div>
+
+  <ion-item button (click)="toggleGame('game2')">
+    <ion-label>Game 2: Noah's Dove Quest</ion-label>
+    <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+  </ion-item>
+  <div *ngIf="selectedGame === 'game2'">
+    <iframe src="https://ph-en.superbook.cbn.com/pages/games/dove-quest" style="width: 100%; height: 500px;"></iframe>
+    <ion-button expand="full" href="https://ph-en.superbook.cbn.com/pages/games/dove-quest" target="_blank" class="visit-game-btn">
+      Visit Game Website
+    </ion-button>
+  </div>
+
+  <ion-item button (click)="toggleGame('game3')">
+    <ion-label>Game 3: Bible Explorer Card Game</ion-label>
+    <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+  </ion-item>
+  <div *ngIf="selectedGame === 'game3'">
+    <iframe src="https://ph-en.superbook.cbn.com/pages/games/bible-explorer" style="width: 100%; height: 500px;"></iframe>
+    <ion-button expand="full" href="https://ph-en.superbook.cbn.com/pages/games/bible-explorer" target="_blank" class="visit-game-btn">
+      Visit Game Website
+    </ion-button>
+  </div>
+
+  <ion-item button (click)="toggleGame('game4')">
+    <ion-label>Game 4: Quiz Angel</ion-label>
+    <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+  </ion-item>
+  <div *ngIf="selectedGame === 'game4'">
+    <iframe src="https://games.freechristianillustrations.com/ocs/index.html" style="width: 100%; height: 500px;"></iframe>
+    <ion-button expand="full" href="https://games.freechristianillustrations.com/ocs/index.html" target="_blank" class="visit-game-btn">
+      Visit Game Website
+    </ion-button>
+  </div>
+
+  <ion-item button (click)="toggleGame('game5')">
+    <ion-label>Game 5: Rapid-Fire QUIZ</ion-label>
+    <ion-icon slot="end" name="chevron-down-outline"></ion-icon>
+  </ion-item>
+  <div *ngIf="selectedGame === 'game5'">
+    <iframe src="https://games.adventurebible.com/islands/18337/games/6" style="width: 100%; height: 500px;"></iframe>
+    <ion-button expand="full" href="https://games.adventurebible.com/islands/18337/games/6" target="_blank" class="visit-game-btn">
+      Visit Game Website
+    </ion-button>
+  </div>
+</div>
+
 
 
 <!---------------------------------->

@@ -98,35 +98,52 @@ ion-menu ion-icon:hover {
 
 
 // --------------------------------------
-/* Login */
+/* Jumbotron Styles with Animation */
 // --------------------------------------
-/* Jumbotron Styles */
+
 .jumbotron {
-  background-color: #ffffff;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background for text readability */
   padding: 40px 20px;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
-  max-width: 90%; /* Ensures the content does not stretch too much */
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+  z-index: 1;
+  animation: fadeIn 1s ease-out;
+}
+
+.jumbotron-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(5px); /* Blur effect to keep the focus on text */
+  z-index: -1; /* Place image behind the text */
 }
 
 .jumbotron h1 {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #4e342e; /* Rich, professional coffee brown */
+  color: #ffffff; /* Rich coffee brown */
   margin-bottom: 15px;
   line-height: 1.2;
+  animation: bounceInUp 1s ease-out;
 }
 
 .jumbotron p {
   font-size: 1.25rem;
-  color: #6d4c41; /* Slightly lighter brown */
+  color: #ffffff; /* Slightly lighter brown */
   margin-bottom: 30px;
   line-height: 1.6;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 @media (max-width: 768px) {
@@ -142,6 +159,115 @@ ion-menu ion-icon:hover {
     font-size: 1rem; /* Adjust paragraph size for smaller screens */
   }
 }
+
+/* Animation Keyframes */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+// --------------------------------------
+/* Game Dropdown Section */
+// --------------------------------------
+.game-container {
+  margin: 20px;
+  background-color: #f5f5f5; /* Light background for the container */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-embed {
+  margin: 20px 0;
+}
+
+iframe {
+  width: 100%;
+  height: 500px; /* Set a default height for iframe */
+  border: none;
+  border-radius: 8px;
+}
+
+.visit-game-btn {
+  --background: #6f4f2f; /* Dark brown color */
+  --color: #ffffff; /* White text */
+  --border-radius: 8px; /* Rounded corners */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px; /* Spacing between the iframe and the button */
+}
+
+.visit-game-btn:hover {
+  --background: #4e3629; /* Darker brown on hover */
+  --box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Styling for the dropdown items */
+ion-item {
+  --background: #fff; /* White background for the dropdown */
+  --color: #6f4f2f; /* Dark brown text color */
+  --padding-start: 15px;
+  --padding-end: 15px;
+  font-size: 1rem;
+}
+
+ion-item:hover {
+  --background: #f0e0d6; /* Light brown background on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  iframe {
+    height: 400px; /* Smaller height for mobile screens */
+  }
+
+  .game-container {
+    padding: 10px;
+  }
+
+  .visit-game-btn {
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+  }
+}
+
+
 
 
 
