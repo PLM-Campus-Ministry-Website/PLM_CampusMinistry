@@ -141,7 +141,7 @@ ion-menu ion-icon:hover {
 /* Prayer Categories */
 .prayer-categories {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
   gap: 16px;
   margin-top: 20px;
 }
@@ -202,7 +202,7 @@ ion-modal::part(content) {
 .modal-content {
   padding: 40px;
   background: #ffffff;
-  color: #000000;
+  color: #6c0e0e;
   border-radius: 10px;
   text-align: center;
 }
@@ -218,9 +218,29 @@ ion-modal ion-button {
   }
 }
 
-/* Responsive Design */
+/* Small Devices (phones in portrait) */
+@media (max-width: 576px) {
+  .prayer-categories {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
 
-/* Extra Small Devices (phones) */
+  .prayer-box {
+    width: 100%; /* Full width for each prayer box on small screens */
+    height: auto;
+  }
+
+  .banner-title {
+    font-size: 30px;
+    letter-spacing: 10px;
+  }
+
+  .description {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* Extra Small Devices (phones in portrait) */
 @media (max-width: 400px) {
   .banner-title {
     font-size: 24px;
@@ -256,14 +276,18 @@ ion-modal ion-button {
 }
 
 /* Medium Devices (tablets) */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
+  .prayer-categories {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+
   .banner-title {
     font-size: 40px;
     letter-spacing: 15px;
   }
 
   .prayer-box {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
 }
@@ -297,6 +321,8 @@ ion-modal ion-button {
 // --------------------------------------
 
   .section-content-two {
+    margin-top: 20px;
+    margin-bottom: 30px;
     text-align: center;
   }
 
