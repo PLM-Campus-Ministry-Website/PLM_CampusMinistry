@@ -1,10 +1,6 @@
-/* Banner Styling */
-.banner-image {
-  width: 100%;
-  max-height: 650px;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
+// --------------------------------------
+// Navigation Bar Section Styles
+// --------------------------------------
 
 /* Default Styles */
 ion-content {
@@ -78,83 +74,6 @@ ion-menu ion-icon:hover {
   color: #4E342E; /* Darker brown on hover */
 }
 
-/* Card Styles */
-.small-card {
-  width: 350px;   /* Adjust width */
-  height: 300px;  /* Adjust height */
-  border-radius: 12px;  /* Rounded corners */
-  margin: 5px;
-  padding: 10px;
-  background-color: #ffffff; /* White background or change to any color like #f4f4f4 */
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);  /* Darker shadow for a more prominent effect */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
-}
-
-/* Add hover effect for a more interactive design */
-.small-card:hover {
-  transform: scale(1.05); /* Slightly enlarge the card on hover */
-  box-shadow: 0px 6px 16px rgb(3, 3, 3);  /* Increased shadow on hover */
-}
-
-.card-col {
-  display: flex;
-  justify-content: center;  /* Center cards within columns */
-  align-items: center;
-}
-
-ion-card-header {
-  text-align: center;  /* Center the title */
-  font-size: 14px;  /* Smaller font for content */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #d27b5b;
-}
-
-ion-card-content {
-  font-size: 14px;  /* Smaller font for content */
-  font-style: oblique;
-  color: #795548;
-  text-align: center;  /* Center the content text */
-}
-
-/* Quote Section */
-.quote-section {
-  background: url('https://png.pngtree.com/thumb_back/fh260/background/20201111/pngtree-background-of-brown-abstract-watercolor-image_468939.jpg') no-repeat center center/cover;
-  padding: 60px 20px; /* Adequate padding for a spacious, clean layout */
-  text-align: center;
-}
-
-.quote-section .container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.quote-section .quote {
-  font-style: italic;
-  font-size: 2rem;
-  color: #5D4037; /* Rich brown color for the quote text */
-  position: relative;
-  padding: 30px 40px;
-  background-color: #ffffff; /* White background for the quote box */
-  border-left: 6px solid #A1887F; /* Decorative left border with soft brown color */
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow to make the quote pop */
-  border-radius: 10px; /* Rounded corners for the quote box */
-  margin: 0 auto;
-  max-width: 90%;
-}
-
-.quote-section .quote footer {
-  margin-top: 15px;
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #4E342E; /* Deep brown color for the author name */
-}
-
-/* Spotify iframe responsiveness */
-.spotifywrapper iframe {
-  max-width: 100%;
-  border-radius: 12px;
-}
-
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
 
@@ -172,38 +91,6 @@ ion-card-content {
       font-size: 14px;  /* Smaller font size for menu items */
   }
 
-  /* Card Styles */
-  .small-card {
-      width: 100%;  /* Make card width responsive */
-      height: auto; /* Adjust height based on content */
-      padding: 5px;
-      margin: 10px 0; /* Add margin between cards */
-  }
-
-  .quote-section {
-      padding: 40px 10px; /* Reduce padding on smaller screens */
-  }
-
-  .quote-section .quote {
-      font-size: 1.5rem;  /* Smaller font size for quotes */
-      padding: 20px 30px; /* Adjust padding for smaller screens */
-  }
-
-  .transparent-box {
-      width: 90%; /* Make transparent box take up 90% of the screen width */
-      padding: 10px;  /* Less padding on smaller screens */
-  }
-
-  /* Adjust font sizes for text */
-  .transparent-box h1 {
-      font-size: 1.8rem; /* Slightly smaller font size */
-  }
-
-  .transparent-box p {
-      font-size: 1rem; /* Adjust paragraph font size */
-  }
-
-
 }
 
 /* Larger Screen Styles (Tablet and above) */
@@ -218,31 +105,139 @@ ion-card-content {
       display: none; /* Hide hamburger menu on larger screens */
   }
 
-  /* Keep card styles as is */
-  .small-card {
-      width: 350px;
-      height: 300px;
+}
+
+// --------------------------------------
+// Jumbotron Section Styles
+// --------------------------------------
+
+.jumbotron {
+  background: url('https://png.pngtree.com/thumb_back/fh260/background/20201111/pngtree-background-of-brown-abstract-watercolor-image_468939.jpg') no-repeat center center/cover; 
+  padding: 130px 70px; 
+  color: #FFFFFF; 
+  
+  @media (max-width: 768px) {
+    padding: 60px 20px;
   }
 
-  .quote-section {
-      padding: 60px 20px; /* Keep original padding */
+  @media (max-width: 576px) {
+    padding: 30px 10px;
   }
 
-  .quote-section .quote {
-      font-size: 2rem;
-      padding: 30px 40px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .left-column {
+      flex: 1 1 60%; 
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+        @media (max-width: 768px) {
+          max-width: 95%;
+        }
+      }
+    }
+
+    .right-column {
+      flex: 1 1 40%; 
+      padding-left: 30px;
+      text-align: left;
+
+      h1 {
+        font-size: 4rem;
+        color: #5D4037; 
+        margin-bottom: 15px;
+        font-weight: bold;
+
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+        }
+
+        @media (max-width: 576px) {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .left-column2 {
+      flex: 1 1 50%; // Left side (image) takes 50% of the width
+      h1 {
+        font-size: 4rem;
+        color: #5D4037; // Rich brown for the heading
+        margin-bottom: 15px;
+        font-weight: bold;
+
+        @media (max-width: 576px) {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .right-column2 {
+      flex: 1 1 40%; // Default size
+      padding-left: 30px;
+      text-align: left;
+    
+      @media (max-width: 768px) {
+        padding-left: 0; // Remove extra padding
+        display: flex; // Use flexbox
+        justify-content: center; // Center horizontally
+        align-items: center; // Center vertically (optional)
+        text-align: center; // Align text to the center
+      }
+    }
+    
+
+    .cta-button {
+      display: inline-block;
+      background-color: #5D4037; // Soft brown for the button
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.25rem;
+      text-align: center;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: #48312a;
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        padding: 10px 30px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+
+      }
+    }
   }
-
-  .transparent-box {
-      width: 80%; /* Keep original width */
-      padding: 20px;
-  }
-
-
-
 }
 
 
+// --------------------------------------
+// Meditation Info Section Styles
+// --------------------------------------
+
+/* Meditation Info Container */
 .prayer-categories-container {
   background: #8D6E63;
   background-size: cover;
@@ -257,6 +252,7 @@ ion-card-content {
   margin-top: 20px;
 }
 
+/* Meditation Info Box */
 .prayer-box {
   position: relative;
   text-align: center;
@@ -272,7 +268,7 @@ ion-card-content {
 
   img {
     width: 100%;
-    height: auto;
+    height: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
@@ -328,120 +324,174 @@ ion-modal ion-button {
   }
 }
 
-/* Responsive Design */
+/* Media Queries for Responsiveness */
 
-/* Extra Small Devices (phones) */
-@media (max-width: 400px) {
+@media (max-width: 768px) {
+  .prayer-categories {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   .prayer-box {
     width: 100%;
-    height: auto;
-  }
-}
-
-/* Small Devices (landscape phones) */
-@media (max-width: 576px) {
-
-  .prayer-box {
-    width: 90%;
-    height: auto;
-  }
-}
-
-/* Medium Devices (tablets) */
-@media (max-width: 992px) {
-
-  .prayer-box {
-    width: 80%;
-    height: auto;
-  }
-}
-
-/* Large Devices (desktops) */
-@media (max-width: 1200px) {
-
-  .prayer-box {
-    width: 70%;
-    height: auto;
-  }
-
-  
-}
-
-.jumbotron {
-  background: url('https://png.pngtree.com/thumb_back/fh260/background/20201111/pngtree-background-of-brown-abstract-watercolor-image_468939.jpg') no-repeat center center/cover; 
-  padding: 130px 70px; // Increased padding for spacious look
-  color: #FFFFFF; // Ensure text is visible over the background
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; // Ensure responsive layout
-    
-    .left-column {
-      flex: 1 1 60%; // Left side (image) takes 50% of the width
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-    }
-
-    .left-column2 {
-      flex: 1 1 50%; // Left side (image) takes 50% of the width
-      h1 {
-        font-size: 4rem;
-        color: #5D4037; // Rich brown for the heading
-        margin-bottom: 15px;
-        font-weight: bold;
-      }
-    }
-    
-    .right-column {
-      flex: 1 1 40%; // Right side (text) takes 40% of the width
-      padding-left: 30px;
-      text-align: left;
-      
-      h1 {
-        font-size: 4rem;
-        color: #5D4037; // Rich brown for the heading
-        margin-bottom: 15px;
-        font-weight: bold;
-      }
-      
-      
-    }
-
-    .right-column2 {
-      flex: 1 1 40%; // Right side (text) takes 40% of the width
-      padding-left: 30px;
-      text-align: left;
-      
-      .cta-button {
-        display: inline-block;
-        background-color: #5D4037; // Soft brown for the button
-        color: white;
-        padding: 15px 40px;
-        font-size: 1.25rem;
-        text-align: center;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: background-color 0.3s, transform 0.3s;
-        
-        &:hover {
-          background-color: #48312a; // Darker brown when hovered
-          transform: scale(1.05); // Slight zoom effect on hover
-        }
-      }
-      
+    img {
+      height: 80%;
     }
   }
 }
 
+
+
+// --------------------------------------
+// Quote Section Styles
+// --------------------------------------
+
+/* Quote Section */
+.quote-section {
+  background: url('https://png.pngtree.com/thumb_back/fh260/background/20201111/pngtree-background-of-brown-abstract-watercolor-image_468939.jpg') no-repeat center center/cover;
+  padding: 60px 20px; /* Adequate padding for a spacious, clean layout */
+  text-align: center;
+}
+
+.quote-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-section .quote {
+  font-style: italic;
+  font-size: 2rem;
+  color: #5D4037; /* Rich brown color for the quote text */
+  position: relative;
+  padding: 30px 40px;
+  background-color: #ffffff; /* White background for the quote box */
+  border-left: 6px solid #A1887F; /* Decorative left border with soft brown color */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow to make the quote pop */
+  border-radius: 10px; /* Rounded corners for the quote box */
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.quote-section .quote footer {
+  margin-top: 15px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #4E342E; /* Deep brown color for the author name */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .quote-section {
+      padding: 40px 10px; /* Reduce padding on smaller screens */
+  }
+
+  .quote-section .quote {
+      font-size: 1.5rem;  /* Smaller font size for quotes */
+      padding: 20px 30px; /* Adjust padding for smaller screens */
+  }
+
+
+}
+
+/* Larger Screen Styles (Tablet and above) */
+@media (min-width: 769px) {
+
+  .quote-section {
+      padding: 60px 20px; /* Keep original padding */
+  }
+
+  .quote-section .quote {
+      font-size: 2rem;
+      padding: 30px 40px;
+  }
+
+}
+
+// --------------------------------------
+// Card Section Styles
+// --------------------------------------
+
+/* Card Styles */
+.small-card {
+  width: 350px;   /* Adjust width */
+  height: 300px;  /* Adjust height */
+  border-radius: 12px;  /* Rounded corners */
+  margin: 5px;
+  padding: 10px;
+  background-color: #ffffff; /* White background or change to any color like #f4f4f4 */
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);  /* Darker shadow for a more prominent effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
+}
+
+/* Add hover effect for a more interactive design */
+.small-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0px 6px 16px rgb(3, 3, 3);  /* Increased shadow on hover */
+}
+
+.card-col {
+  display: flex;
+  justify-content: center;  /* Center cards within columns */
+  align-items: center;
+}
+
+ion-card-header {
+  text-align: center;  /* Center the title */
+  font-size: 14px;  /* Smaller font for content */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #d27b5b;
+}
+
+ion-card-content {
+  text-align: center;  /* Center the content text */
+}
+
+ion-card-title {
+  font-size: 20px;
+  color: #4e4c45;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+/* Spotify iframe responsiveness */
+.spotifywrapper iframe {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+
+  .small-card {
+      width: 100%;  /* Make card width responsive */
+      height: 250px; /* Adjust height based on content */
+      padding: 5px;
+      margin: 10px 0; /* Add margin between cards */
+  }
+
+  .spotify-iframe {
+    height: 230px; /* Reduced height on smaller screens */
+}
+
+ion-col {
+    size: 12;  /* Full width on mobile for better accessibility */
+}
+
+}
+
+/* Larger Screen Styles (Tablet and above) */
+@media (min-width: 769px) {
+
+  /* Keep card styles as is */
+  .small-card {
+      width: 350px;
+      height: 300px;
+  }
+
+  ion-col {
+    size: 4;  /* Display 3 items per row on medium and larger screens */
+}
+
+}
 
 // --------------------------------------
 // BibleViewer Section Styles
