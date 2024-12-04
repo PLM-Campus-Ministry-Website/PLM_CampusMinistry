@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { PrayerPageRoutingModule } from './prayer-routing.module';
-
 import { PrayerPage } from './prayer.page';
+import { PrayerPageRoutingModule } from './prayer-routing.module';
 
 @NgModule({
   imports: [

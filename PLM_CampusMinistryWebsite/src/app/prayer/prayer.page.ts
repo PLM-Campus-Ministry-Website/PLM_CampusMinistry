@@ -10,8 +10,10 @@ export class PrayerPage {
   isModalOpen: boolean = false; // Controls modal visibility
   modalTitle: string = '';      // Stores modal title
   modalDetails: string = '';    // Stores modal details
+  isSmallScreen: boolean = false; // Detect small screen size
 
   constructor(private alertCtrl: AlertController) {}
+  
 
   // Method to open a search bar alert
   async openSearch() {

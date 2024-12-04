@@ -32,29 +32,20 @@ ion-toolbar {
   color: #FFFFFF; /* Set button-inner to white */
 }
 
+.hamburger-menu {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .icon-container {
-    display: none;
+    display: none;  /* Hide icons for smaller screens */
   }
 
   .hamburger-menu {
-    display: none;  // Make sure it’s hidden on larger screens
-    position: relative;  // Ensure it's positioned within its context
-    z-index: 1000;  // Bring it to the front on smaller screens
+    display: block; 
+    position: relative;  /* Ensure it’s positioned within its context */
+    z-index: 1000;  /* Bring to front */
   }
-  
-  @media (max-width: 768px) {
-    .hamburger-menu {
-      display: block;  // Show the hamburger menu on smaller screens
-    }
-    
-    /* Ensure other elements like menu or content don’t overlap the hamburger icon */
-    .icon-container {
-      position: relative;
-      z-index: 1;
-    }
-  }
-  
 }
 
 /* Menu Styles */
