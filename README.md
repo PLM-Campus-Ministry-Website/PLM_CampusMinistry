@@ -70,7 +70,44 @@ Make sure you have the following tools installed:
    ionic build --prod
 7. **Running on a Device (Optional): If you want to run the application on a mobile device, use the following command (make sure you have your device connected):**:
    ```bash
-   ionic capacitor run android
-  or
-```bash
-ionic capacitor run ios
+   ionic capacitor run android or ios
+  
+
+## Meet the Web Engineers
+
+We are proud to introduce the talented web engineers who contributed to the development of the **PLM Campus Ministry Website**. Below are their profiles:
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQEupdfRV0k6uw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718889703571?e=1738800000&v=beta&t=Wv7pRl-IYXasSVHfCTul5zwjCeNvIA82RmJB96qcwNs" width="150" style="border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
+        <p><b>Yuri Egipto</b></p>
+        <a href="https://www.linkedin.com/in/yuriegipto/" target="_blank">
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="LinkedIn Icon" width="40" />
+        </a>
+      </td>
+      <td align="center">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGfsEvPm2F2sA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718517101443?e=1738800000&v=beta&t=RK4_J3vGXx2cjifFJWHhtp4pjhky25NOIG6bTFfQk_w" alt="Princess Arabis" width="150" style="border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
+        <p><b>Princess Arabis</b></p>
+        <a href="https://www.linkedin.com/in/princess-joeby-arabis-8bb510238/" target="_blank">
+           <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="LinkedIn Icon" width="40" />
+        </a>
+      </td>
+      <td align="center">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQHPKAOEqu5g6g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728795528854?e=1738800000&v=beta&t=nyUaYLEdMG-2WzZGnlc8huZ4EYDQqbI7Nz2tu-v3Hgc" alt="Gervie Quinal" width="150" style="border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
+        <p><b>Gervie Quinal</b></p>
+        <a href="https://www.linkedin.com/in/gervie-anne-qui%C3%B1al-bb7a62328/" target="_blank">
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="LinkedIn Icon" width="40" />
+        </a>
+      </td>
+      <td align="center">
+        <img src="https://plm-moc.netlify.app/assets/cmlogo.png" alt="Rachel Atienza" width="150" style="border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
+        <p><b>Rachel Atienza</b></p>
+        <a href="https://www.linkedin.com/in/rachel-atienza-90b9a5212/" target="_blank">
+           <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="LinkedIn Icon" width="40" />
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
