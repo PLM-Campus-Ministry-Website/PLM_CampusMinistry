@@ -35,40 +35,53 @@ ion-toolbar {
 
 /* Menu Styles */
 ion-menu {
-    --width: 300px;
-    --background: #FFF8E1; /* Light beige menu background */
-    --border-color: transparent; /* Remove borders */
-    --box-shadow: none; /* Eliminate black shadows */
+  --width: 300px;
+  --background: #FFF8E1; /* Light beige menu background */
+  --border-color: transparent; /* Remove borders */
+  --box-shadow: none; /* Eliminate black shadows */
 }
 
 ion-menu::part(container) {
-    background-color: #d0a30e !important; /* Ensure consistent background color */
-    border: none !important;
-    box-shadow: none !important;
+  background-color: #d0a30e !important; /* Ensure consistent background color */
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* Menu Item Styles */
 ion-menu ion-item {
-    font-size: 16px;
-    --background: #D7CCC8; /* Light coffee color */
-    --color: #5D4037; /* Text: Dark coffee brown */
-    border-radius: 8px;
-    margin: 5px 10px;
+  font-size: 16px;
+  --background: #D7CCC8; /* Light coffee color */
+  --color: #5D4037; /* Text: Dark coffee brown */
+  border-radius: 8px;
+  margin: 5px 10px;
 }
 
 ion-menu ion-item:hover {
-    --background: #A1887F; /* Lighter brown on hover */
-    --color: #FFFFFF; /* White text on hover */
+  --background: #A1887F; /* Lighter brown on hover */
+  --color: #FFFFFF; /* White text on hover */
 }
 
 ion-menu ion-icon {
-    font-size: 24px;
-    color: #795548; /* Medium brown for icons */
+  font-size: 24px;
+  color: #795548; /* Medium brown for icons */
 }
 
 ion-menu ion-icon:hover {
-    color: #4E342E; /* Darker brown on hover */
+  color: #4E342E; /* Darker brown on hover */
 }
+
+.list-md {
+  --background: #EFEBE9; /* Light beige */
+  border-radius: 10px;
+}
+
+.list-md hydrated {
+  font-size: 14px;
+  --color: #4E342E; /* Dark coffee brown text */
+  padding: 10px 15px;
+}
+
+
 
 /* Card Styles */
 .small-card {

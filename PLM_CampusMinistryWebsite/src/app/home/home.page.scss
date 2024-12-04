@@ -38,14 +38,23 @@ ion-toolbar {
   }
 
   .hamburger-menu {
-    display: block; /* Show hamburger menu for smaller screens */
+    display: none;  // Make sure it’s hidden on larger screens
+    position: relative;  // Ensure it's positioned within its context
+    z-index: 1000;  // Bring it to the front on smaller screens
   }
-}
-
-@media (min-width: 769px) {
-  .hamburger-menu {
-    display: none; /* Hide hamburger menu for larger screens */
+  
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: block;  // Show the hamburger menu on smaller screens
+    }
+    
+    /* Ensure other elements like menu or content don’t overlap the hamburger icon */
+    .icon-container {
+      position: relative;
+      z-index: 1;
+    }
   }
+  
 }
 
 /* Menu Styles */
@@ -653,12 +662,6 @@ form {
     }
   }
 }
-
-
-
-
-
-
 
 // --------------------------------------
 /* Footer Container */

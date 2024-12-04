@@ -74,38 +74,17 @@ ion-menu ion-icon:hover {
   color: #4E342E; /* Darker brown on hover */
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-
-  /* Icon container */
-  .icon-container {
-      display: none; /* Hide icon container on smaller screens */
-  }
-
-  .hamburger-menu {
-      display: block; /* Show hamburger menu for smaller screens */
-  }
-
-  /* Menu Item Styles */
-  ion-menu ion-item {
-      font-size: 14px;  /* Smaller font size for menu items */
-  }
-
+.list-md {
+  --background: #EFEBE9; /* Light beige */
+  border-radius: 10px;
 }
 
-/* Larger Screen Styles (Tablet and above) */
-@media (min-width: 769px) {
-
-  /* Adjust Icon container */
-  .icon-container {
-      display: flex; /* Show icon container on larger screens */
-  }
-
-  .hamburger-menu {
-      display: none; /* Hide hamburger menu on larger screens */
-  }
-
+.list-md hydrated {
+  font-size: 14px;
+  --color: #4E342E; /* Dark coffee brown text */
+  padding: 10px 15px;
 }
+
 
 // --------------------------------------
 // Jumbotron Section Styles
