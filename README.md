@@ -102,10 +102,10 @@ We are proud to introduce the talented web engineers who contributed to the deve
         </a>
       </td>
       <td align="center">
-        <img src="https://plm-moc.netlify.app/assets/cmlogo.png" alt="Rachel Atienza" width="150" style="border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
+        <img src="blob:https://www.messenger.com/9fa3bd6c-b308-4afc-9809-a6d39cdab313" alt="Rachel Atienza" width="150" style="border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
         <p><b>Rachel Atienza</b></p>
         <a href="https://www.linkedin.com/in/rachel-atienza-90b9a5212/" target="_blank">
-           <img src="blob:https://www.messenger.com/9fa3bd6c-b308-4afc-9809-a6d39cdab313" alt="LinkedIn Icon" width="40" />
+           <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="LinkedIn Icon" width="40" />
         </a>
       </td>
     </tr>
