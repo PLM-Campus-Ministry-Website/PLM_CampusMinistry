@@ -79,7 +79,7 @@ export class HomePage {
       `;
 
       // Construct the mailto link with the subject and body
-      const mailToLink = `mailto:yurialfrance05@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      const mailToLink = `mailto:annie.macasaet1985@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
       // Trigger the email client to open with the pre-filled message
       window.location.href = mailToLink;
