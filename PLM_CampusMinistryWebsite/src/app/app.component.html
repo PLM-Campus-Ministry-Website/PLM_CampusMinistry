@@ -1,65 +1,122 @@
-<ion-header>
-  <ion-toolbar>
-    <!-- Logo on the left -->
-    <ion-buttons slot="start">
-      <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-left: 10px;" />
-    </ion-buttons>
-
-    <!-- Hamburger menu for mobile -->
-    <ion-buttons slot="end" class="hamburger-menu">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
-
-    <!-- Navigation bar for larger screens -->
-    <div class="icon-container">
-      <ion-button routerLink="/home" routerLinkActive="active" data-label="Home">
-        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
-      </ion-button>
-      <ion-button routerLink="/game" data-label="Search">
-        <ion-icon slot="icon-only" name="game-controller-outline"></ion-icon>
-      </ion-button>
-      <ion-button routerLink="/prayer" routerLinkActive="active" data-label="Prayer">
-        <ion-icon slot="icon-only" name="book-outline"></ion-icon>
-      </ion-button>
-      <ion-button routerLink="/meditation" routerLinkActive="active" data-label="Meditation">
-        <ion-icon slot="icon-only" name="leaf-outline"></ion-icon>
-      </ion-button>
-      <ion-button routerLink="/music" routerLinkActive="active" data-label="Music">
-        <ion-icon slot="icon-only" name="musical-notes-outline"></ion-icon>
-      </ion-button>
+<ion-header class="modern-header">
+  <ion-toolbar class="glass-toolbar">
+    <!-- Logo with animation -->
+    <div class="logo-container" slot="start">
+      <img src="assets/logo.png" alt="PLM Campus Ministry" class="logo-image" />
+      <div class="logo-text">
+        <span class="ministry">Campus</span>
+        <span class="plm">Ministry</span>
+      </div>
     </div>
+
+    <!-- Desktop Navigation -->
+    <div class="nav-container">
+      <nav class="desktop-nav">
+        <a routerLink="/home" routerLinkActive="active" class="nav-item">
+          <ion-icon name="home-outline"></ion-icon>
+          <span class="nav-label">Home</span>
+          <div class="nav-indicator"></div>
+        </a>
+        <a routerLink="/prayer" routerLinkActive="active" class="nav-item">
+          <ion-icon name="book-outline"></ion-icon>
+          <span class="nav-label">Prayer</span>
+          <div class="nav-indicator"></div>
+        </a>
+        <a routerLink="/meditation" routerLinkActive="active" class="nav-item">
+          <ion-icon name="leaf-outline"></ion-icon>
+          <span class="nav-label">Meditation</span>
+          <div class="nav-indicator"></div>
+        </a>
+        <a routerLink="/music" routerLinkActive="active" class="nav-item">
+          <ion-icon name="musical-notes-outline"></ion-icon>
+          <span class="nav-label">Music</span>
+          <div class="nav-indicator"></div>
+        </a>
+        <a routerLink="/game" routerLinkActive="active" class="nav-item">
+          <ion-icon name="game-controller-outline"></ion-icon>
+          <span class="nav-label">Games</span>
+          <div class="nav-indicator"></div>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <ion-buttons slot="end" class="mobile-menu-btn">
+      <ion-menu-button class="hamburger-modern">
+        <div class="hamburger-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-menu contentId="main-content" type="overlay">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-item routerLink="/home">
-        <ion-icon name="home-outline" slot="start"></ion-icon>
-        <ion-label>Home</ion-label>
+<!-- Modern Mobile Menu -->
+<ion-menu contentId="main-content" type="overlay" class="modern-menu">
+  <div class="menu-header">
+    <img src="assets/logo.png" alt="Logo" class="menu-logo" />
+    <h2>Campus Ministry</h2>
+    <p>PLM</p>
+  </div>
+  
+  <ion-content class="menu-content">
+    <div class="menu-items">
+      <ion-item routerLink="/home" class="menu-item">
+        <div class="menu-item-content">
+          <ion-icon name="home" class="menu-icon"></ion-icon>
+          <div class="menu-text">
+            <span class="menu-title">Home</span>
+            <span class="menu-subtitle">Welcome page</span>
+          </div>
+        </div>
       </ion-item>
-      <ion-item routerLink="/game">
-        <ion-icon name="game-controller-outline" slot="start"></ion-icon>
-        <ion-label>Game</ion-label>
+      
+      <ion-item routerLink="/prayer" class="menu-item">
+        <div class="menu-item-content">
+          <ion-icon name="book" class="menu-icon"></ion-icon>
+          <div class="menu-text">
+            <span class="menu-title">Prayer</span>
+            <span class="menu-subtitle">Spiritual guidance</span>
+          </div>
+        </div>
       </ion-item>
-      <ion-item routerLink="/prayer">
-        <ion-icon name="book-outline" slot="start"></ion-icon>
-        <ion-label>Prayer</ion-label>
+      
+      <ion-item routerLink="/meditation" class="menu-item">
+        <div class="menu-item-content">
+          <ion-icon name="leaf" class="menu-icon"></ion-icon>
+          <div class="menu-text">
+            <span class="menu-title">Meditation</span>
+            <span class="menu-subtitle">Mindful reflection</span>
+          </div>
+        </div>
       </ion-item>
-      <ion-item routerLink="/meditation">
-        <ion-icon name="leaf-outline" slot="start"></ion-icon>
-        <ion-label>Meditation</ion-label>
+      
+      <ion-item routerLink="/music" class="menu-item">
+        <div class="menu-item-content">
+          <ion-icon name="musical-notes" class="menu-icon"></ion-icon>
+          <div class="menu-text">
+            <span class="menu-title">Music</span>
+            <span class="menu-subtitle">Worship & praise</span>
+          </div>
+        </div>
       </ion-item>
-      <ion-item routerLink="/music">
-        <ion-icon name="musical-notes-outline" slot="start"></ion-icon>
-        <ion-label>Music</ion-label>
+      
+      <ion-item routerLink="/game" class="menu-item">
+        <div class="menu-item-content">
+          <ion-icon name="game-controller" class="menu-icon"></ion-icon>
+          <div class="menu-text">
+            <span class="menu-title">Games</span>
+            <span class="menu-subtitle">Faith activities</span>
+          </div>
+        </div>
       </ion-item>
-    </ion-list>
+    </div>
+    
+    <div class="menu-footer">
+      <p>Serving the PLM Community</p>
+    </div>
   </ion-content>
 </ion-menu>
 

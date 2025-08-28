@@ -1,3 +1,4 @@
+// src/app/prayer/prayer.page.ts
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
@@ -11,8 +12,14 @@ export class PrayerPage {
   modalTitle: string = '';      // Stores modal title
   modalDetails: string = '';    // Stores modal details
   isSmallScreen: boolean = false; // Detect small screen size
+  flippedCards: { [key: number]: boolean } = {}; // Track flipped state of cards
 
   constructor(private alertCtrl: AlertController) {}
+
+  // Method to toggle flip card state
+  toggleCard(cardId: number) {
+    this.flippedCards[cardId] = !this.flippedCards[cardId];
+  }
   
 
   // Method to open a search bar alert

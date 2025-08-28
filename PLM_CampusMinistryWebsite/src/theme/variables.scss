@@ -1,2 +1,24 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+// Catholic-inspired professional color palette
+:root {
+  // Primary colors
+  --ion-color-primary: #722F37;        // Deep burgundy
+  --ion-color-primary-rgb: 114,47,55;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #64292f;
+  --ion-color-primary-tint: #80454b;
+
+  // Secondary colors  
+  --ion-color-secondary: #B8860B;      // Warm gold
+  --ion-color-secondary-rgb: 184,134,11;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #a2760a;
+  --ion-color-secondary-tint: #bf9323;
+
+  // Background colors
+  --background-primary: #FDF5E6;       // Warm cream
+  --background-secondary: #F8F8F8;     // Light gray
+  --text-primary: #4A4A4A;            // Dark gray
+  --text-secondary: #6A6A6A;          // Medium gray
+}

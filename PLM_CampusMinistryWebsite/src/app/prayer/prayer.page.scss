@@ -1,470 +1,1134 @@
+// src/app/prayer/prayer.page.scss
+@import '../../shared-styles.scss';
+
 ion-content {
-  --background: #ffffff;
-  --color: black;
+  --background: var(--white);
+  --color: var(--text-primary);
 }
 
-/* Banner Styling */
-.banner-image {
-  width: 100%;
-  max-height: 700px;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
-.banner-title {
-  text-align: center;
-  font-weight: bold;
-  color: #4e4c45;
-  letter-spacing: 20px;
-  font-size: 70px;
-  margin-bottom: 10px;
-}
-
-.banner-subtitle {
-  text-align: center;
-  color: black;
-  margin-bottom: 20px;
-  font-size: 15px;
-}
-
-/* Description Paragraph */
-.description {
-  text-align: center;
-  font-size: 25px;
-  line-height: 1.5;
-  color: black;
-  margin: 0 auto;
-  max-width: 600px;
-  margin-bottom: 20px;
-}
-
-/* Prayer Categories Container */
-.prayer-categories-container {
-  background: url('/assets/bg.png') no-repeat center center;
-  background-size: cover;
-  padding: 20px;
-}
-
-/* Prayer Categories */
-.prayer-categories {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
-  gap: 16px;
-  margin-top: 20px;
-}
-
-.prayer-box {
+// Hero Section
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--warm-cream) 0%, var(--soft-gold) 100%);
+  padding: 120px 20px 80px;
   position: relative;
-  text-align: center;
-  margin: 0 auto;
-  width: 200px;
-  height: 250px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05); /* Slight zoom */
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-
-  .prayer-text {
-    margin-top: 10px;
-    font-size: 15px;
-    color: #ffffff;
-    font-weight: bold;
-  }
-
-  .prayer-details {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 12px;
-    padding: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-
-    &:hover {
-      opacity: 1; /* Show details on hover */
-    }
-  }
-}
-
-/* Modal Styles */
-ion-modal::part(content) {
-  --background: #000000;
-}
-
-.modal-content {
-  padding: 40px;
-  background: #ffffff;
-  color: #6c0e0e;
-  border-radius: 10px;
-  text-align: center;
-}
-
-ion-modal ion-button {
-  margin-top: 100px;
-  background-color: #4e4c45;
-  color: white;
-  border-radius: 5px;
-
-  &:hover {
-    --background: #080808;
-  }
-}
-
-/* Small Devices (phones in portrait) */
-@media (max-width: 576px) {
-  .prayer-categories {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-  }
-
-  .prayer-box {
-    width: 100%; /* Full width for each prayer box on small screens */
-    height: auto;
-  }
-
-  .banner-title {
-    font-size: 30px;
-    letter-spacing: 10px;
-  }
-
-  .description {
-    font-size: 15px;
-    padding: 10px;
-  }
-}
-
-/* Extra Small Devices (phones in portrait) */
-@media (max-width: 400px) {
-  .banner-title {
-    font-size: 24px;
-    letter-spacing: 5px;
-  }
-
-  .banner-subtitle {
-    font-size: 14px;
-  }
-
-  .prayer-box {
-    width: 100%;
-    height: auto;
-  }
-
-  .description {
-    font-size: 15px;
-    padding: 10px;
-  }
-}
-
-/* Small Devices (landscape phones) */
-@media (max-width: 576px) {
-  .banner-title {
-    font-size: 30px;
-    letter-spacing: 10px;
-  }
-
-  .prayer-box {
-    width: 90%;
-    height: auto;
-  }
-}
-
-/* Medium Devices (tablets) */
-@media (max-width: 768px) {
-  .prayer-categories {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-  }
-
-  .banner-title {
-    font-size: 40px;
-    letter-spacing: 15px;
-  }
-
-  .prayer-box {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Large Devices (desktops) */
-@media (max-width: 1200px) {
-  .banner-title {
-    font-size: 50px;
-    letter-spacing: 18px;
-  }
-
-  .prayer-box {
-    width: 70%;
-    height: auto;
-  }
-}
-
-/* Banner Styling */
-.additional-banner-title {
-  text-align: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #4e4c45;
-  letter-spacing: 15px;
-  font-size: 60px;
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
-
-/* Heading styling */
-h2 {
-  font-size: 50px;
-  color: #5c3d32;  /* Dark brown color for heading */
-  font-weight: bold;
-  margin-bottom: 10px; /* Larger margin bottom for spacing */
-  text-transform: uppercase;
-  letter-spacing: 2px; /* Slight letter spacing for a modern look */
-  text-align: center;
-}
-
-.basic-prayer-section {
-  background-size: cover;
-  background-position: center;
-  padding: 40px 20px;
-}
- /* Basic Prayer Container */
- .basic-prayer-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 700px;
-  max-width: 100%;
-  height: 500px; 
-  border-radius: 12px; 
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff; 
-  margin: 0 auto; 
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+  width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23D4AF37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+  }
+}
 
-
-/* Ensure iframe is fully responsive */
-iframe {
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  z-index: 1;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-  .basic-prayer-container {
-    width: 100%;
-    height: 500px;  /* Adjust height for mobile */
-  }
-}
- }
-
-
-// -------------------------------------- 
-/* Gospel of the Day Section */
-// --------------------------------------
-
-  .section-content-two {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  .video-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-  }
-    iframe {
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      height: 340px;
-      width: 350px;
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--warm-gold) 0%, var(--dark-gold) 100%);
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+    
+    &.shape-1 {
+      width: 80px;
+      height: 80px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
     }
-
-/* Media Query for tablets (small devices) */
-@media (max-width: 768px) {
-
-  .additional-banner-title{
-    font-size: 1.5rem;
-  }
-
-  .iframe {
-    height: 300px;
-    width: 100%;
-  }
-  .video-container {
-    margin-top: 20px;
-  }
-}
-
-/* Media Query for mobile devices */
-@media (max-width: 375px) {
-
-  .additional-banner-title{
-    font-size: .8rem;
-  }
-
-  iframe {
-    height: 500px;
-    width: 100%;
-  }
-
-  .video-container {
-    margin-top: 15px;
+    
+    &.shape-2 {
+      width: 120px;
+      height: 120px;
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+    
+    &.shape-3 {
+      width: 60px;
+      height: 60px;
+      bottom: 30%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+    
+    &.shape-4 {
+      width: 100px;
+      height: 100px;
+      top: 40%;
+      right: 30%;
+      animation-delay: 1s;
+    }
   }
 }
 
-/* Media Query for large screens (desktops, large devices) */
-@media (min-width: 1201px) {
-  iframe {
-    height: 515px;
-    width: 430px;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
   }
 }
 
-.jumbotron {
-  background: url('https://media.istockphoto.com/id/471929136/photo/church.jpg?s=612x612&w=0&k=20&c=ieviZPxGysGE6bcCvz4FNzcBDpEvTIYtplc9PgrptQw=') no-repeat center center/cover; 
-  padding: 130px 70px; 
-  color: #FFFFFF; 
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(114, 47, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+  z-index: 2;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  text-align: center;
+  }
+}
+
+.hero-content {
+  padding: 40px 0;
+  
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--warm-gold) 0%, var(--dark-gold) 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+
+  &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+    }
+    
+    .badge-icon {
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
   }
   
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; // Ensure responsive layout
+  .hero-title {
+    margin-bottom: 20px;
+    
+    .title-main {
+      display: block;
+      font-size: 2.4rem;
+      color: var(--dark-brown);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 5px;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    .title-highlight {
+      display: block;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--dark-brown) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      line-height: 1.1;
+      text-shadow: 0 4px 8px rgba(114, 47, 55, 0.1);
+      
+      @media (max-width: 768px) {
+        font-size: 2.8rem;
+      }
+    }
   }
-
-    .left-column2 {
-      flex: 1 1 50%; // Left side (image) takes 50% of the width
-      h1 {
-        font-size: 4rem;
-        color: #ffffff; 
-        margin-bottom: 15px;
-        font-weight: bold;
-      }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-style: italic;
+    max-width: 500px;
+    
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      margin: 0 auto 40px;
     }
-
-    .right-column {
-      flex: 1 1 40%; // Right side (text) takes 40% of the width
-      padding-left: 30px;
-      text-align: left;
-      
-      h1 {
-        font-size: 4rem;
-        color: #5D4037; // Rich brown for the heading
-        margin-bottom: 15px;
-        font-weight: bold;
-      }
-      
-      
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 50px;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
     }
-
-    .right-column2 {
-      flex: 1 1 40%; // Right side (text) takes 40% of the width
-      padding-left: 30px;
-      text-align: left;
+    
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       
-      .cta-button {
-        display: inline-block;
-        background-color: #5D4037; // Soft brown for the button
-        color: white;
-        padding: 15px 40px;
-        font-size: 1.25rem;
-        text-align: center;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: background-color 0.3s, transform 0.3s;
-        
-        &:hover {
-          background-color: #48312a; // Darker brown when hovered
-          transform: scale(1.05); // Slight zoom effect on hover
+      &.primary {
+        background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--dark-brown) 100%);
+  color: white;
+
+  &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 35px rgba(114, 47, 55, 0.4);
         }
       }
       
-    }
-
-// --------------------------------------
-// Liturgical Calendar Page Styles
-// --------------------------------------
-
-.liturgical-calendar {
-  background-color: #f7f1e1;  // Light brownish background for a soft feel
-  padding: 50px 20px;
-  text-align: center;
-
-  .title-container {
-    margin-bottom: 30px;
-    
-    h1 {
-      font-size: 50px;
-      font-weight: bold;
-      color: #4e4c45;  // Dark brown color
-      letter-spacing: 15px;
-      margin: 0;
-      text-align: center;
-      text-transform: uppercase;
+      &.secondary {
+        background: linear-gradient(135deg, var(--warm-gold) 0%, var(--dark-gold) 100%);
+        color: white;
+        
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+      }
+      
+      svg {
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover svg {
+        transform: scale(1.1);
+      }
     }
   }
-
-  .iframe-container {
-    max-width: 1200px;
-    margin: 0 auto;
+  
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  }
+  
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     padding: 20px;
-    background-color: #ffffff;  // White background for iframe container
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
     
-    iframe {
-      width: 100%;
-      height: 800px;  // Default height for desktop view
-      border: none;
-      border-radius: 8px;
+    &:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     }
-  }
-
-  // Responsiveness for smaller screens
-  @media (max-width: 480px) {
-    .liturgical-calendar {
-      padding: 20px;
+    
+    .stat-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--warm-gold) 0%, var(--dark-gold) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+      flex-shrink: 0;
     }
-
-    .iframe-container iframe {
-      height: 600px;  // Smaller height for mobile
-    }
-
-    .title-container h1 {
-      font-size: 38px;  // Adjust font size on smaller screens
-      letter-spacing: 10px;
+    
+    .stat-content {
+      flex: 1;
+      
+      .stat-number {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--primary-burgundy);
+        line-height: 1;
+        margin-bottom: 5px;
+        
+        @media (max-width: 768px) {
+          font-size: 1.8rem;
+        }
+      }
+      
+      .stat-label {
+        display: block;
+        font-size: 13px;
+        color: var(--dark-brown);
+        font-weight: 500;
+        line-height: 1.2;
+      }
     }
   }
 }
 
+.hero-image-wrapper {
+  position: relative;
+  
+  .image-container {
+    position: relative;
+    
+    .hero-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: 0 25px 50px rgba(139, 69, 19, 0.2), 0 12px 24px rgba(139, 69, 19, 0.15);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 2;
+      
+      &:hover {
+        transform: scale(1.03) translateY(-8px);
+      }
+      
+      @media (max-width: 768px) {
+        height: 350px;
+      }
+    }
+    
+    .image-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+      border-radius: 24px;
+      z-index: 1;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+    
+    .image-decoration {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--warm-gold) 0%, var(--dark-gold) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+      z-index: 3;
+      animation: pulse 2s ease-in-out infinite;
+    }
+  }
+  
+  .floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 4;
+    
+    .floating-element {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--dark-brown) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 8px 20px rgba(114, 47, 55, 0.3);
+      animation: floatElement 4s ease-in-out infinite;
+      
+      &.element-1 {
+        top: 20%;
+        left: -20px;
+        animation-delay: 0s;
+      }
+      
+      &.element-2 {
+        top: 60%;
+        right: -20px;
+        animation-delay: 1.5s;
+      }
+      
+      &.element-3 {
+        bottom: 30%;
+        left: 10%;
+        animation-delay: 3s;
+      }
+    }
+  }
+}
 
-   // --------------------------------------
-/* Footer Container */
-// --------------------------------------
+@keyframes glow {
+  0% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes floatElement {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+  }
+}
+
+// Prayer Categories Section
+.prayer-categories-section {
+  @include section-background;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23D4AF37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
+  
+  .header-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
+    background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--dark-brown) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(114, 47, 55, 0.3);
+  }
+  
+  h2 {
+    font-size: 3rem;
+    color: var(--primary-burgundy);
+    font-weight: 700;
+    margin-bottom: 20px;
+    
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: var(--dark-brown);
+    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.prayer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto; 
+  position: relative;
+  z-index: 1;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+.prayer-card {
+  @include glassmorphism;
+  @include card-hover;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(114, 47, 55, 0.15);
+    
+    .card-image img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  
+  img {
+  width: 100%;
+  height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(114, 47, 55, 0.3) 0%, rgba(212, 175, 55, 0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover .image-overlay {
+    opacity: 1;
+  }
+}
+
+.card-content {
+  padding: 25px;
+  text-align: center;
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--warm-gold) 0%, var(--dark-gold) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    color: var(--primary-burgundy);
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+// Basic Prayer Section
+.basic-prayer-section {
+  @include section-background;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cross" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20 10v20M10 20h20" stroke="%23D4AF37" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23cross)"/></svg>');
+  }
+}
+
+// Flip Cards for Basic Prayers
+.basic-prayers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1400px;
+    margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+}
+
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 280px;
+  perspective: 1000px;
+  cursor: pointer;
+  
+@media (max-width: 768px) {
+    height: 260px;
+  }
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  
+  &.flipped {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+    width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(114, 47, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.flip-card-front {
+  background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--dark-brown) 100%);
+  color: white;
+  
+  .prayer-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    
+    svg {
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .flip-hint {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-style: italic;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  color: var(--text-primary);
+  transform: rotateY(180deg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  
+  .prayer-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    p {
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      text-align: center;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+    }
+    
+    .prayer-alternative {
+      text-align: center;
+      font-weight: 600;
+      color: var(--primary-burgundy);
+      font-style: italic;
+      margin: 10px 0;
+      font-size: 0.9rem;
+    }
+    
+    // Custom scrollbar for prayer content
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 2px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--warm-gold);
+      border-radius: 2px;
+      
+      &:hover {
+        background: var(--dark-gold);
+      }
+    }
+  }
+}
+
+// Hover effects for flip cards
+.flip-card:hover .flip-card-inner:not(.flipped) {
+  transform: scale(1.02);
+}
+
+.flip-card:hover .flip-card-front {
+  box-shadow: 0 15px 40px rgba(114, 47, 55, 0.25);
+}
+
+.flip-card:hover .flip-card-back {
+  box-shadow: 0 15px 40px rgba(114, 47, 55, 0.15);
+}
+
+// Gospel Section
+.gospel-section {
+  @include section-background;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="gospel" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="%23722F37" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23gospel)"/></svg>');
+  }
+}
+
+.gospel-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  
+  iframe {
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+}
+
+.gospel-link {
+  text-align: center;
+  
+  .read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--warm-gold) 0%, var(--dark-gold) 100%);
+        color: white;
+    padding: 16px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+    }
+    
+    svg {
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover svg {
+      transform: translateX(3px);
+    }
+  }
+}
+
+// Prayer Request Section
+.prayer-request-section {
+  background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--dark-brown) 100%);
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="request" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M30 20v60M20 30h60" stroke="%23FFFFFF" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23request)"/></svg>');
+  }
+  
+  @media (max-width: 768px) {
+    padding: 80px 20px;
+  }
+}
+
+.request-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.request-content {
+      text-align: center;
+  color: white;
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+  
+  .request-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--warm-gold) 0%, var(--dark-gold) 100%);
+    color: white;
+    padding: 18px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+    
+    svg {
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover svg {
+      transform: translateX(3px);
+    }
+  }
+}
+
+// Liturgical Calendar Section
+.liturgical-calendar-section {
+  @include section-background;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="calendar" width="30" height="30" patternUnits="userSpaceOnUse"><rect x="10" y="10" width="10" height="10" fill="%23D4AF37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23calendar)"/></svg>');
+  }
+}
+
+.calendar-container {
+  max-width: 1000px;
+    margin: 0 auto;
+  position: relative;
+  z-index: 1;
+    
+    iframe {
+      width: 100%;
+    height: 600px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Enhanced Modal
+.prayer-modal {
+  --background: rgba(0, 0, 0, 0.8);
+  
+  // Modal backdrop styling
+  &::part(backdrop) {
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  // Modal content styling
+  &::part(content) {
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden; // Prevent double scrollbars
+  }
+  
+  @media (max-width: 768px) {
+    &::part(content) {
+      max-width: 95vw;
+      max-height: 85vh;
+    }
+  }
+  
+  ion-header {
+    --background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--dark-brown) 100%);
+    --color: white;
+    border-radius: 16px 16px 0 0;
+    
+    ion-toolbar {
+      --background: transparent;
+      --min-height: 60px;
+      
+      ion-title {
+        font-weight: 600;
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+        color: white !important; // Force white color
+      }
+    }
+    
+    // Additional header styling to ensure white text
+    ion-title {
+      color: white !important;
+      --color: white !important;
+    }
+  }
+  
+  .close-btn {
+    --color: white;
+    --background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      --background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  
+  .modal-content {
+    padding: 40px 40px 50px 40px; // Increased bottom padding
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    color: var(--text-primary);
+    border-radius: 0 0 16px 16px;
+    line-height: 1.7;
+    max-height: 75vh; // Increased height
+    overflow-y: auto;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--warm-gold) 100%);
+      border-radius: 0 0 16px 16px;
+    }
+    
+    @media (max-width: 768px) {
+      padding: 30px 20px 40px 20px; // Increased bottom padding on mobile
+      max-height: 65vh; // Increased mobile height
+    }
+    
+    // Hide default scrollbar and show custom one
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-burgundy) #f1f1f1;
+    
+    // Custom scrollbar styling
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--dark-brown) 100%);
+      border-radius: 4px;
+      
+      &:hover {
+        background: linear-gradient(135deg, var(--dark-brown) 0%, var(--primary-burgundy) 100%);
+      }
+    }
+    
+    // Hide default scrollbar on webkit browsers
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    // General paragraph styling
+    p {
+      font-family: 'Georgia', serif;
+      text-align: justify;
+      text-justify: inter-word;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      
+      @media (max-width: 768px) {
+        text-align: left;
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    // Cross icon styling
+    span[style*="font-size:100px"] {
+      display: block;
+      text-align: center;
+      margin: 20px 0 30px 0;
+      color: var(--primary-burgundy);
+      font-size: 4rem !important;
+      line-height: 1;
+      opacity: 0.8;
+      
+      @media (max-width: 768px) {
+        font-size: 3rem !important;
+        margin: 15px 0 25px 0;
+      }
+    }
+    
+    // First paragraph (opening prayer)
+    p:first-of-type {
+      font-weight: 500;
+      color: var(--primary-burgundy);
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      text-align: center;
+      font-family: 'Georgia', serif;
+    }
+    
+    // Last paragraph (Amen)
+    p:last-of-type {
+      font-weight: 600;
+      color: var(--primary-burgundy);
+      font-size: 1.3rem;
+      text-align: center;
+      margin-top: 30px;
+      font-style: italic;
+      font-family: 'Georgia', serif;
+    }
+  }
+}
+
+// Footer
 .footer {
-  background-color: #4e3629;;
+  background-color: var(--primary-burgundy);
   color: white;
   padding: 40px 20px;
   text-align: center;
@@ -478,7 +1142,6 @@ iframe {
     margin: 0 auto;
   }
 
-  /* Logos Section */
   .logo-container {
     display: flex;
     justify-content: space-evenly;
@@ -496,7 +1159,6 @@ iframe {
     }
   }
 
-  /* Links Section */
   .links-container {
     margin: 20px 0;
   }
@@ -517,12 +1179,11 @@ iframe {
       transition: color 0.3s;
 
       &:hover {
-        color: #3498db;
+        color: var(--warm-gold);
       }
     }
   }
 
-  /* Social Media Section */
   .social-media-container {
     display: flex;
     justify-content: center;
@@ -537,5 +1198,40 @@ iframe {
     &:hover {
       transform: scale(1.1);
     }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .prayer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 100px 15px 60px;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .request-content h2 {
+    font-size: 1.8rem;
   }
 }

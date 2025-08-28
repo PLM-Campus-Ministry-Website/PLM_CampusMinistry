@@ -1,94 +1,349 @@
-ion-toolbar {
-    --background: rgba(236, 225, 164, 0.5) !important;
+// src/app/app.component.scss
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Updated color variables - much darker and more visible
+:root {
+  --nav-gradient: linear-gradient(135deg, rgba(69, 39, 19, 0.95) 0%, rgba(92, 51, 23, 0.95) 100%);
+  --nav-glass: rgba(0, 0, 0, 0.3);
+  --nav-border: rgba(0, 0, 0, 0.2);
+  --gold-accent: #FFD700;
+  --deep-burgundy: #722F37;
+  --warm-white: #FFF8DC;
+}
+
+// Make the header much more visible
+.modern-header {
+  --background: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.glass-toolbar {
+  --background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #654321 100%);
+  --color: white;
+  --border-width: 0;
+  --min-height: 80px;
+  padding: 0 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+// Logo Container
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+  .logo-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: rotate(10deg) scale(1.05);
+    }
   }
   
-  /* Icon container for larger screens */
-  .icon-container {
+  .logo-text {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-    margin: 0;
-    background: transparent;
-    padding: 10px 0;
-  }
-  
-  .icon-container ion-button {
-    --background: #8D6E63; /* Button background: Coffee Brown */
-    --color: #FFFFFF; /* Icon/Text: White */
-  }
-  
-  /* Hover Effect */
-  .icon-container ion-button:hover {
-    --background: #A1887F; /* Lighter brown on hover */
-  }
-  
-  .icon-container ion-button-inner {
-    color: #FFFFFF; /* Set button-inner to white */
-  }
-  
-  .hamburger-menu { 
-    display: none;
-    z-index: 1000;
-  }
-  
-  @media (max-width: 768px) {
-    .hamburger-menu {
-      display: block; 
-      position: relative;  /* Ensure it’s positioned within its context */
-      z-index: 1000;  /* Bring to front */
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    
+    .ministry {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gold-accent);
+      line-height: 1;
     }
-    .icon-container {
-      display: none;  /* Hide icons for smaller screens */
+    
+    .plm {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1;
     }
   }
+}
+
+// Desktop Navigation
+.nav-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+// Enhanced nav items for better visibility
+.nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Poppins', sans-serif;
+  background: rgba(0, 0, 0, 0.1);
   
-  /* Menu Styles */
-  ion-menu {
-    --width: 300px;
-    --background: #FFF8E1; /* Light beige menu background */
-    --border-color: transparent; /* Remove borders */
-    --box-shadow: none; /* Eliminate black shadows */
-    z-index: 10;
-  }
-  
-  ion-menu::part(container) {
-    background-color: #d0a30e !important; /* Ensure consistent background color */
-    border: none !important;
-    box-shadow: none !important;
-  }
-  
-  /* Menu Item Styles */
-  ion-menu ion-item {
-    font-size: 16px;
-    --background: #D7CCC8; /* Light coffee color */
-    --color: #5D4037; /* Text: Dark coffee brown */
-    border-radius: 8px;
-    margin: 5px 10px;
-  }
-  
-  ion-menu ion-item:hover {
-    --background: #A1887F; /* Lighter brown on hover */
-    --color: #FFFFFF; /* White text on hover */
-  }
-  
-  ion-menu ion-icon {
+  ion-icon {
     font-size: 24px;
-    color: #795548; /* Medium brown for icons */
+    transition: all 0.3s ease;
+    color: white;
   }
   
-  ion-menu ion-icon:hover {
-    color: #4E342E; /* Darker brown on hover */
+  .nav-label {
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: white;
   }
   
-  .list-md {
-    --background: #EFEBE9; /* Light beige */
-    border-radius: 10px;
+  .nav-indicator {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 30px;
+    height: 3px;
+    background: var(--gold-accent);
+    border-radius: 2px;
+    transition: transform 0.3s ease;
   }
   
-  .list-md hydrated {
+  &:hover {
+    color: var(--gold-accent);
+    background: rgba(255, 215, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+    
+    ion-icon {
+      transform: scale(1.1);
+      color: var(--gold-accent);
+    }
+    
+    .nav-label {
+      color: var(--gold-accent);
+    }
+    
+    .nav-indicator {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+  
+  &.active {
+    color: var(--gold-accent);
+    background: rgba(255, 215, 0, 0.15);
+    
+    .nav-indicator {
+      transform: translateX(-50%) scaleX(1);
+    }
+    
+    ion-icon {
+      color: var(--gold-accent);
+    }
+    
+    .nav-label {
+      color: var(--gold-accent);
+    }
+  }
+}
+
+// Mobile Menu Button
+.mobile-menu-btn {
+  display: none;
+}
+
+.hamburger-modern {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+}
+
+.hamburger-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 4px;
+  
+  span {
+    width: 20px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+  }
+}
+
+// Modern Mobile Menu
+.modern-menu {
+  --width: 320px;
+  --background: linear-gradient(180deg, rgba(69, 39, 19, 0.98) 0%, rgba(92, 51, 23, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.menu-header {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 40px 20px 30px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+  .menu-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  h2 {
+    color: var(--gold-accent);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
-    --color: #4E342E; /* Dark coffee brown text */
-    padding: 10px 15px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
   }
+}
+
+.menu-content {
+  --background: transparent;
+}
+
+.menu-items {
+  padding: 20px 0;
+}
+
+.menu-item {
+  --background: transparent;
+  --border-color: transparent;
+  margin: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    --background: rgba(255, 255, 255, 0.1);
+    transform: translateX(8px);
+  }
+}
+
+.menu-item-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  width: 100%;
+}
+
+.menu-icon {
+  font-size: 24px;
+  color: var(--gold-accent);
+  min-width: 24px;
+}
+
+.menu-text {
+  display: flex;
+  flex-direction: column;
+  
+  .menu-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .menu-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+.menu-footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  
+  p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .logo-text {
+    display: none;
+  }
+  
+  .glass-toolbar {
+    --min-height: 60px;
+    padding: 0 16px;
+  }
+  
+  .logo-container .logo-image {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+// Animation keyframes
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modern-header {
+  animation: slideInFromTop 0.6s ease-out;
+}
   

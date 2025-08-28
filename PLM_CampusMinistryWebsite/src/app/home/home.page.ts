@@ -155,4 +155,11 @@ export class HomePage {
     };
     return date.toLocaleString('en-US', options);
   }
+
+  // Add this function to handle loading more photos
+  loadMorePhotos() {
+    // You can implement logic to show more photos or navigate to a dedicated gallery page
+    console.log('Loading more photos...');
+    // For now, you could scroll to a different section or show more images
+  }
 }
