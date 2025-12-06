@@ -1212,6 +1212,764 @@ The Mass is not just a ritual - it is our encounter with the living God!`,
     ];
   }
 
+  private getCourse3Lessons(): Lesson[] {
+    return [
+      {
+        id: 1,
+        title: 'Introduction to the Sacraments',
+        content: `What is a sacrament? A sacrament is a "visible sign of invisible grace" instituted by Christ. Sacraments are sacred rituals through which God's grace is given to us in a tangible way.
+
+Why Jesus instituted the sacraments:
+• Jesus knew we are both body and soul, so he gave us physical signs to receive spiritual grace
+• Sacraments make God's love and presence concrete and accessible
+• They help us grow spiritually and stay connected to Christ and the Church
+
+Biblical foundations of sacramental life:
+• Jesus' ministry included physical actions (healing, washing feet, breaking bread)
+• He commanded his apostles to baptize (Matthew 28:19) and celebrate the Eucharist (Luke 22:19-20)
+• The early Church practiced sacraments as seen in the Acts of the Apostles
+
+How sacraments help us grow spiritually:
+• They strengthen our relationship with God
+• They mark important moments in our faith journey
+• They provide grace to live as disciples of Christ`,
+        questions: [
+          {
+            id: 1,
+            type: 'fill-blank',
+            question: 'A sacrament is a "visible sign of invisible _____" instituted by Christ.',
+            correctAnswer: 'grace',
+            explanation: 'Sacraments are visible signs that give us invisible grace - God\'s life and love.'
+          },
+          {
+            id: 2,
+            type: 'multiple-choice',
+            question: 'Why did Jesus institute the sacraments?',
+            options: ['To create rituals', 'Because we are both body and soul, so he gave us physical signs to receive spiritual grace', 'To follow tradition', 'To make religion complicated'],
+            correctAnswer: 1,
+            explanation: 'Jesus knew we are both body and soul, so he gave us physical signs (sacraments) to receive spiritual grace in a tangible way.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Sacraments help us grow spiritually and stay connected to Christ.',
+            correctAnswer: true,
+            explanation: 'Yes! Sacraments strengthen our relationship with God and provide grace to live as disciples of Christ.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 2,
+        title: 'Sacraments and the Life of Grace',
+        content: `What is grace? Grace is God's free gift of his own life and love, which helps us to know, love, and serve him.
+
+Types of grace:
+
+Sanctifying grace:
+• The grace that makes us holy and pleasing to God
+• Received initially at Baptism
+• Restored through Reconciliation if lost through mortal sin
+• Makes us children of God and temples of the Holy Spirit
+
+Actual grace:
+• God's help for specific moments and actions
+• Helps us to do good and avoid evil
+• Available to everyone, even those not baptized
+• Guides us in daily decisions
+
+Sacramental grace:
+• Special grace received through each sacrament
+• Helps us fulfill the purpose of that particular sacrament
+• For example: Matrimony gives grace to love and serve your spouse
+
+Why grace is essential for salvation:
+• We cannot save ourselves - we need God's help
+• Grace transforms us from sinners into saints
+• It enables us to live according to God's will
+• Without grace, we cannot reach heaven`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What is sanctifying grace?',
+            options: ['Temporary help from God', 'The grace that makes us holy and pleasing to God', 'A type of prayer', 'A sacrament'],
+            correctAnswer: 1,
+            explanation: 'Sanctifying grace is the grace that makes us holy and pleasing to God, received initially at Baptism.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: '_____ grace is God\'s help for specific moments and actions.',
+            correctAnswer: 'Actual',
+            explanation: 'Actual grace is God\'s help for specific moments - it helps us do good and avoid evil in daily life.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Grace is essential for salvation because we cannot save ourselves.',
+            correctAnswer: true,
+            explanation: 'Yes! We need God\'s grace to be saved - we cannot save ourselves through our own efforts alone.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 3,
+        title: 'Overview of the Seven Sacraments',
+        content: `The Catholic Church has seven sacraments, grouped by their purpose:
+
+Sacraments of Initiation (bring us into the Church and strengthen us):
+1. Baptism - Entry into the Church, removes original sin
+2. Confirmation - Strengthens us with the Holy Spirit
+3. Holy Eucharist - The Body and Blood of Christ, our spiritual nourishment
+
+Sacraments of Healing (restore and strengthen us):
+4. Reconciliation (Confession) - Forgiveness of sins
+5. Anointing of the Sick - Healing and comfort for the ill
+
+Sacraments of Service (help us serve others):
+6. Matrimony - Holy marriage between a man and woman
+7. Holy Orders - Ordination to priesthood (bishop, priest, or deacon)
+
+Each sacrament gives us specific graces to live our Christian vocation. Together, they mark the important moments of our life journey and help us grow in holiness.`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many sacraments are there in the Catholic Church?',
+            options: ['Five', 'Six', 'Seven', 'Ten'],
+            correctAnswer: 2,
+            explanation: 'The Catholic Church has seven sacraments instituted by Christ.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The Sacraments of _____ bring us into the Church and strengthen us.',
+            correctAnswer: 'Initiation',
+            explanation: 'The Sacraments of Initiation (Baptism, Confirmation, Eucharist) bring us into the Church and strengthen us.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Reconciliation and Anointing of the Sick are Sacraments of Healing.',
+            correctAnswer: true,
+            explanation: 'Yes! Reconciliation and Anointing of the Sick are the two Sacraments of Healing.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 4,
+        title: 'Baptism: The First Sacrament',
+        content: `Baptism is the first sacrament and the gateway to all other sacraments.
+
+Biblical roots:
+• Jesus commanded: "Go, therefore, and make disciples of all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Spirit" (Matthew 28:19)
+• Jesus said: "Unless one is born of water and the Spirit, he cannot enter the kingdom of God" (John 3:5)
+
+Effects of baptism:
+• Forgiveness of original sin and all personal sins
+• New life as a child of God
+• Becoming a member of the Church
+• Receiving sanctifying grace
+• Becoming a temple of the Holy Spirit
+• An indelible spiritual mark (character) that can never be erased
+
+Role of godparents:
+• Help the parents raise the child in the faith
+• Must be practicing Catholics, at least 16 years old, and confirmed
+• Represent the Church community
+
+Baptismal promises:
+• We renounce Satan and all his works
+• We profess faith in God the Father, Son, and Holy Spirit
+• We commit to living as disciples of Christ`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What does Baptism do?',
+            options: ['Only removes original sin', 'Forgives original sin, gives new life, makes us children of God', 'Is just a ceremony', 'Only for babies'],
+            correctAnswer: 1,
+            explanation: 'Baptism forgives original sin, gives us new life as children of God, makes us members of the Church, and gives us sanctifying grace.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'Jesus said: "Unless one is born of water and the _____, he cannot enter the kingdom of God."',
+            correctAnswer: 'Spirit',
+            explanation: 'In John 3:5, Jesus emphasizes that Baptism (water and the Spirit) is necessary for entering the kingdom of God.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Baptism leaves an indelible spiritual mark that can never be erased.',
+            correctAnswer: true,
+            explanation: 'Yes! Baptism leaves a permanent spiritual mark (character) that makes us forever a child of God, even if we sin later.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 5,
+        title: 'Confirmation: The Gift of the Holy Spirit',
+        content: `Confirmation completes the grace of Baptism and strengthens us with the Holy Spirit.
+
+The Holy Spirit in Scripture:
+• At Pentecost (Acts 2), the Holy Spirit descended upon the apostles
+• They were filled with courage and began to preach the Gospel
+• This same Spirit is given to us in Confirmation
+
+Seven gifts of the Holy Spirit:
+1. Wisdom - to see things from God's perspective
+2. Understanding - to grasp the truths of faith
+3. Counsel (Right Judgment) - to make good decisions
+4. Fortitude (Courage) - to stand up for our faith
+5. Knowledge - to know God and his will
+6. Piety (Reverence) - to love and worship God
+7. Fear of the Lord (Wonder and Awe) - to be in awe of God's greatness
+
+Role of the bishop:
+• The bishop is the ordinary minister of Confirmation
+• This shows the connection to the apostles
+• In special circumstances, a priest can confirm with permission
+
+Why Confirmation strengthens our mission:
+• It gives us courage to witness to Christ
+• It helps us live as adult members of the Church
+• It empowers us to share our faith with others
+• It strengthens us to resist temptation`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many gifts of the Holy Spirit are there?',
+            options: ['Five', 'Six', 'Seven', 'Twelve'],
+            correctAnswer: 2,
+            explanation: 'There are seven gifts of the Holy Spirit: wisdom, understanding, counsel, fortitude, knowledge, piety, and fear of the Lord.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The _____ is the ordinary minister of Confirmation.',
+            correctAnswer: 'bishop',
+            explanation: 'The bishop is the ordinary minister of Confirmation, showing the connection to the apostles who received the Holy Spirit at Pentecost.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Confirmation gives us courage to witness to Christ and share our faith.',
+            correctAnswer: true,
+            explanation: 'Yes! Confirmation strengthens us with the Holy Spirit to be bold witnesses of Christ in the world.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 6,
+        title: 'Holy Eucharist: The Source and Summit',
+        content: `The Eucharist is the greatest of all sacraments - the source and summit of Christian life.
+
+The Last Supper:
+• Jesus took bread, blessed it, and said: "This is my Body" (Matthew 26:26)
+• He took the cup and said: "This is my Blood of the covenant" (Matthew 26:28)
+• He commanded: "Do this in memory of me" (Luke 22:19)
+
+Real Presence:
+• Catholics believe in the Real Presence: the bread and wine truly become the Body, Blood, Soul, and Divinity of Jesus Christ
+• This is not a symbol - it is truly Christ himself
+• The appearance (accidents) remains as bread and wine, but the substance becomes Christ
+• This is called "transubstantiation"
+
+Communion as spiritual nourishment:
+• Just as our bodies need food, our souls need the Eucharist
+• It strengthens us to live as Christians
+• It unites us with Christ and with all the faithful
+• It forgives venial sins and preserves us from mortal sin
+
+Eucharist as sacrifice, meal, and memorial:
+• Sacrifice: The Mass re-presents Christ's sacrifice on the cross
+• Meal: We receive Christ as spiritual food
+• Memorial: Not just remembering, but making present the saving events`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What is the Real Presence?',
+            options: ['A symbol', 'The bread and wine truly become the Body, Blood, Soul, and Divinity of Christ', 'Just a memory', 'A blessing'],
+            correctAnswer: 1,
+            explanation: 'The Real Presence means the bread and wine truly become the Body, Blood, Soul, and Divinity of Jesus Christ - not a symbol, but truly Christ himself.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The Eucharist is the source and _____ of Christian life.',
+            correctAnswer: 'summit',
+            explanation: 'The Eucharist is called the "source and summit" because it is both where we draw strength from and the goal toward which all Christian life points.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Eucharist is sacrifice, meal, and memorial.',
+            correctAnswer: true,
+            explanation: 'Yes! The Eucharist has three dimensions: it is a sacrifice (re-presents Christ\'s death), a meal (we receive Christ), and a memorial (makes present the saving events).'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 7,
+        title: 'Reconciliation: The Sacrament of Mercy',
+        content: `Reconciliation (also called Confession or Penance) is the sacrament of God's mercy and forgiveness.
+
+Why we confess sins:
+• Jesus gave the apostles the power to forgive sins (John 20:22-23)
+• Confession helps us acknowledge our sins and receive God's mercy
+• It restores our relationship with God if broken by mortal sin
+• It gives us grace to avoid sin in the future
+
+Sin: mortal vs. venial:
+• Mortal sin: Serious sin that breaks our relationship with God
+  - Must be grave matter (serious)
+  - Must be done with full knowledge
+  - Must be done with deliberate consent
+  - Requires Confession before receiving Communion
+• Venial sin: Less serious sin that weakens but doesn't break our relationship with God
+  - Can be forgiven through prayer, good works, and the Eucharist
+  - Still should be confessed regularly
+
+Role of the priest in absolution:
+• The priest acts "in persona Christi" (in the person of Christ)
+• Only a priest can give absolution (forgiveness)
+• The priest is bound by the seal of confession - he can never reveal what is confessed
+
+Steps to a good confession:
+1. Examine your conscience
+2. Be truly sorry (contrition)
+3. Confess all mortal sins
+4. Make a firm purpose of amendment (resolve not to sin again)
+5. Do the penance the priest gives you`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What are the two types of sin?',
+            options: ['Big and small', 'Mortal and venial', 'Serious and minor', 'Major and petty'],
+            correctAnswer: 1,
+            explanation: 'The two types of sin are mortal (serious, breaks relationship with God) and venial (less serious, weakens but doesn\'t break the relationship).'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The priest is bound by the _____ of confession - he can never reveal what is confessed.',
+            correctAnswer: 'seal',
+            explanation: 'The seal of confession is absolute - a priest can never reveal what is said in confession, even under threat of death.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Mortal sin requires Confession before receiving Communion.',
+            correctAnswer: true,
+            explanation: 'Yes! If we have committed mortal sin, we must go to Confession before receiving Communion.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 8,
+        title: 'Anointing of the Sick: Strength in Illness',
+        content: `Anointing of the Sick is a sacrament of healing and strength for those who are seriously ill.
+
+Scriptural basis:
+• "Is anyone among you sick? He should summon the presbyters of the church, and they should pray over him and anoint him with oil in the name of the Lord" (James 5:14-15)
+• Jesus healed the sick during his ministry
+• The apostles also healed in Jesus' name
+
+Purpose: spiritual and sometimes physical healing
+• Primarily for spiritual healing: peace, strength, forgiveness of sins
+• Sometimes God grants physical healing as well
+• Helps the person unite their suffering with Christ's suffering
+• Gives courage to face illness or death
+
+When someone should receive it:
+• Anyone seriously ill (not just dying)
+• Before major surgery
+• Elderly people whose health is declining
+• Those with chronic or serious illness
+• Can be received multiple times if illness continues or worsens
+
+Not only for the dying - sacrament of strength:
+• This sacrament is NOT just for those at the point of death
+• It is for anyone seriously ill who needs God's strength
+• It helps people face illness with faith and courage
+• It can be received whenever there is a serious health concern`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'When should someone receive Anointing of the Sick?',
+            options: ['Only when dying', 'When seriously ill, before surgery, or when health is declining', 'Only once in a lifetime', 'Never'],
+            correctAnswer: 1,
+            explanation: 'Anointing of the Sick should be received by anyone seriously ill, before major surgery, or when health is declining - not just when dying.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The Anointing of the Sick is primarily for _____ healing, though sometimes physical healing occurs.',
+            correctAnswer: 'spiritual',
+            explanation: 'The primary purpose is spiritual healing (peace, strength, forgiveness), though God sometimes grants physical healing as well.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Anointing of the Sick can be received multiple times if illness continues.',
+            correctAnswer: true,
+            explanation: 'Yes! If someone\'s illness continues or worsens, they can receive Anointing of the Sick again.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 9,
+        title: 'Matrimony: A Lifelong Covenant',
+        content: `Matrimony is the sacrament of marriage between a baptized man and woman.
+
+Marriage in God's plan:
+• From the beginning, God created man and woman for each other (Genesis 2:24)
+• Jesus elevated marriage to a sacrament
+• Marriage reflects the love between Christ and the Church (Ephesians 5:25-32)
+
+Lifelong covenant between husband and wife:
+• Marriage is a permanent bond - "until death do us part"
+• It cannot be dissolved by human authority
+• The couple gives themselves completely to each other
+• They promise to love, honor, and cherish each other
+
+Openness to life:
+• Marriage is naturally ordered toward the procreation and education of children
+• Couples should be open to having children
+• Natural Family Planning is acceptable for serious reasons
+• Artificial contraception is contrary to God's plan
+
+The grace to love and serve each other:
+• Matrimony gives special grace to love and serve your spouse
+• It helps couples grow in holiness together
+• It strengthens them to face life's challenges
+• It helps them raise children in the faith`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What is marriage in the Catholic Church?',
+            options: ['A contract', 'A lifelong covenant between a baptized man and woman', 'A temporary arrangement', 'Just a ceremony'],
+            correctAnswer: 1,
+            explanation: 'Marriage is a lifelong covenant (sacred bond) between a baptized man and woman, elevated by Christ to a sacrament.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'Marriage is naturally ordered toward the procreation and _____ of children.',
+            correctAnswer: 'education',
+            explanation: 'Marriage is ordered toward both having children (procreation) and raising them in the faith (education).'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Marriage gives special grace to love and serve your spouse.',
+            correctAnswer: true,
+            explanation: 'Yes! The sacrament of Matrimony gives couples special grace to love, honor, and serve each other throughout their lives.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 10,
+        title: 'Holy Orders: Service to the Church',
+        content: `Holy Orders is the sacrament through which men are ordained to serve the Church as bishops, priests, or deacons.
+
+Three degrees:
+• Bishop: Successor of the apostles, has the fullness of Holy Orders
+  - Can ordain priests and deacons
+  - Leads a diocese
+  - Teaches, sanctifies, and governs
+• Priest: Acts in persona Christi (in the person of Christ)
+  - Can celebrate Mass and hear confessions
+  - Serves a parish or other ministry
+  - Preaches, administers sacraments, serves the people
+• Deacon: Serves in a ministry of service
+  - Can baptize, witness marriages, preach, assist at Mass
+  - Cannot celebrate Mass or hear confessions
+  - Often serves in parishes, hospitals, or other ministries
+
+Why only men are ordained:
+• Jesus chose only men as his apostles
+• The priest acts "in persona Christi" - representing Christ the bridegroom
+• This is a matter of faith, not discrimination
+• Women have many other important roles in the Church
+
+Role of priests as shepherds and servants:
+• Priests are shepherds who guide and care for God's people
+• They serve by celebrating Mass, hearing confessions, anointing the sick
+• They teach the faith and help people grow spiritually
+• They lead the community in worship and service
+
+The call to ministry in the Church:
+• Holy Orders is a vocation (calling from God)
+• Not everyone is called to priesthood
+• Those who are called must discern carefully
+• It requires a life of prayer, service, and celibacy (for priests and bishops)`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What are the three degrees of Holy Orders?',
+            options: ['Pope, Cardinal, Bishop', 'Bishop, Priest, Deacon', 'Priest, Deacon, Layperson', 'Pope, Bishop, Priest'],
+            correctAnswer: 1,
+            explanation: 'The three degrees of Holy Orders are: Bishop (fullness of orders), Priest (can celebrate Mass), and Deacon (ministry of service).'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The priest acts "in persona _____" (in the person of Christ).',
+            correctAnswer: 'Christi',
+            explanation: 'The priest acts "in persona Christi" - in the person of Christ - especially when celebrating Mass and hearing confessions.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Holy Orders is a vocation - a calling from God.',
+            correctAnswer: true,
+            explanation: 'Yes! Holy Orders is a vocation that requires careful discernment. Not everyone is called to priesthood.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 11,
+        title: 'How the Sacraments Work',
+        content: `Sacraments work through specific elements that make them valid and effective.
+
+Matter and form:
+• Matter: The physical element (water for Baptism, bread and wine for Eucharist, oil for Anointing)
+• Form: The words spoken (the formula that makes the sacrament)
+• Both matter and form must be correct for the sacrament to be valid
+• Example: Baptism requires water (matter) and the words "I baptize you in the name of the Father, and of the Son, and of the Holy Spirit" (form)
+
+The role of intention:
+• The minister must intend to do what the Church does
+• The recipient must have the right intention (for example, wanting to be baptized)
+• Without proper intention, the sacrament may be invalid
+
+"Ex opere operato" (Christ works through the sacrament):
+• This Latin phrase means "by the work worked"
+• It means the sacrament works because of Christ's power, not because of the holiness of the minister
+• Even if the priest is a sinner, the sacrament is still valid
+• Christ is the one who acts through the sacrament
+
+The faith of the recipient:
+• While sacraments work "ex opere operato," the recipient's faith and disposition matter
+• We should receive sacraments with faith, reverence, and proper preparation
+• The more we believe and are open to grace, the more we benefit
+• However, sacraments still give grace even if our faith is weak`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What does "ex opere operato" mean?',
+            options: ['By human effort', 'By the work worked - Christ works through the sacrament', 'By faith alone', 'By the priest\'s holiness'],
+            correctAnswer: 1,
+            explanation: '"Ex opere operato" means the sacrament works because of Christ\'s power, not because of the holiness of the minister or recipient.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The _____ is the physical element, and the _____ is the words spoken in a sacrament.',
+            correctAnswer: 'matter, form',
+            explanation: 'Matter is the physical element (water, bread, oil), and form is the words spoken (the formula). Both are needed for a valid sacrament.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The recipient\'s faith and disposition affect how much we benefit from the sacrament.',
+            correctAnswer: true,
+            explanation: 'Yes! While sacraments work "ex opere operato," our faith, reverence, and proper preparation help us receive more grace.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 12,
+        title: 'Sacramentals vs. Sacraments',
+        content: `Sacramentals are sacred signs that help us grow in devotion, but they are different from sacraments.
+
+Examples of sacramentals:
+• Holy water: Reminds us of Baptism, used for blessing
+• Rosaries: Help us meditate on the mysteries of Christ's life
+• Medals: Remind us of saints and their intercession
+• Scapulars: Signs of devotion to Mary
+• Blessings: Prayers that invoke God's protection
+• Crucifixes, statues, icons: Help us focus on God and the saints
+
+Difference between blessings and sacraments:
+• Sacraments: Instituted by Christ, give grace directly, necessary for salvation (some of them)
+• Sacramentals: Instituted by the Church, prepare us to receive grace, helpful but not necessary
+• Sacraments work "ex opere operato" (by Christ's power)
+• Sacramentals work through the Church's prayer and our faith
+
+How sacramentals help us grow in devotion:
+• They remind us of God's presence
+• They help us focus our minds and hearts on prayer
+• They connect us to the communion of saints
+• They prepare us to receive sacramental grace
+• They help us live our faith in daily life`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What is the main difference between sacraments and sacramentals?',
+            options: ['No difference', 'Sacraments were instituted by Christ and give grace directly; sacramentals were instituted by the Church and prepare us for grace', 'Sacramentals are more important', 'Only sacraments exist'],
+            correctAnswer: 1,
+            explanation: 'Sacraments were instituted by Christ and give grace directly. Sacramentals were instituted by the Church and help prepare us to receive grace.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: '_____ water reminds us of Baptism and is used for blessing.',
+            correctAnswer: 'Holy',
+            explanation: 'Holy water is a sacramental that reminds us of Baptism and is used for blessings and protection.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Sacramentals help us grow in devotion and prepare us to receive sacramental grace.',
+            correctAnswer: true,
+            explanation: 'Yes! Sacramentals like rosaries, medals, and holy water help us focus on prayer and prepare our hearts to receive God\'s grace.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 13,
+        title: 'Living a Sacramental Life',
+        content: `Living a sacramental life means making the sacraments a regular part of our spiritual journey.
+
+Frequent confession:
+• Go to Confession regularly (at least monthly, or more often if needed)
+• Don't wait until you have mortal sin
+• Regular confession helps us grow in self-awareness and holiness
+• It strengthens us to resist temptation
+
+Regular reception of the Eucharist:
+• Receive Communion at least weekly (Sunday Mass obligation)
+• Daily Mass and Communion is even better if possible
+• Always receive in a state of grace (no mortal sin)
+• Prepare your heart before receiving
+
+Participating in parish community:
+• The sacraments are meant to be celebrated in community
+• Join parish activities and ministries
+• Support your parish financially and through service
+• Build relationships with other Catholics
+
+Bringing grace into daily life:
+• Family: Pray together, celebrate feast days, live the faith at home
+• Work: See your work as a way to serve God and others
+• Relationships: Treat others with love and respect, as Christ would
+• Challenges: Turn to the sacraments when facing difficulties
+• Joy: Celebrate God's blessings and give thanks
+
+The sacraments are not just rituals - they are encounters with Christ that should transform our entire lives.`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How often should Catholics go to Confession?',
+            options: ['Never', 'Only when they have mortal sin', 'Regularly, at least monthly', 'Once a year'],
+            correctAnswer: 2,
+            explanation: 'Catholics should go to Confession regularly (at least monthly), not just when they have mortal sin. Regular confession helps us grow in holiness.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'We should always receive the Eucharist in a state of _____ (no mortal sin).',
+            correctAnswer: 'grace',
+            explanation: 'We must be in a state of grace (free from mortal sin) to receive the Eucharist worthily. If we have mortal sin, we must go to Confession first.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The sacraments should transform our entire lives, not just be rituals we perform.',
+            correctAnswer: true,
+            explanation: 'Yes! The sacraments are encounters with Christ that should transform how we live - in our families, work, relationships, and daily challenges.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 14,
+        title: 'Summary and Closing',
+        content: `The sacraments are gifts from Christ that help us grow in holiness and stay connected to God.
+
+Key points to remember:
+• Sacraments are "visible signs of invisible grace" instituted by Christ
+• There are seven sacraments: Baptism, Confirmation, Eucharist, Reconciliation, Anointing of the Sick, Matrimony, and Holy Orders
+• Sacraments give us grace - God's life and love
+• Each sacrament has a specific purpose and gives specific graces
+• Sacraments work through matter, form, and intention
+• Sacramentals (like rosaries and holy water) help us grow in devotion
+
+The sacraments as gifts from Christ:
+• Jesus gave us the sacraments because he loves us
+• They are his way of staying with us and giving us his grace
+• They mark the important moments of our life journey
+• They help us become saints
+
+Invitation to deepen your sacramental life:
+• Make the sacraments a regular part of your life
+• Go to Confession regularly
+• Receive the Eucharist frequently
+• Participate actively in your parish
+• Learn more about each sacrament
+• Share your faith with others
+
+Encouragement to continue learning and receiving God's grace:
+• Faith is a journey, not a destination
+• Keep learning about your faith
+• Receive the sacraments with faith and reverence
+• Let the sacraments transform your life
+• Trust in God's grace to help you grow in holiness
+
+The sacraments are channels of God's grace - use them regularly to stay close to Christ!`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What are the sacraments?',
+            options: ['Just rituals', 'Gifts from Christ that are channels of God\'s grace', 'Optional practices', 'Only for priests'],
+            correctAnswer: 1,
+            explanation: 'The sacraments are gifts from Christ - visible signs that give us invisible grace. They are channels through which God\'s grace flows to us.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'Faith is a _____, not a destination.',
+            correctAnswer: 'journey',
+            explanation: 'Faith is a lifelong journey of growing closer to God. The sacraments help us on this journey.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'We should make the sacraments a regular part of our lives to stay close to Christ.',
+            correctAnswer: true,
+            explanation: 'Yes! The sacraments are channels of God\'s grace - we should use them regularly to grow in holiness and stay close to Christ.'
+          }
+        ],
+        completed: false
+      }
+    ];
+  }
+
   courseTitle: string = '';
 
   constructor(
@@ -1238,6 +1996,9 @@ The Mass is not just a ritual - it is our encounter with the living God!`,
     } else if (this.courseId === 2) {
       this.lessons = this.getCourse2Lessons();
       this.courseTitle = 'Understanding the Holy Mass';
+    } else if (this.courseId === 3) {
+      this.lessons = this.getCourse3Lessons();
+      this.courseTitle = 'The Sacraments: Channels of God\'s Grace';
     } else {
       // Default to course 1 if course not found
       this.lessons = this.getCourse1Lessons();
