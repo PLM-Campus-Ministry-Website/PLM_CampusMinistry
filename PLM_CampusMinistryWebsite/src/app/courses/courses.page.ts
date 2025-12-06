@@ -136,6 +136,82 @@ export class CoursesPage implements OnInit {
       id: 30,
       title: 'How to Discern God\'s Will',
     },
+    {
+      id: 31,
+      title: 'Latin for Catholics',
+    },
+    {
+      id: 32,
+      title: 'Salvation History: From Creation to Christ',
+    },
+    {
+      id: 33,
+      title: 'The Old Testament: Covenant and Prophecy',
+    },
+    {
+      id: 34,
+      title: 'The New Testament: Gospels and Apostolic Teaching',
+    },
+    {
+      id: 35,
+      title: 'Catholic Moral Theology: Conscience and Human Freedom',
+    },
+    {
+      id: 36,
+      title: 'Theology of the Body: Human Sexuality and Identity',
+    },
+    {
+      id: 37,
+      title: 'Catholic Teachings on Life Issues (Pro-life Formation)',
+    },
+    {
+      id: 38,
+      title: 'Introduction to Ignatian Spirituality',
+    },
+    {
+      id: 39,
+      title: 'Introduction to Carmelite Spirituality',
+    },
+    {
+      id: 40,
+      title: 'How to Make a Good Confession & Spiritual Examination',
+    },
+    {
+      id: 41,
+      title: 'Understanding the Sacramentals and Catholic Devotions',
+    },
+    {
+      id: 42,
+      title: 'Introduction to Gregorian Chant and Sacred Music',
+    },
+    {
+      id: 43,
+      title: 'Stewardship: Time, Talent, and Treasure',
+    },
+    {
+      id: 44,
+      title: 'Catholic Leadership and Ministry Training',
+    },
+    {
+      id: 45,
+      title: 'Catholic Teaching on Social Media & Modern Technology',
+    },
+    {
+      id: 46,
+      title: 'Interreligious Dialogue and Ecumenism',
+    },
+    {
+      id: 47,
+      title: 'The Church and Modern Culture',
+    },
+    {
+      id: 48,
+      title: 'Parish Life 101: Roles, Ministries, and How the Church Works',
+    },
+    {
+      id: 49,
+      title: 'Youth Catholic Formation: Faith for Young Catholics',
+    },
   ];
 
   myScore: any = null;
@@ -165,8 +241,8 @@ export class CoursesPage implements OnInit {
     let allStreaks: number[] = [];
     let maxStreak = 0;
 
-    // Check all courses (1-30)
-    for (let courseId = 1; courseId <= 30; courseId++) {
+    // Check all courses (1-49)
+    for (let courseId = 1; courseId <= 49; courseId++) {
       const saved = localStorage.getItem(`course_progress_${courseId}`);
       if (saved) {
         const progress = JSON.parse(saved);
@@ -192,6 +268,7 @@ export class CoursesPage implements OnInit {
     // Return lesson count for each course
     if (courseId === 1) return 14; // Introduction to Catholic Faith
     if (courseId === 2) return 16; // Understanding the Holy Mass
+    if (courseId === 31) return 12; // Latin for Catholics
     // Add more as courses are implemented
     return 0;
   }
@@ -204,7 +281,7 @@ export class CoursesPage implements OnInit {
     this.completedCourses = [];
     
     // Check all courses and see which are completed
-    for (let courseId = 1; courseId <= 30; courseId++) {
+    for (let courseId = 1; courseId <= 49; courseId++) {
       const saved = localStorage.getItem(`course_progress_${courseId}`);
       if (saved) {
         const progress = JSON.parse(saved);

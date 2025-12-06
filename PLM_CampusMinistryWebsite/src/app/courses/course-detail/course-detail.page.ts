@@ -3078,6 +3078,913 @@ The Bible is not just to be read - it's to be lived!`,
     ];
   }
 
+  private getCourse31Lessons(): Lesson[] {
+    return [
+      {
+        id: 1,
+        title: 'Introduction to Latin',
+        content: `What is Latin?
+
+Latin is an ancient language that was originally spoken by the people of ancient Rome. It belongs to the Italic branch of the Indo-European language family. While Latin is no longer spoken as a native language, it remains highly influential and is still used in various contexts today.
+
+Importance of Latin in the Catholic Church:
+
+• Latin has been the official language of the Catholic Church for centuries
+• It serves as a unifying language for the universal Church
+• Many important Church documents, prayers, and liturgical texts are in Latin
+• Latin connects Catholics across different cultures and languages
+
+Latin as the language of the liturgy and tradition:
+
+• The Roman Rite of the Mass was traditionally celebrated in Latin
+• Sacred music, especially Gregorian chant, uses Latin texts
+• Official Church documents (encyclicals, papal bulls) are often written in Latin
+• Latin preserves the Church's theological and liturgical heritage
+
+Pronunciation systems: Ecclesiastical vs. Classical:
+
+• Ecclesiastical Latin: The pronunciation used by the Catholic Church, closer to Italian pronunciation
+• Classical Latin: The reconstructed pronunciation used in academic settings
+• For Catholics, Ecclesiastical Latin is the standard for liturgy and prayer
+
+Why Catholics still use Latin today:
+
+• Church documents: Official Vatican documents are often published in Latin
+• Chants: Gregorian chant and sacred music use Latin texts
+• Prayers: Many traditional prayers are in Latin
+• Unity: Latin provides a common language for the universal Church
+• Tradition: It connects us to centuries of Catholic heritage and worship`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What pronunciation system does the Catholic Church use for Latin?',
+            options: ['Classical', 'Ecclesiastical', 'Medieval', 'Modern'],
+            correctAnswer: 1,
+            explanation: 'The Catholic Church uses Ecclesiastical Latin pronunciation, which is closer to Italian pronunciation.'
+          },
+          {
+            id: 2,
+            type: 'true-false',
+            question: 'Latin is still used in official Church documents and liturgical texts today.',
+            correctAnswer: true,
+            explanation: 'Yes! Latin remains important in the Catholic Church for official documents, liturgy, and tradition.'
+          },
+          {
+            id: 3,
+            type: 'fill-blank',
+            question: 'Latin serves as a _____ language for the universal Church.',
+            correctAnswer: 'unifying',
+            explanation: 'Latin unites Catholics across different cultures and languages, providing a common liturgical and theological language.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 2,
+        title: 'Basic Ecclesiastical Latin Pronunciation',
+        content: `Alphabet and vowel sounds:
+
+The Latin alphabet has 23 letters (no J, U, or W in classical Latin, though modern texts may use them):
+• A, B, C, D, E, F, G, H, I, K, L, M, N, O, P, Q, R, S, T, V, X, Y, Z
+
+Vowel sounds in Ecclesiastical Latin:
+• A: "ah" as in "father"
+• E: "eh" as in "bed"
+• I: "ee" as in "see"
+• O: "oh" as in "go"
+• U: "oo" as in "moon"
+• Y: "ee" (used in Greek loanwords)
+
+Consonant rules:
+
+• C: Before E, I, AE, OE: "ch" (as in "church")
+  Before A, O, U: "k" (as in "cat")
+• G: Before E, I, AE, OE: "j" (as in "joy")
+  Before A, O, U: "g" (as in "go")
+• GN: "ny" (as in "canyon") - e.g., "agnus" sounds like "AH-nyoos"
+• TI: Before a vowel: "tsee" (as in "nation") - e.g., "gratia" sounds like "GRAH-tsee-ah"
+• SC: Before E, I: "sh" (as in "ship")
+
+Syllables and stress:
+
+• Words are divided into syllables
+• Stress usually falls on the second-to-last syllable (penultimate) if it's long, or the third-to-last if the penultimate is short
+• In two-syllable words, stress the first syllable
+
+Practice with common liturgical words:
+
+• Dominus (DOH-mee-noos): Lord
+• Christus (KREE-stoos): Christ
+• Spiritus (SPEE-ree-toos): Spirit
+• Sanctus (SAHNK-toos): Holy
+• Gloria (GLOH-ree-ah): Glory
+• Maria (mah-REE-ah): Mary`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How does "C" sound before "E" or "I" in Ecclesiastical Latin?',
+            options: ['Like "k"', 'Like "ch"', 'Like "s"', 'Like "ts"'],
+            correctAnswer: 1,
+            explanation: 'In Ecclesiastical Latin, "C" before "E" or "I" sounds like "ch" as in "church".'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The combination "GN" in Latin (as in "agnus") sounds like "_____" (as in "canyon").',
+            correctAnswer: 'ny',
+            explanation: 'GN produces the "ny" sound, so "agnus" is pronounced "AH-nyoos".'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'In Ecclesiastical Latin, "Gloria" is pronounced "GLOH-ree-ah".',
+            correctAnswer: true,
+            explanation: 'Yes! In Ecclesiastical Latin, vowels are pronounced clearly and "Gloria" has the stress on the first syllable.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 3,
+        title: 'Essential Latin Vocabulary for Catholics',
+        content: `Basic greetings and simple phrases:
+
+• Ave (AH-veh): Hail / Hello
+• Pax (pahks): Peace
+• Gratias (GRAH-tsee-ahs): Thanks
+• Deo gratias (DEH-oh GRAH-tsee-ahs): Thanks be to God
+• Amen (AH-men): So be it / I believe
+
+Church-related vocabulary:
+
+• Altare (ahl-TAH-reh): Altar
+• Sacerdos (sah-CHEHR-dohs): Priest
+• Sacramentum (sah-krah-MEN-toom): Sacrament
+• Oratio (oh-RAH-tsee-oh): Prayer
+• Ecclesia (eh-CLEH-see-ah): Church
+• Missa (MEES-sah): Mass
+• Eucharistia (eh-oo-kah-REE-stee-ah): Eucharist
+• Confessio (kohn-FEHS-see-oh): Confession
+
+Vocabulary from the Mass and the Bible:
+
+• Verbum (VEHR-boom): Word
+• Evangelium (eh-vahn-GEH-lee-oom): Gospel
+• Lectio (LEHK-tsee-oh): Reading
+• Credo (KREH-doh): I believe
+• Sanctus (SAHNK-toos): Holy
+• Benedictus (beh-nee-DEEK-toos): Blessed
+• Agnus (AHG-noos): Lamb
+• Panis (PAH-nees): Bread
+• Vinum (VEE-noom): Wine
+
+Latin roots in English and Filipino:
+
+Many English words come from Latin:
+• "Sanctify" from "sanctus" (holy)
+• "Sacrament" from "sacramentum"
+• "Confession" from "confessio"
+• "Evangelical" from "evangelium"
+• "Credible" from "credo" (I believe)
+
+Filipino words with Latin origins:
+• "Misa" from "Missa" (Mass)
+• "Sakramento" from "Sacramentum"
+• "Ebanghelyo" from "Evangelium"`,
+        questions: [
+          {
+            id: 1,
+            type: 'fill-blank',
+            question: 'The Latin word "_____" means "Peace" and is used in the Mass.',
+            correctAnswer: 'Pax',
+            explanation: '"Pax" means peace and is used in phrases like "Pax Domini" (Peace of the Lord).'
+          },
+          {
+            id: 2,
+            type: 'multiple-choice',
+            question: 'What does "Credo" mean?',
+            options: ['I pray', 'I believe', 'I confess', 'I love'],
+            correctAnswer: 1,
+            explanation: '"Credo" means "I believe" and is the first word of the Apostles\' and Nicene Creeds.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Filipino word "Misa" comes from the Latin word "Missa".',
+            correctAnswer: true,
+            explanation: 'Yes! Many Filipino religious terms have Latin origins, including "Misa" from "Missa" (Mass).'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 4,
+        title: 'Basic Grammar Foundations: Nouns, Verbs, and Adjectives',
+        content: `A. Nouns
+
+Gender: masculine, feminine, neuter
+
+Latin nouns have three genders:
+• Masculine: e.g., "Dominus" (Lord), "Christus" (Christ)
+• Feminine: e.g., "Maria" (Mary), "Ecclesia" (Church)
+• Neuter: e.g., "Verbum" (Word), "Sacramentum" (Sacrament)
+
+Cases and their functions:
+
+Latin nouns change form (decline) based on their function in a sentence:
+• Nominative: Subject of the sentence (who/what does the action)
+• Genitive: Possession ("of" something)
+• Dative: Indirect object ("to/for" someone)
+• Accusative: Direct object (receives the action)
+• Ablative: Various uses (by, with, from, in, on)
+• Vocative: Direct address (calling someone)
+
+Declension overview:
+
+Latin nouns are organized into five declensions based on their endings. Each declension has its own pattern of endings.
+
+B. Verbs
+
+Present tense:
+
+The present tense describes actions happening now:
+• "Oro" (I pray)
+• "Credis" (you believe)
+• "Sanctificat" (he/she/it sanctifies)
+
+Basic verb conjugations:
+
+Latin verbs are conjugated (change form) based on:
+• Person (I, you, he/she/it, we, you all, they)
+• Number (singular or plural)
+• Tense (when the action happens)
+
+Common verbs in prayers:
+
+• "Credere" (to believe): Used in the Creed
+• "Orare" (to pray): Used in many prayers
+• "Sanctificare" (to sanctify): Used in the Our Father
+• "Benedicere" (to bless): Used in blessings
+• "Glorificare" (to glorify): Used in the Gloria
+
+C. Adjectives
+
+Agreement of adjective and noun:
+
+Adjectives must agree with the noun they describe in:
+• Gender (masculine, feminine, neuter)
+• Number (singular or plural)
+• Case (nominative, genitive, etc.)
+
+Common adjectives used in prayers:
+
+• "Sanctus" (holy, saint)
+• "Benedictus" (blessed)
+• "Gloriosus" (glorious)
+• "Aeternus" (eternal)
+• "Divinus" (divine)`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many genders do Latin nouns have?',
+            options: ['Two', 'Three', 'Four', 'Five'],
+            correctAnswer: 1,
+            explanation: 'Latin nouns have three genders: masculine, feminine, and neuter.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The Latin verb "_____" means "to believe" and is used in the Creed.',
+            correctAnswer: 'Credere',
+            explanation: '"Credere" means "to believe" and is the root of "Credo" (I believe).'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Adjectives in Latin must agree with their nouns in gender, number, and case.',
+            correctAnswer: true,
+            explanation: 'Yes! Latin adjectives must match the noun they describe in gender, number, and case.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 5,
+        title: 'Latin in the Mass',
+        content: `Key parts of the Mass in Latin:
+
+Sign of the Cross:
+"In nomine Patris, et Filii, et Spiritus Sancti. Amen."
+(In the name of the Father, and of the Son, and of the Holy Spirit. Amen.)
+
+Gloria:
+"Gloria in excelsis Deo, et in terra pax hominibus bonae voluntatis."
+(Glory to God in the highest, and on earth peace to people of good will.)
+
+Sanctus:
+"Sanctus, Sanctus, Sanctus, Dominus Deus Sabaoth. Pleni sunt caeli et terra gloria tua."
+(Holy, Holy, Holy, Lord God of hosts. Heaven and earth are full of your glory.)
+
+Agnus Dei:
+"Agnus Dei, qui tollis peccata mundi, miserere nobis."
+(Lamb of God, who takes away the sins of the world, have mercy on us.)
+
+Pater Noster:
+"Pater noster, qui es in caelis, sanctificetur nomen tuum..."
+(Our Father, who art in heaven, hallowed be thy name...)
+
+Practice:
+
+Reading and pronouncing Mass responses:
+
+• "Et cum spiritu tuo" (And with your spirit) - Response to "Dominus vobiscum"
+• "Amen" (Amen) - Affirmation after prayers
+• "Deo gratias" (Thanks be to God) - Response to "Ite, missa est"
+
+Understanding meaning line-by-line:
+
+When learning Latin prayers, it's helpful to:
+• Break them down word by word
+• Understand each word's meaning
+• See how the words work together
+• Practice pronunciation slowly
+• Build up to full speed
+
+Common Mass phrases:
+
+• "Dominus vobiscum" (The Lord be with you)
+• "Lift up your hearts" - "Sursum corda"
+• "We lift them up to the Lord" - "Habemus ad Dominum"
+• "Let us give thanks to the Lord our God" - "Gratias agamus Domino Deo nostro"`,
+        questions: [
+          {
+            id: 1,
+            type: 'fill-blank',
+            question: 'The response to "Dominus vobiscum" is "Et cum _____ tuo" (And with your spirit).',
+            correctAnswer: 'spiritu',
+            explanation: '"Et cum spiritu tuo" is the traditional response meaning "And with your spirit."'
+          },
+          {
+            id: 2,
+            type: 'multiple-choice',
+            question: 'What does "Agnus Dei" mean?',
+            options: ['Lamb of God', 'Son of God', 'Word of God', 'Spirit of God'],
+            correctAnswer: 0,
+            explanation: '"Agnus Dei" means "Lamb of God" and refers to Jesus Christ.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The "Sanctus" is sung or said during the Eucharistic Prayer.',
+            correctAnswer: true,
+            explanation: 'Yes! The "Sanctus" (Holy, Holy, Holy) is part of the Eucharistic Prayer in the Mass.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 6,
+        title: 'Latin Prayers Every Catholic Should Know',
+        content: `Signum Crucis (Sign of the Cross):
+
+"In nomine Patris, et Filii, et Spiritus Sancti. Amen."
+(In the name of the Father, and of the Son, and of the Holy Spirit. Amen.)
+
+Pater Noster (Our Father):
+
+"Pater noster, qui es in caelis,
+sanctificetur nomen tuum.
+Adveniat regnum tuum.
+Fiat voluntas tua, sicut in caelo et in terra.
+Panem nostrum quotidianum da nobis hodie,
+et dimitte nobis debita nostra,
+sicut et nos dimittimus debitoribus nostris.
+Et ne nos inducas in tentationem,
+sed libera nos a malo. Amen."
+
+(Our Father, who art in heaven, hallowed be thy name. Thy kingdom come. Thy will be done, on earth as it is in heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. Amen.)
+
+Ave Maria (Hail Mary):
+
+"Ave Maria, gratia plena, Dominus tecum.
+Benedicta tu in mulieribus,
+et benedictus fructus ventris tui, Iesus.
+Sancta Maria, Mater Dei,
+ora pro nobis peccatoribus,
+nunc et in hora mortis nostrae. Amen."
+
+(Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.)
+
+Gloria Patri:
+
+"Gloria Patri, et Filio, et Spiritui Sancto.
+Sicut erat in principio, et nunc, et semper,
+et in saecula saeculorum. Amen."
+
+(Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.)
+
+Confiteor (I Confess):
+
+"Confiteor Deo omnipotenti... quia peccavi nimis..."
+(I confess to almighty God... that I have sinned greatly...)
+
+Credo (Apostles' or Nicene Creed):
+
+"Credo in unum Deum, Patrem omnipotentem..."
+(I believe in one God, the Father almighty...)`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What does "Ave Maria" mean?',
+            options: ['Our Mother', 'Hail Mary', 'Blessed Virgin', 'Holy Mary'],
+            correctAnswer: 1,
+            explanation: '"Ave Maria" means "Hail Mary" and is the beginning of the Hail Mary prayer.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The prayer "Gloria _____" ends with "in saecula saeculorum. Amen."',
+            correctAnswer: 'Patri',
+            explanation: '"Gloria Patri" (Glory be to the Father) is a common doxology used in Catholic prayer.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The "Pater Noster" is the Latin name for the Our Father prayer.',
+            correctAnswer: true,
+            explanation: 'Yes! "Pater Noster" means "Our Father" and is the Latin version of the Lord\'s Prayer.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 7,
+        title: 'Introduction to Gregorian Chant',
+        content: `What is Gregorian Chant?
+
+Gregorian chant is the traditional music of the Roman Catholic Church. It is:
+• Monophonic (single melodic line, no harmony)
+• Unaccompanied (sung a cappella)
+• Named after Pope Gregory I, who organized and codified the chants
+• Used in the liturgy for over a thousand years
+• Characterized by its flowing, meditative quality
+
+Basics of chant notation:
+
+Gregorian chant uses a special notation system:
+• Four-line staff (instead of the modern five-line staff)
+• Neumes: Special symbols that indicate groups of notes
+• No time signature or barlines (free rhythm)
+• Notes move stepwise, creating smooth melodies
+
+Understanding neumes:
+
+Neumes are the basic units of Gregorian chant notation:
+• Single note: A single pitch
+• Two-note neume: Two notes connected
+• Three-note neume: Three notes in a group
+• Special neumes indicate specific melodic patterns
+
+Simple chant practice: Kyrie, Sanctus, Agnus Dei
+
+Kyrie:
+"Kyrie eleison" (Lord, have mercy)
+"Christe eleison" (Christ, have mercy)
+"Kyrie eleison" (Lord, have mercy)
+
+Sanctus:
+"Sanctus, Sanctus, Sanctus, Dominus Deus Sabaoth..."
+(Holy, Holy, Holy, Lord God of hosts...)
+
+Agnus Dei:
+"Agnus Dei, qui tollis peccata mundi, miserere nobis..."
+(Lamb of God, who takes away the sins of the world, have mercy on us...)
+
+Why chant is important:
+
+• Connects us to centuries of Catholic tradition
+• Enhances the sacred atmosphere of the liturgy
+• Helps us meditate on the words being sung
+• Unites the Church across time and cultures
+• Elevates the mind and heart to God`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many lines does a Gregorian chant staff have?',
+            options: ['Three', 'Four', 'Five', 'Six'],
+            correctAnswer: 1,
+            explanation: 'Gregorian chant uses a four-line staff, unlike modern musical notation which uses five lines.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'Gregorian chant is named after Pope _____ I, who organized the chants.',
+            correctAnswer: 'Gregory',
+            explanation: 'Pope Gregory I (Gregory the Great) is credited with organizing and codifying Gregorian chant.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Gregorian chant is typically sung a cappella (without instruments).',
+            correctAnswer: true,
+            explanation: 'Yes! Gregorian chant is traditionally unaccompanied, sung a cappella to maintain its pure, meditative quality.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 8,
+        title: 'Reading the Latin Bible',
+        content: `Vulgate introduction:
+
+The Vulgate is the Latin translation of the Bible, primarily translated by St. Jerome in the 4th century:
+• "Vulgate" means "common" or "popular" (vulgata)
+• It became the standard Latin Bible of the Catholic Church
+• Used for over a thousand years in the liturgy
+• Still referenced in Church documents and theology
+• The basis for many modern translations
+
+Common biblical phrases in Latin:
+
+• "In principio erat Verbum" (In the beginning was the Word) - John 1:1
+• "Ecce Agnus Dei" (Behold the Lamb of God) - John 1:29
+• "Ego sum via, veritas, et vita" (I am the way, the truth, and the life) - John 14:6
+• "Dominus meus et Deus meus" (My Lord and my God) - John 20:28
+• "Ave, gratia plena" (Hail, full of grace) - Luke 1:28
+• "Fiat mihi secundum verbum tuum" (Be it done to me according to your word) - Luke 1:38
+
+Recognizing liturgical scripture phrases:
+
+Many phrases from the Latin Bible are used in the Mass and liturgy:
+• "Verbum Domini" (The Word of the Lord) - said after readings
+• "Deo gratias" (Thanks be to God) - response to readings
+• "Per evangelica dicta" (Through the words of the Gospel) - prayer after Gospel
+• "Laus tibi, Christe" (Praise to you, O Christ) - response to Gospel
+
+Famous biblical passages in Latin:
+
+The Lord's Prayer (Pater Noster) - Matthew 6:9-13
+The Magnificat (Mary's song) - Luke 1:46-55
+The Beatitudes - Matthew 5:3-12
+The Last Supper narrative - Matthew 26:26-28
+
+Why the Vulgate matters:
+
+• Preserves the Church's scriptural tradition
+• Used in official Church documents
+• Basis for theological study
+• Connects us to the early Church
+• Still referenced in papal documents and encyclicals`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'Who primarily translated the Vulgate?',
+            options: ['St. Augustine', 'St. Jerome', 'St. Thomas Aquinas', 'St. Benedict'],
+            correctAnswer: 1,
+            explanation: 'St. Jerome translated the Vulgate in the 4th century, making it the standard Latin Bible of the Church.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: '"Ecce _____ Dei" means "Behold the Lamb of God" (John 1:29).',
+            correctAnswer: 'Agnus',
+            explanation: '"Ecce Agnus Dei" is John the Baptist\'s declaration when he sees Jesus.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Vulgate is still referenced in official Church documents today.',
+            correctAnswer: true,
+            explanation: 'Yes! The Vulgate remains important and is still referenced in papal documents and theological works.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 9,
+        title: 'Liturgical Expressions and Phrases',
+        content: `Dominus vobiscum / Et cum spiritu tuo:
+
+"Dominus vobiscum" (The Lord be with you)
+"Et cum spiritu tuo" (And with your spirit)
+
+This exchange happens multiple times during Mass:
+• At the beginning: Greeting
+• Before the Gospel: Invitation to listen
+• Before the Preface: Invitation to prayer
+• Before the final blessing: Sending forth
+
+Ite, missa est / Deo gratias:
+
+"Ite, missa est" (Go, the Mass is ended / Go, you are sent)
+"Deo gratias" (Thanks be to God)
+
+This is the dismissal at the end of Mass, sending the faithful forth to live what they have received.
+
+Pax Domini sit semper vobiscum:
+
+"Pax Domini sit semper vobiscum" (The peace of the Lord be always with you)
+Response: "Et cum spiritu tuo" (And with your spirit)
+
+This is said before the Sign of Peace during Mass.
+
+Learning context and meaning:
+
+Understanding when these phrases are used helps us:
+• Participate more fully in the Mass
+• Understand the flow of the liturgy
+• Connect the words to their meaning
+• Appreciate the beauty of the Latin language
+• Feel more connected to the universal Church
+
+Other common liturgical phrases:
+
+• "Oremus" (Let us pray) - Invitation to prayer
+• "Per omnia saecula saeculorum" (For ever and ever) - Conclusion of prayers
+• "Sursum corda" (Lift up your hearts) - Before the Eucharistic Prayer
+• "Habemus ad Dominum" (We lift them up to the Lord) - Response
+• "Dignum et iustum est" (It is right and just) - Response before Preface
+• "Mysterium fidei" (The mystery of faith) - Acclamation after consecration`,
+        questions: [
+          {
+            id: 1,
+            type: 'fill-blank',
+            question: 'The response to "Dominus vobiscum" is "Et cum _____ tuo".',
+            correctAnswer: 'spiritu',
+            explanation: '"Et cum spiritu tuo" means "And with your spirit" and is the traditional response.'
+          },
+          {
+            id: 2,
+            type: 'multiple-choice',
+            question: 'What does "Ite, missa est" mean?',
+            options: ['The Mass begins', 'Go, you are sent', 'Let us pray', 'Peace be with you'],
+            correctAnswer: 1,
+            explanation: '"Ite, missa est" means "Go, the Mass is ended" or "Go, you are sent" - it\'s the dismissal.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: '"Oremus" means "Let us pray" and is used to invite the congregation to prayer.',
+            correctAnswer: true,
+            explanation: 'Yes! "Oremus" is the Latin invitation to prayer, used throughout the Mass.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 10,
+        title: 'Translating Simple Latin Texts',
+        content: `Simple phrases from prayers:
+
+Let's practice translating common prayer phrases:
+
+• "In nomine Patris" = In the name of the Father
+• "Sancta Maria" = Holy Mary
+• "Mater Dei" = Mother of God
+• "Ora pro nobis" = Pray for us
+• "Peccatoribus" = Sinners
+• "Nunc et in hora mortis" = Now and at the hour of death
+
+Short Scripture lines:
+
+• "Verbum caro factum est" = The Word became flesh (John 1:14)
+• "Ego sum panis vitae" = I am the bread of life (John 6:35)
+• "Diliges Dominum Deum tuum" = You shall love the Lord your God (Matthew 22:37)
+• "Venite ad me" = Come to me (Matthew 11:28)
+
+Liturgical acclamations:
+
+• "Sanctus, Sanctus, Sanctus" = Holy, Holy, Holy
+• "Benedictus qui venit" = Blessed is he who comes
+• "Hosanna in excelsis" = Hosanna in the highest
+• "Dignus est Agnus" = Worthy is the Lamb
+
+Step-by-step translation practice:
+
+1. Identify the main verb (the action word)
+2. Find the subject (who or what does the action)
+3. Identify the object (what receives the action)
+4. Look for adjectives and see what they modify
+5. Consider the context (prayer, Mass, Scripture)
+6. Put it all together in English
+
+Example: "Sancta Maria, Mater Dei"
+
+• "Sancta" = Holy (adjective, feminine, modifying Maria)
+• "Maria" = Mary (noun, subject)
+• "Mater" = Mother (noun)
+• "Dei" = of God (genitive case)
+• Translation: "Holy Mary, Mother of God"
+
+Tips for translation:
+
+• Start with words you recognize
+• Use context clues (prayer, Mass setting)
+• Remember common endings and their meanings
+• Practice with familiar prayers first
+• Build vocabulary gradually`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What does "Ora pro nobis" mean?',
+            options: ['Pray for us', 'Our Father', 'Holy Mary', 'Thanks be to God'],
+            correctAnswer: 0,
+            explanation: '"Ora pro nobis" means "Pray for us" and is found in the Hail Mary and other prayers.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: '"Verbum _____ factum est" means "The Word became flesh" (John 1:14).',
+            correctAnswer: 'caro',
+            explanation: '"Verbum caro factum est" is one of the most important verses in the Bible, describing the Incarnation.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'When translating Latin, it helps to identify the main verb first.',
+            correctAnswer: true,
+            explanation: 'Yes! Finding the main verb helps you understand the sentence structure and meaning.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 11,
+        title: 'Latin in Church Documents',
+        content: `Use of Latin in papal documents:
+
+Many official Church documents are written in Latin:
+• Encyclicals: Papal letters on important topics
+• Apostolic constitutions: Major Church documents
+• Papal bulls: Official decrees
+• Motu proprio: Documents issued "on one's own initiative"
+• Decrees from Vatican congregations
+
+Understanding mottoes and inscriptions:
+
+Many Church institutions have Latin mottoes:
+• "Ad maiorem Dei gloriam" (For the greater glory of God) - Jesuit motto
+• "Ora et labora" (Pray and work) - Benedictine motto
+• "In hoc signo vinces" (In this sign you will conquer) - Associated with Constantine
+• "Ecce homo" (Behold the man) - Words of Pilate about Jesus
+
+Examples from encyclicals and councils:
+
+Famous opening words of encyclicals:
+• "Rerum Novarum" (Of New Things) - On labor and capital
+• "Pacem in Terris" (Peace on Earth) - On peace
+• "Humanae Vitae" (Of Human Life) - On human life
+• "Deus Caritas Est" (God is Love) - On Christian love
+
+Vatican II documents:
+• "Sacrosanctum Concilium" (This Sacred Council) - On the liturgy
+• "Lumen Gentium" (Light of the Nations) - On the Church
+• "Gaudium et Spes" (Joy and Hope) - On the Church in the modern world
+
+Why Latin in documents:
+
+• Precision: Latin allows for exact theological expression
+• Universality: Understood by scholars worldwide
+• Tradition: Connects to the Church's historical documents
+• Permanence: Latin doesn't change like modern languages
+• Official language: Still the official language of the Vatican
+
+Common document phrases:
+
+• "In nomine Domini" (In the name of the Lord)
+• "Ad perpetuam rei memoriam" (For the perpetual memory of the matter)
+• "Datum Romae" (Given at Rome)
+• "Benedictus XVI" (Pope Benedict XVI - papal signature)`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What does "Ad maiorem Dei gloriam" mean?',
+            options: ['For the greater glory of God', 'Pray and work', 'In this sign you will conquer', 'Behold the man'],
+            correctAnswer: 0,
+            explanation: '"Ad maiorem Dei gloriam" is the Jesuit motto meaning "For the greater glory of God."'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The Benedictine motto "Ora et _____" means "Pray and work".',
+            correctAnswer: 'labora',
+            explanation: '"Ora et labora" is the famous Benedictine motto emphasizing both prayer and work.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Latin is still the official language of the Vatican.',
+            correctAnswer: true,
+            explanation: 'Yes! Latin remains the official language of the Vatican and is used in official Church documents.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 12,
+        title: 'Review and Practical Application',
+        content: `How to continue studying Latin:
+
+1. Practice pronunciation daily:
+   • Read Latin prayers aloud
+   • Listen to recordings of Gregorian chant
+   • Practice with a Latin-English dictionary
+
+2. Learn new vocabulary:
+   • Focus on liturgical and prayer vocabulary
+   • Study common phrases from the Mass
+   • Memorize key prayers in Latin
+
+3. Study grammar gradually:
+   • Start with basic noun and verb forms
+   • Learn one declension at a time
+   • Practice with simple sentences
+
+4. Use Latin in context:
+   • Attend Latin Mass if available
+   • Join a Latin study group
+   • Read Latin prayers in your daily devotions
+
+Resources for Catholic Latin study:
+
+Books:
+• "A Primer of Ecclesiastical Latin" by John F. Collins
+• "Latin Grammar" by Cora and Charles Scanlon
+• "The New Missal Latin" by Rev. H. P. G. Nunn
+
+Online resources:
+• Vatican website (vatican.va) - Official documents in Latin
+• Gregorian chant recordings and tutorials
+• Latin prayer apps and websites
+• Online Latin dictionaries
+
+Encouragement: using Latin in prayer, choir, and liturgy:
+
+In prayer:
+• Pray the Rosary in Latin
+• Learn the Our Father and Hail Mary in Latin
+• Use Latin prayers in your personal devotions
+• Memorize favorite Latin phrases
+
+In choir:
+• Learn to sing Gregorian chant
+• Participate in Latin Mass settings
+• Study the meaning of the texts you sing
+• Appreciate the beauty of sacred music
+
+In liturgy:
+• Understand the Latin responses in Mass
+• Appreciate the universality of the Church
+• Connect with centuries of Catholic tradition
+• Deepen your participation in the liturgy
+
+Final thoughts:
+
+Latin is not a dead language for Catholics - it's a living tradition that:
+• Connects us to our faith heritage
+• Unites us with Catholics worldwide
+• Enhances our understanding of the liturgy
+• Deepens our prayer life
+• Opens up the treasures of Church documents and theology
+
+Keep practicing, stay patient, and enjoy the journey of learning this beautiful language of the Church!`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What is a good way to continue studying Latin?',
+            options: ['Only read about it', 'Practice pronunciation daily', 'Avoid using it', 'Learn everything at once'],
+            correctAnswer: 1,
+            explanation: 'Practicing pronunciation daily, reading Latin prayers aloud, and using Latin in context are excellent ways to continue learning.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'Latin is not a dead language for Catholics - it\'s a living _____ that connects us to our faith heritage.',
+            correctAnswer: 'tradition',
+            explanation: 'Latin is a living tradition that connects Catholics to centuries of faith, liturgy, and theology.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'You can use Latin in prayer, choir, and liturgy to deepen your faith experience.',
+            correctAnswer: true,
+            explanation: 'Yes! Using Latin in prayer, learning Gregorian chant, and understanding the liturgy in Latin can greatly enrich your Catholic faith.'
+          }
+        ],
+        completed: false
+      }
+    ];
+  }
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -3113,7 +4020,26 @@ The Bible is not just to be read - it's to be lived!`,
       { id: 9, title: 'The Holy Trinity Explained' },
       { id: 10, title: 'Who Is the Blessed Virgin Mary?' },
       { id: 11, title: 'The Church: One, Holy, Catholic, and Apostolic' },
-      { id: 12, title: 'The Saints and the Communion of Saints' }
+      { id: 12, title: 'The Saints and the Communion of Saints' },
+      { id: 31, title: 'Latin for Catholics' },
+      { id: 32, title: 'Salvation History: From Creation to Christ' },
+      { id: 33, title: 'The Old Testament: Covenant and Prophecy' },
+      { id: 34, title: 'The New Testament: Gospels and Apostolic Teaching' },
+      { id: 35, title: 'Catholic Moral Theology: Conscience and Human Freedom' },
+      { id: 36, title: 'Theology of the Body: Human Sexuality and Identity' },
+      { id: 37, title: 'Catholic Teachings on Life Issues (Pro-life Formation)' },
+      { id: 38, title: 'Introduction to Ignatian Spirituality' },
+      { id: 39, title: 'Introduction to Carmelite Spirituality' },
+      { id: 40, title: 'How to Make a Good Confession & Spiritual Examination' },
+      { id: 41, title: 'Understanding the Sacramentals and Catholic Devotions' },
+      { id: 42, title: 'Introduction to Gregorian Chant and Sacred Music' },
+      { id: 43, title: 'Stewardship: Time, Talent, and Treasure' },
+      { id: 44, title: 'Catholic Leadership and Ministry Training' },
+      { id: 45, title: 'Catholic Teaching on Social Media & Modern Technology' },
+      { id: 46, title: 'Interreligious Dialogue and Ecumenism' },
+      { id: 47, title: 'The Church and Modern Culture' },
+      { id: 48, title: 'Parish Life 101: Roles, Ministries, and How the Church Works' },
+      { id: 49, title: 'Youth Catholic Formation: Faith for Young Catholics' }
     ];
 
     const course = courses.find(c => c.id === this.courseId);
@@ -3130,6 +4056,9 @@ The Bible is not just to be read - it's to be lived!`,
       this.hasContent = true;
     } else if (this.courseId === 4) {
       this.lessons = this.getCourse4Lessons();
+      this.hasContent = true;
+    } else if (this.courseId === 31) {
+      this.lessons = this.getCourse31Lessons();
       this.hasContent = true;
     } else {
       // Course doesn't have content yet
