@@ -319,8 +319,8 @@
                 <span class="book-name">{{ book.name }}</span>
                 <span class="book-description" *ngIf="book.description">{{ book.description }}</span>
               </div>
-              <a [href]="book.filePath" target="_blank" class="read-button" *ngIf="book.filePath">
-                <ion-icon name="open-outline"></ion-icon>
+              <a class="read-button" *ngIf="book.filePath" (click)="openPdfReader(book); $event.preventDefault()">
+                <ion-icon name="book"></ion-icon>
                 Read
               </a>
               <span class="coming-soon" *ngIf="!book.filePath">PDF Coming Soon</span>
@@ -328,7 +328,13 @@
           </div>
           <div class="empty-state" *ngIf="books.length === 0">
             <ion-icon name="book-outline"></ion-icon>
-            <p>No books available yet. PDFs will be added soon.</p>
+            <p><strong>No PDF books available yet.</strong></p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">
+              To add PDF books:<br>
+              1. Place PDF files in <code>src/assets/pdf/</code> folder<br>
+              2. Update the <code>books</code> array in <code>meditation.page.ts</code><br>
+              3. Make sure the filePath matches your actual PDF filename
+            </p>
           </div>
         </div>
       </div>

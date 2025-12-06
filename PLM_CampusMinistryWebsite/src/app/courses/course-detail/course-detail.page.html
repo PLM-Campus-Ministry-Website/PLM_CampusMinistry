@@ -20,8 +20,22 @@
     </div>
   </div>
 
+  <!-- Coming Soon Message -->
+  <div class="coming-soon-container" *ngIf="!hasContent">
+    <div class="coming-soon-card">
+      <ion-icon name="time-outline" class="coming-soon-icon"></ion-icon>
+      <h2 class="coming-soon-title">{{ courseTitle }}</h2>
+      <p class="coming-soon-message">This course is coming soon! We're working hard to bring you comprehensive content for this course.</p>
+      <p class="coming-soon-submessage">Check back soon for updates!</p>
+      <ion-button fill="outline" (click)="goBack()" class="back-button">
+        <ion-icon name="arrow-back" slot="start"></ion-icon>
+        Back to Courses
+      </ion-button>
+    </div>
+  </div>
+
   <!-- Lesson Content -->
-  <div class="lesson-container" *ngIf="currentLesson">
+  <div class="lesson-container" *ngIf="currentLesson && hasContent">
     <!-- Lesson Header -->
     <div class="lesson-header">
       <h2 class="lesson-title">{{ currentLesson.title }}</h2>

@@ -49,6 +49,8 @@ export class CourseDetailPage implements OnInit {
   hasStartedLesson: boolean = false;
 
   lessons: Lesson[] = [];
+  hasContent: boolean = false;
+  courseTitle: string = '';
 
   private getCourse1Lessons(): Lesson[] {
     return [
@@ -1970,7 +1972,1111 @@ The sacraments are channels of God's grace - use them regularly to stay close to
     ];
   }
 
-  courseTitle: string = '';
+  private getCourse4Lessons(): Lesson[] {
+    return [
+      {
+        id: 1,
+        title: 'Introduction to the Bible',
+        content: `What is the Bible? The Bible is the collection of sacred books that contain God's revelation to humanity. It is the Word of God written by human authors under the inspiration of the Holy Spirit.
+
+The Bible as God's Word (Divine Inspiration):
+• The Bible is not just a human book - it is God's Word
+• God inspired human authors to write what he wanted
+• The Holy Spirit guided the writers while preserving their unique styles
+• Every word is important because God is the primary author
+
+The Bible as a library of books:
+• The Bible is not one book, but a library of 73 books (Catholic Bible)
+• Written over 1,500 years by many different authors
+• Contains different literary forms: history, poetry, prophecy, letters, etc.
+• All books work together to tell one story: God's plan of salvation
+
+Why the Bible is central to Catholic faith:
+• It reveals who God is and who we are
+• It tells the story of salvation from creation to the end of time
+• It guides our faith, morals, and worship
+• It is read at every Mass in the Liturgy of the Word
+• It is the foundation of Catholic teaching
+
+How the Bible reveals God's plan of salvation:
+• Old Testament: God's preparation and promise of a Savior
+• New Testament: The fulfillment in Jesus Christ
+• From Genesis to Revelation, one continuous story of God's love
+• Every book points to Christ and our salvation`,
+        questions: [
+          {
+            id: 1,
+            type: 'fill-blank',
+            question: 'The Bible is the Word of God written by human authors under the inspiration of the _____ Spirit.',
+            correctAnswer: 'Holy',
+            explanation: 'The Holy Spirit inspired the human authors to write what God wanted, making the Bible truly God\'s Word.'
+          },
+          {
+            id: 2,
+            type: 'multiple-choice',
+            question: 'How many books are in the Catholic Bible?',
+            options: ['66', '70', '73', '80'],
+            correctAnswer: 2,
+            explanation: 'The Catholic Bible contains 73 books - 46 in the Old Testament and 27 in the New Testament.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Bible is central to Catholic faith and is read at every Mass.',
+            correctAnswer: true,
+            explanation: 'Yes! The Bible is essential to Catholicism and is proclaimed at every Mass in the Liturgy of the Word.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 2,
+        title: 'Structure of the Catholic Bible: Old Testament',
+        content: `The Old Testament contains 46 books, divided into four main sections:
+
+Pentateuch (Torah/Law) – 5 books:
+• Genesis: Creation, the Fall, the patriarchs
+• Exodus: The escape from Egypt, the Ten Commandments
+• Leviticus: Laws for worship and holiness
+• Numbers: The journey through the wilderness
+• Deuteronomy: Moses' final words and the law
+
+Historical Books – 16 books:
+• Joshua, Judges, Ruth, 1-2 Samuel, 1-2 Kings, 1-2 Chronicles, Ezra, Nehemiah, Tobit, Judith, Esther, 1-2 Maccabees
+• Tell the history of Israel from the conquest of Canaan to the Maccabean revolt
+• Show God's faithfulness despite human sinfulness
+
+Wisdom Books (Writings) – 7 books:
+• Job: Suffering and God's justice
+• Psalms: Prayers and hymns (150 psalms)
+• Proverbs: Practical wisdom for daily life
+• Ecclesiastes: The meaning of life
+• Song of Songs: Love poetry (also seen as God's love for his people)
+• Wisdom: God's wisdom personified
+• Sirach (Ecclesiasticus): Wisdom teachings
+
+Prophetic Books – 18 books:
+• Major Prophets: Isaiah, Jeremiah, Lamentations, Baruch, Ezekiel, Daniel
+• Minor Prophets: Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, Malachi
+• Prophets called Israel back to faithfulness and foretold the coming of the Messiah`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many books are in the Old Testament?',
+            options: ['39', '46', '27', '66'],
+            correctAnswer: 1,
+            explanation: 'The Catholic Old Testament contains 46 books, including the deuterocanonical books.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The first five books of the Bible are called the _____ or Torah.',
+            correctAnswer: 'Pentateuch',
+            explanation: 'The Pentateuch (also called Torah or Law) consists of Genesis, Exodus, Leviticus, Numbers, and Deuteronomy.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Psalms are prayers and hymns found in the Wisdom Books.',
+            correctAnswer: true,
+            explanation: 'Yes! The Book of Psalms contains 150 psalms - prayers and hymns used in worship.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 3,
+        title: 'Structure of the Catholic Bible: New Testament',
+        content: `The New Testament contains 27 books, divided into four main sections:
+
+The Gospels – 4 books:
+• Matthew: Written for Jews, emphasizes Jesus as the fulfillment of Old Testament prophecies
+• Mark: The shortest Gospel, emphasizes action and Jesus as the suffering servant
+• Luke: Written for Gentiles, emphasizes Jesus' mercy and concern for the poor
+• John: The most theological, emphasizes Jesus' divinity and eternal life
+• The word "Gospel" means "Good News" - the good news of salvation in Jesus Christ
+
+Acts of the Apostles – 1 book:
+• Written by Luke as a sequel to his Gospel
+• Tells the story of the early Church after Jesus' ascension
+• Shows how the apostles spread the Gospel
+• Describes the coming of the Holy Spirit at Pentecost
+
+Letters/Epistles – 21 books:
+• Pauline Letters (13-14 books): Romans, 1-2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon, (Hebrews - authorship debated)
+• Catholic (General) Epistles: James, 1-2 Peter, 1-2-3 John, Jude
+• Letters written to early Christian communities to teach, encourage, and correct
+• Address specific issues and provide guidance for Christian living
+
+Book of Revelation – 1 book:
+• Also called the Apocalypse
+• Written by John, uses symbolic language
+• Describes the end times and the victory of Christ
+• Gives hope to persecuted Christians
+• Points to the new heaven and new earth`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many books are in the New Testament?',
+            options: ['21', '27', '39', '46'],
+            correctAnswer: 1,
+            explanation: 'The New Testament contains 27 books: 4 Gospels, 1 Acts, 21 Letters, and 1 Revelation.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The word "_____" means "Good News" - the good news of salvation in Jesus Christ.',
+            correctAnswer: 'Gospel',
+            explanation: 'Gospel means "Good News" - the four Gospels tell the good news of Jesus Christ and our salvation.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Book of Revelation describes the end times and gives hope to persecuted Christians.',
+            correctAnswer: true,
+            explanation: 'Yes! Revelation uses symbolic language to describe the victory of Christ and the new heaven and new earth.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 4,
+        title: 'The Catholic Bible vs. Other Bibles',
+        content: `The Deuterocanonical Books (7 additional OT books):
+• These books are in the Catholic Bible but not in most Protestant Bibles:
+  1. Tobit
+  2. Judith
+  3. Wisdom (Wisdom of Solomon)
+  4. Sirach (Ecclesiasticus)
+  5. Baruch
+  6. 1 Maccabees
+  7. 2 Maccabees
+• Also additions to Esther and Daniel
+• Called "deuterocanonical" (second canon) because they were accepted later
+• Called "Apocrypha" by Protestants (meaning "hidden" or "doubtful")
+
+Why Protestant Bibles have 66 books vs. Catholic 73 books:
+• During the Reformation, Martin Luther removed these 7 books
+• He questioned their canonicity because they weren't in the Hebrew Bible
+• However, they were in the Greek Septuagint (used by early Christians)
+• The Catholic Church kept them because they were in the early Christian canon
+
+History of the biblical canon:
+• "Canon" means "rule" or "standard" - the official list of inspired books
+• The Old Testament canon was settled by the time of Jesus
+• The New Testament canon was finalized in the 4th century
+• The Council of Trent (1546) officially confirmed the 73-book canon
+
+The role of the Church in determining the canon:
+• The Church, guided by the Holy Spirit, determined which books are inspired
+• The Church didn't create the canon - it recognized what God had inspired
+• The same authority that wrote the New Testament determined its canon
+• Without the Church, we wouldn't know which books belong in the Bible`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many additional books does the Catholic Bible have compared to most Protestant Bibles?',
+            options: ['5', '7', '10', 'None'],
+            correctAnswer: 1,
+            explanation: 'The Catholic Bible has 7 additional books in the Old Testament called the deuterocanonical books.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The word "_____" means "rule" or "standard" - the official list of inspired books.',
+            correctAnswer: 'canon',
+            explanation: 'Canon means the official list of books that the Church recognizes as inspired Scripture.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Church determined which books belong in the Bible, guided by the Holy Spirit.',
+            correctAnswer: true,
+            explanation: 'Yes! The Church, guided by the Holy Spirit, recognized which books are inspired and belong in the canon.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 5,
+        title: 'Divine Inspiration and Inerrancy',
+        content: `What "inspired by God" means (2 Timothy 3:16):
+• "All Scripture is inspired by God" (theopneustos - "God-breathed")
+• God is the primary author - the Bible is truly God's Word
+• Human writers are secondary authors - they wrote in their own style and language
+• The Holy Spirit guided them to write what God wanted, without error
+
+God as primary author, human writers as secondary authors:
+• God is the ultimate source of the Bible's content
+• Human authors used their own knowledge, experiences, and writing styles
+• God worked through their humanity to communicate his message
+• This is why different books have different styles (e.g., poetry vs. history)
+
+Biblical inerrancy: truth without error in matters of salvation:
+• The Bible is without error in what it teaches about salvation
+• It is true in matters of faith and morals
+• It may contain historical or scientific details from the human author's perspective
+• The important thing is the religious truth, not scientific precision
+
+Difference between literal truth and literary forms:
+• We must understand the literary form (genre) to interpret correctly
+• Poetry uses figurative language (not literal)
+• Parables are stories to teach truth (not historical events)
+• Historical books record events (but from a faith perspective)
+• We read each book according to its literary form
+• Example: Genesis 1 is not a scientific account but a theological statement about God as Creator`,
+        questions: [
+          {
+            id: 1,
+            type: 'fill-blank',
+            question: '2 Timothy 3:16 says "All Scripture is _____ by God."',
+            correctAnswer: 'inspired',
+            explanation: 'The Bible is inspired (God-breathed) - God is the primary author, working through human writers.'
+          },
+          {
+            id: 2,
+            type: 'multiple-choice',
+            question: 'What does biblical inerrancy mean?',
+            options: ['The Bible has no errors at all, even in science', 'The Bible is without error in matters of salvation, faith, and morals', 'The Bible is mostly true', 'Only the New Testament is true'],
+            correctAnswer: 1,
+            explanation: 'Biblical inerrancy means the Bible is without error in what it teaches about salvation, faith, and morals.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'We must understand the literary form (genre) to interpret the Bible correctly.',
+            correctAnswer: true,
+            explanation: 'Yes! We read poetry as poetry, history as history, parables as parables - each according to its literary form.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 6,
+        title: 'How Catholics Interpret Scripture: The Three Criteria',
+        content: `Catholics interpret Scripture using three criteria from Dei Verbum (Vatican II document):
+
+Attention to the content and unity of the whole Scripture:
+• We can't take verses out of context
+• All of Scripture works together as one story
+• The Old Testament prepares for the New Testament
+• The New Testament fulfills the Old Testament
+• We interpret difficult passages in light of clearer ones
+• Example: We understand the Old Testament through the lens of Christ
+
+Reading Scripture within the living Tradition of the Church:
+• We don't interpret the Bible in isolation
+• We read it within 2,000 years of Church teaching
+• The Church Fathers, saints, and councils help us understand
+• Tradition helps us avoid errors and heresies
+• The same Holy Spirit who inspired Scripture guides the Church
+• Example: The Church's teaching on the Real Presence helps us understand John 6
+
+Attention to the analogy of faith:
+• All truths of faith are connected and consistent
+• Scripture must be interpreted in harmony with other Catholic teachings
+• One truth of faith cannot contradict another
+• We interpret unclear passages in light of clear Church teaching
+• The Creed, sacraments, and moral teaching all work together
+• Example: Our understanding of marriage in Scripture aligns with Church teaching on Matrimony`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many criteria do Catholics use to interpret Scripture?',
+            options: ['One', 'Two', 'Three', 'Four'],
+            correctAnswer: 2,
+            explanation: 'Catholics use three criteria: content and unity of Scripture, living Tradition, and analogy of faith.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'We read Scripture within the living _____ of the Church, not in isolation.',
+            correctAnswer: 'Tradition',
+            explanation: 'We interpret Scripture within the living Tradition of the Church - 2,000 years of teaching and guidance.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The analogy of faith means all truths of faith are connected and consistent.',
+            correctAnswer: true,
+            explanation: 'Yes! The analogy of faith means Scripture must be interpreted in harmony with all Catholic teachings.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 7,
+        title: 'The Four Senses of Scripture',
+        content: `Catholics recognize four senses (levels of meaning) in Scripture:
+
+Literal sense – what the text actually says:
+• The most important sense - the foundation
+• What the human author intended to communicate
+• The historical, grammatical meaning
+• Example: "Jesus walked on water" means Jesus literally walked on water
+
+Allegorical sense – deeper spiritual meaning:
+• How the text points to Christ and the Church
+• Old Testament events prefigure New Testament realities
+• Example: The Passover lamb points to Christ, the Lamb of God
+• Example: The crossing of the Red Sea prefigures Baptism
+
+Moral sense – how it guides our lives:
+• What the text teaches us about how to live
+• The ethical and moral lessons
+• How to apply Scripture to our daily lives
+• Example: The Good Samaritan teaches us to love our neighbor
+• Example: The Beatitudes show us how to be happy
+
+Anagogical sense – eternal/heavenly significance:
+• How the text points to our final destiny (heaven)
+• The eschatological (end times) meaning
+• What it tells us about eternal life
+• Example: The Promised Land points to heaven
+• Example: The wedding feast parables point to the heavenly banquet
+
+All four senses work together to give us the full meaning of Scripture.`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What is the most important sense of Scripture?',
+            options: ['Allegorical', 'Moral', 'Literal', 'Anagogical'],
+            correctAnswer: 2,
+            explanation: 'The literal sense is the foundation - what the text actually says. The other senses build on this.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The _____ sense shows how the text points to Christ and the Church.',
+            correctAnswer: 'allegorical',
+            explanation: 'The allegorical sense reveals how Old Testament events prefigure Christ and the Church.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The anagogical sense points to our final destiny in heaven.',
+            correctAnswer: true,
+            explanation: 'Yes! The anagogical sense shows the eternal, heavenly meaning - how Scripture points to heaven.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 8,
+        title: 'Sacred Scripture and Sacred Tradition',
+        content: `The relationship between Bible and Tradition:
+• Scripture and Tradition are not in competition - they work together
+• Both come from the same source: Divine Revelation
+• Both are necessary for understanding God's full revelation
+• Tradition helps us understand and interpret Scripture
+• Scripture confirms and clarifies Tradition
+
+Why "Scripture alone" (sola scriptura) is not Catholic teaching:
+• The Bible itself doesn't say "Scripture alone"
+• The Bible tells us to hold to both Scripture and Tradition (2 Thessalonians 2:15)
+• Many Christian beliefs aren't explicitly in Scripture (e.g., the Trinity, the canon of Scripture itself)
+• The early Church existed before the New Testament was written
+• The Church wrote and determined the canon of Scripture
+• Without Tradition, we wouldn't know which books belong in the Bible
+
+The role of the Magisterium (teaching authority):
+• The Magisterium is the Pope and bishops teaching in union with him
+• They interpret Scripture authentically (with authority)
+• They protect us from false interpretations
+• They are guided by the Holy Spirit
+• They cannot contradict Scripture or previous infallible teachings
+
+How Tradition helps us understand Scripture:
+• Tradition preserves the apostles' teaching
+• It shows us how the early Church understood Scripture
+• It provides context and interpretation
+• It helps us avoid errors and heresies
+• Example: Tradition helps us understand that "This is my Body" means the Real Presence`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What is the relationship between Scripture and Tradition?',
+            options: ['They compete with each other', 'They work together as two sources of Divine Revelation', 'Only Scripture matters', 'Tradition replaces Scripture'],
+            correctAnswer: 1,
+            explanation: 'Scripture and Tradition work together as two sources of Divine Revelation - both are necessary and complement each other.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The _____ is the Pope and bishops teaching in union with him.',
+            correctAnswer: 'Magisterium',
+            explanation: 'The Magisterium is the teaching authority of the Church - the Pope and bishops who interpret Scripture authentically.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Bible itself doesn\'t teach "Scripture alone" - it tells us to hold to both Scripture and Tradition.',
+            correctAnswer: true,
+            explanation: 'Yes! 2 Thessalonians 2:15 tells us to hold to both the traditions and the written word.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 9,
+        title: 'The Role of the Church in Reading Scripture',
+        content: `Why Catholics don't interpret the Bible privately:
+• Private interpretation led to thousands of Protestant denominations
+• The Bible warns against private interpretation (2 Peter 1:20)
+• We need the guidance of the Church that Jesus established
+• The same Holy Spirit who inspired Scripture guides the Church
+• Individual interpretation can lead to error and division
+
+The Church as guardian and interpreter:
+• Jesus gave the Church authority to teach (Matthew 16:18-19, 18:18)
+• The Church protects and preserves the true meaning of Scripture
+• The Church has faithfully passed down the faith for 2,000 years
+• The Church helps us avoid false interpretations
+
+The role of the Pope and bishops:
+• The Pope and bishops are successors of the apostles
+• They have the authority to interpret Scripture authentically
+• They teach in union with the whole Church
+• They are guided by the Holy Spirit
+• Their teaching on faith and morals is protected from error
+
+Papal encyclicals on Scripture:
+• Divino Afflante Spiritu (1943): Encouraged study of original languages and literary forms
+• Dei Verbum (1965): Vatican II document on Divine Revelation
+  - Emphasized the importance of Scripture
+  - Explained the relationship between Scripture and Tradition
+  - Encouraged Catholics to read the Bible regularly
+  - Provided principles for interpretation`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'Why don\'t Catholics interpret the Bible privately?',
+            options: ['Catholics can\'t read', 'We need the guidance of the Church that Jesus established', 'The Bible is too hard', 'Only priests can read'],
+            correctAnswer: 1,
+            explanation: 'We need the Church\'s guidance because Jesus gave the Church authority to interpret Scripture, and private interpretation can lead to error.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The _____ document Dei Verbum emphasized the importance of Scripture and encouraged Catholics to read it regularly.',
+            correctAnswer: 'Vatican II',
+            explanation: 'Dei Verbum is a Vatican II document that renewed Catholic emphasis on Scripture study.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Pope and bishops have authority to interpret Scripture authentically, guided by the Holy Spirit.',
+            correctAnswer: true,
+            explanation: 'Yes! The Pope and bishops, as successors of the apostles, have the authority to interpret Scripture with the guidance of the Holy Spirit.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 10,
+        title: 'Literary Forms and Genres in the Bible',
+        content: `Understanding literary forms (genres) is essential for interpreting the Bible correctly:
+
+Historical narrative (e.g., Exodus, Acts):
+• Records actual historical events
+• Written from a faith perspective
+• May include dialogue and details from the author's perspective
+• Example: The Exodus from Egypt really happened
+
+Poetry (e.g., Psalms, Song of Songs):
+• Uses figurative language, not always literal
+• Expresses emotions and praise
+• Uses parallelism and imagery
+• Example: "The Lord is my shepherd" is poetry, not literal
+
+Prophecy (e.g., Isaiah, Jeremiah):
+• Proclaims God's message to his people
+• Often uses symbolic language
+• Calls people to repentance
+• Foretells future events (especially the Messiah)
+• Example: Isaiah's prophecies about the suffering servant
+
+Wisdom literature (e.g., Proverbs, Ecclesiastes):
+• Teaches practical wisdom for living
+• Uses sayings, proverbs, and reflections
+• Not always absolute rules but general principles
+• Example: "Train up a child in the way he should go"
+
+Parables (e.g., Gospels):
+• Stories Jesus told to teach truth
+• Not historical events but fictional stories with a message
+• Use everyday situations to reveal spiritual truth
+• Example: The Parable of the Good Samaritan
+
+Apocalyptic literature (e.g., Daniel, Revelation):
+• Uses highly symbolic language
+• Describes cosmic battles and end times
+• Not meant to be read literally
+• Gives hope in times of persecution
+• Example: The Book of Revelation
+
+Why understanding genre matters for interpretation:
+• We read poetry as poetry, not as history
+• We read parables as stories, not as literal events
+• We read apocalyptic as symbolic, not as a literal timeline
+• Misunderstanding genre leads to misinterpretation`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What literary form uses highly symbolic language to describe end times?',
+            options: ['Historical narrative', 'Poetry', 'Apocalyptic literature', 'Wisdom literature'],
+            correctAnswer: 2,
+            explanation: 'Apocalyptic literature (like Revelation) uses symbolic language to describe cosmic battles and end times.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: '_____ are stories Jesus told to teach truth, not historical events.',
+            correctAnswer: 'Parables',
+            explanation: 'Parables are fictional stories with a spiritual message - we don\'t read them as literal historical events.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Understanding the literary form (genre) is essential for interpreting the Bible correctly.',
+            correctAnswer: true,
+            explanation: 'Yes! We must read poetry as poetry, history as history, and parables as stories - each according to its genre.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 11,
+        title: 'The Bible in the Liturgy',
+        content: `The Liturgy of the Word in Mass:
+• Every Mass includes readings from Scripture
+• We don't just read the Bible - we hear it proclaimed
+• The Word of God is alive and active (Hebrews 4:12)
+• Hearing Scripture in community is different from private reading
+
+The Lectionary and its cycle (Years A, B, C):
+• The Lectionary is the book containing all Mass readings
+• Three-year cycle for Sundays (Years A, B, C)
+  - Year A: Mostly Matthew's Gospel
+  - Year B: Mostly Mark's Gospel
+  - Year C: Mostly Luke's Gospel
+  - John's Gospel appears in all three years (especially during Easter and Lent)
+• Two-year cycle for weekdays
+• This ensures we hear most of the Bible over time
+
+Why Catholics hear the Bible proclaimed, not just read:
+• Proclamation makes the Word present in a special way
+• Hearing together unites us as a community
+• The reader acts as Christ's voice
+• It's an encounter with the living Word
+• The Word becomes present through proclamation
+
+Responding to God's Word:
+• Homily: The priest or deacon explains and applies the readings
+• Creed: We profess our faith in response to God's Word
+• Prayers of the Faithful: We pray for needs in response to the Word
+• The entire Mass is a response to God's Word
+• We are called to live what we hear`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many years are in the Sunday Lectionary cycle?',
+            options: ['One', 'Two', 'Three', 'Four'],
+            correctAnswer: 2,
+            explanation: 'The Sunday Lectionary has a three-year cycle (Years A, B, C) covering Matthew, Mark, and Luke respectively.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The _____ is the book containing all the Mass readings.',
+            correctAnswer: 'Lectionary',
+            explanation: 'The Lectionary organizes all Scripture readings for Mass in a systematic cycle.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Hearing Scripture proclaimed at Mass is an encounter with the living Word of God.',
+            correctAnswer: true,
+            explanation: 'Yes! When Scripture is proclaimed at Mass, the Word becomes present in a special way - it\'s an encounter with the living God.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 12,
+        title: 'How to Read the Bible as a Catholic: Practical Tips',
+        content: `Practical Tips for Reading the Bible:
+
+Start with the Gospels:
+• The Gospels are the heart of the Bible
+• They tell us about Jesus, who is the center of our faith
+• They're easier to understand than some Old Testament books
+• Read one Gospel all the way through
+• Then read Acts to see how the Church began
+
+Use a Catholic translation:
+• NABRE (New American Bible, Revised Edition): Used in US Masses
+• RSV-CE (Revised Standard Version, Catholic Edition): Popular for study
+• Douay-Rheims: Traditional English translation
+• Avoid Protestant-only translations that may have bias
+• Catholic translations include the deuterocanonical books
+
+Read with the footnotes and introductions:
+• Catholic Bibles have helpful footnotes
+• Introductions explain the book's context and purpose
+• They help us understand the historical and theological background
+• They guide us in proper interpretation
+
+Pray before reading (invoke the Holy Spirit):
+• Ask the Holy Spirit to guide your reading
+• Pray: "Come, Holy Spirit, enlighten my mind and heart"
+• The same Spirit who inspired Scripture will help you understand
+• Reading the Bible is a form of prayer
+• Be open to what God wants to teach you
+
+Other tips:
+• Read regularly, even if just a little each day
+• Read in a quiet place where you can focus
+• Keep a journal of insights and questions
+• Join a Bible study group
+• Read with the Church - follow the daily Mass readings`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'Where should Catholics start when reading the Bible?',
+            options: ['Genesis', 'Revelation', 'The Gospels', 'The Psalms'],
+            correctAnswer: 2,
+            explanation: 'Start with the Gospels - they tell us about Jesus, who is the center of our faith, and they\'re more accessible.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'Before reading the Bible, we should pray and invoke the _____ Spirit.',
+            correctAnswer: 'Holy',
+            explanation: 'We should ask the Holy Spirit to guide our reading - the same Spirit who inspired Scripture will help us understand.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Catholics should use Catholic translations that include the deuterocanonical books.',
+            correctAnswer: true,
+            explanation: 'Yes! Use Catholic translations like NABRE or RSV-CE that include all 73 books of the Catholic Bible.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 13,
+        title: 'Tools for Bible Study',
+        content: `Catholic Study Bibles:
+• Include introductions to each book
+• Have footnotes explaining difficult passages
+• Provide cross-references to related verses
+• Explain Catholic teaching on various topics
+• Examples: Ignatius Study Bible, Didache Bible, NABRE Study Bible
+
+Catechism of the Catholic Church:
+• Explains how the Church interprets Scripture
+• Shows how Bible passages relate to Catholic teaching
+• Provides the official teaching on faith and morals
+• Has extensive Scripture references
+• Helps us understand the Bible in light of Church teaching
+
+Commentaries by Church Fathers and saints:
+• Early Church Fathers (like Augustine, Jerome, John Chrysostom) wrote extensively on Scripture
+• Saints throughout history have provided insights
+• Their writings help us understand how the Church has always interpreted Scripture
+• They show the continuity of Catholic teaching
+• Modern Catholic commentaries build on this tradition
+
+Parish Bible studies and groups:
+• Studying with others helps us learn
+• We can discuss and ask questions
+• Others may have insights we miss
+• It builds community and fellowship
+• Many parishes offer Bible study programs
+• Online Catholic Bible studies are also available
+
+Other helpful tools:
+• Concordances: Find where words appear in the Bible
+• Bible dictionaries: Understand terms and concepts
+• Maps and timelines: Visualize biblical history
+• Catholic apps: Daily readings, study tools, commentaries`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What does the Catechism of the Catholic Church help us with?',
+            options: ['Only prayer', 'Understanding how the Church interprets Scripture and relates it to Catholic teaching', 'Only sacraments', 'Only morality'],
+            correctAnswer: 1,
+            explanation: 'The Catechism explains how the Church interprets Scripture and shows how Bible passages relate to Catholic teaching.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The early _____ Fathers wrote extensively on Scripture and help us understand how the Church has always interpreted it.',
+            correctAnswer: 'Church',
+            explanation: 'The Church Fathers (like Augustine and Jerome) provide insights into how the Church has interpreted Scripture throughout history.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Studying the Bible with others in a group can help us learn and grow.',
+            correctAnswer: true,
+            explanation: 'Yes! Bible study groups provide community, discussion, and different perspectives that help us understand Scripture better.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 14,
+        title: 'Common Misunderstandings About Catholics and the Bible',
+        content: `"Catholics don't read the Bible" – addressing the myth:
+• This is completely false!
+• Catholics have always valued Scripture
+• The Mass is full of Scripture readings
+• Many saints were great Scripture scholars
+• The Church has preserved and copied the Bible for 2,000 years
+
+Why Catholics weren't encouraged to read alone in the past:
+• Before printing, Bibles were extremely expensive
+• Most people couldn't read
+• The Church wanted to ensure proper interpretation
+• People heard Scripture at Mass (which was in Latin)
+• This was practical, not theological
+
+The renewal of biblical study after Vatican II:
+• Dei Verbum (1965) encouraged all Catholics to read Scripture
+• The Bible was translated into modern languages
+• Bible studies became common in parishes
+• Catholics began reading the Bible personally
+• Biblical scholarship flourished
+
+Catholic biblical scholarship today:
+• Catholic scholars are leaders in biblical studies
+• They use modern methods (archaeology, linguistics, history)
+• They remain faithful to Church teaching
+• They contribute to understanding the original meaning
+• Catholic universities have excellent biblical programs
+• The Pontifical Biblical Commission guides Catholic scholarship
+
+The truth:
+• Catholics DO read the Bible - at Mass, in prayer, and in study
+• The Church encourages Bible reading
+• Scripture is central to Catholic faith and worship
+• Catholics have a rich tradition of biblical interpretation`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'Why weren\'t Catholics always encouraged to read the Bible alone in the past?',
+            options: ['The Church didn\'t want people to read', 'Bibles were expensive, most couldn\'t read, and the Church wanted proper interpretation', 'The Bible was forbidden', 'Only priests could read'],
+            correctAnswer: 1,
+            explanation: 'Before printing, Bibles were rare and expensive, most people were illiterate, and the Church wanted to ensure proper interpretation.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The Vatican II document _____ encouraged all Catholics to read Scripture.',
+            correctAnswer: 'Dei Verbum',
+            explanation: 'Dei Verbum (1965) renewed the Church\'s emphasis on Scripture and encouraged all Catholics to read the Bible.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Catholics DO read the Bible - at Mass, in prayer, and in study.',
+            correctAnswer: true,
+            explanation: 'Yes! The myth that Catholics don\'t read the Bible is false. Scripture is central to Catholic faith, worship, and study.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 15,
+        title: 'Key Biblical Themes in Catholic Teaching',
+        content: `Creation and the Fall:
+• Genesis 1-3: God creates everything good, but sin enters through disobedience
+• Shows God's love and human free will
+• Points to our need for a Savior
+• Foundation for understanding original sin and redemption
+
+Covenant and Promise:
+• God makes covenants with Noah, Abraham, Moses, David
+• Each covenant prepares for the New Covenant in Christ
+• Shows God's faithfulness despite human unfaithfulness
+• The Eucharist is the New Covenant (Luke 22:20)
+
+Incarnation: The Word Made Flesh (John 1:14):
+• "The Word became flesh and dwelt among us"
+• Jesus is both fully God and fully human
+• God entered human history to save us
+• The ultimate expression of God's love
+
+Redemption and Salvation:
+• Jesus died and rose to save us from sin
+• Through his sacrifice, we are redeemed
+• Salvation is a gift, not something we earn
+• We are saved by grace through faith and good works
+
+The Kingdom of God:
+• Jesus preached the coming of God's kingdom
+• It's both present (in the Church) and future (in heaven)
+• We're called to live as citizens of the kingdom now
+• Parables teach us about the kingdom
+
+The Church as the Body of Christ:
+• Paul describes the Church as Christ's body (1 Corinthians 12)
+• We are members, each with different gifts
+• Christ is the head, we are the members
+• Shows our unity and interdependence
+
+The Eucharist in Scripture:
+• The Last Supper accounts (Matthew 26, Mark 14, Luke 22, 1 Corinthians 11)
+• "This is my Body" - the Real Presence
+• John 6: "Unless you eat my flesh and drink my blood"
+• The Eucharist is central to Catholic faith`,
+        questions: [
+          {
+            id: 1,
+            type: 'fill-blank',
+            question: 'John 1:14 says "The Word became _____ and dwelt among us."',
+            correctAnswer: 'flesh',
+            explanation: 'The Incarnation means God became human - "The Word became flesh" - showing God\'s ultimate love for us.'
+          },
+          {
+            id: 2,
+            type: 'multiple-choice',
+            question: 'What does Paul call the Church?',
+            options: ['An organization', 'The Body of Christ', 'A building', 'A club'],
+            correctAnswer: 1,
+            explanation: 'Paul describes the Church as the Body of Christ - we are members, each with different gifts, and Christ is the head.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Eucharist is found in Scripture, especially in the Last Supper accounts and John 6.',
+            correctAnswer: true,
+            explanation: 'Yes! The Eucharist is clearly taught in Scripture - at the Last Supper and in John 6 where Jesus insists we must eat his flesh.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 16,
+        title: 'Praying with Scripture: Lectio Divina',
+        content: `What is Lectio Divina?
+• "Divine Reading" - a way of praying with Scripture
+• An ancient practice of the Church
+• Not just reading, but encountering God
+• A way to let Scripture transform us
+• Used by monks, saints, and ordinary Catholics
+
+The four steps:
+
+Lectio (Reading):
+• Read a passage slowly and carefully
+• Read it more than once
+• Notice words or phrases that stand out
+• Don't rush - take your time
+• Choose a short passage (a few verses)
+
+Meditatio (Meditation):
+• Reflect on what you've read
+• Ask: "What is God saying to me?"
+• Think about how it applies to your life
+• Let the words sink in
+• Consider the context and meaning
+
+Oratio (Prayer):
+• Respond to God in prayer
+• Talk to God about what you've read
+• Thank him, ask for help, express your feelings
+• Be honest and open
+• Let your heart speak to God
+
+Contemplatio (Contemplation):
+• Rest in God's presence
+• Be still and silent
+• Let God speak to your heart
+• Don't try to think or analyze
+• Just be with God
+
+How to practice it daily:
+• Set aside 15-30 minutes
+• Choose a passage (maybe the daily Mass reading)
+• Follow the four steps
+• Don't worry if it feels difficult at first
+• The goal is relationship with God, not perfection
+• Practice makes it easier`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'How many steps are in Lectio Divina?',
+            options: ['Two', 'Three', 'Four', 'Five'],
+            correctAnswer: 2,
+            explanation: 'Lectio Divina has four steps: Lectio (Reading), Meditatio (Meditation), Oratio (Prayer), and Contemplatio (Contemplation).'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'Lectio Divina means "_____ Reading" - a way of praying with Scripture.',
+            correctAnswer: 'Divine',
+            explanation: 'Lectio Divina (Divine Reading) is an ancient way of praying with Scripture that helps us encounter God.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The goal of Lectio Divina is relationship with God, not perfection.',
+            correctAnswer: true,
+            explanation: 'Yes! Lectio Divina is about encountering God and growing in relationship with him, not about doing it perfectly.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 17,
+        title: 'The Bible and Catholic Devotions',
+        content: `The Rosary and Scripture:
+• Each mystery of the Rosary is based on Scripture
+• Joyful Mysteries: Annunciation, Visitation, Nativity, Presentation, Finding in Temple
+• Sorrowful Mysteries: Agony, Scourging, Crowning, Carrying Cross, Crucifixion
+• Glorious Mysteries: Resurrection, Ascension, Pentecost, Assumption, Coronation
+• Luminous Mysteries: Baptism, Wedding at Cana, Proclamation of Kingdom, Transfiguration, Institution of Eucharist
+• The Rosary helps us meditate on Scripture
+
+Stations of the Cross:
+• Based on Jesus' passion and death
+• Follows the events of Good Friday
+• Each station is a scene from the Gospels
+• Helps us walk with Jesus to Calvary
+• Combines Scripture with prayer and meditation
+
+Scripture-based novenas:
+• Novenas are nine days of prayer
+• Many are based on Scripture
+• Example: The Divine Mercy Novena (based on Jesus' revelations to St. Faustina)
+• Novenas help us focus on specific Scripture passages
+• They combine reading, prayer, and reflection
+
+Biblical roots of Catholic prayers:
+• Hail Mary: Combines Luke 1:28 ("Hail, full of grace") and Luke 1:42 ("Blessed are you among women")
+• Magnificat: Mary's prayer from Luke 1:46-55
+• Our Father: Taught by Jesus in Matthew 6:9-13 and Luke 11:2-4
+• Glory Be: Based on Trinitarian theology from Scripture
+• Many prayers come directly from Scripture
+
+The Bible enriches all Catholic devotions:
+• Scripture gives them meaning and depth
+• They help us live out Scripture in our daily lives
+• They connect us to the biblical story
+• They make Scripture part of our prayer life`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What Catholic prayer combines verses from Luke\'s Gospel about Mary?',
+            options: ['Our Father', 'Hail Mary', 'Glory Be', 'Apostles\' Creed'],
+            correctAnswer: 1,
+            explanation: 'The Hail Mary combines Luke 1:28 ("Hail, full of grace") and Luke 1:42 ("Blessed are you among women").'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'The _____ of the Cross follows the events of Jesus\' passion from the Gospels.',
+            correctAnswer: 'Stations',
+            explanation: 'The Stations of the Cross are based on the Gospel accounts of Jesus\' passion and death.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'Many Catholic prayers, like the Our Father, come directly from Scripture.',
+            correctAnswer: true,
+            explanation: 'Yes! The Our Father was taught by Jesus, the Hail Mary comes from Luke\'s Gospel, and many other prayers have biblical roots.'
+          }
+        ],
+        completed: false
+      },
+      {
+        id: 18,
+        title: 'Summary and Invitation',
+        content: `The Bible as God's love letter to humanity:
+• The Bible is not just a book - it's God's Word to us
+• It reveals God's love, plan, and desire for us
+• Every page shows God's care for his people
+• It's a love story from creation to eternity
+• God speaks to us through Scripture
+
+Encouragement to read Scripture daily:
+• Make Bible reading a daily habit
+• Even 10-15 minutes a day makes a difference
+• Start with the Gospels or daily Mass readings
+• Use Lectio Divina to pray with Scripture
+• Join a Bible study group
+• The more you read, the more you'll want to read
+
+The Bible and the Eucharist: Word and Sacrament:
+• At Mass, we receive both Word and Sacrament
+• The Liturgy of the Word prepares us for the Liturgy of the Eucharist
+• Scripture and Eucharist work together
+• Both are encounters with Christ
+• Both nourish our souls
+• We need both to grow in faith
+
+Growing deeper in love with God's Word:
+• Reading Scripture transforms us
+• It changes how we think, act, and love
+• It brings us closer to God
+• It helps us know Jesus better
+• It guides us in daily life
+• It gives us hope and strength
+
+Final thoughts:
+• The Bible is a gift from God - use it!
+• Read it with the Church, in Tradition
+• Let it transform your life
+• Share it with others
+• Let God's Word be a lamp to your feet and a light to your path (Psalm 119:105)
+
+The Bible is not just to be read - it's to be lived!`,
+        questions: [
+          {
+            id: 1,
+            type: 'multiple-choice',
+            question: 'What do we receive at Mass that work together?',
+            options: ['Only the Eucharist', 'Only the Word', 'Both Word and Sacrament', 'Only prayers'],
+            correctAnswer: 2,
+            explanation: 'At Mass, we receive both the Word (Scripture) and the Sacrament (Eucharist) - both are encounters with Christ.'
+          },
+          {
+            id: 2,
+            type: 'fill-blank',
+            question: 'Psalm 119:105 says God\'s Word is "a lamp to my _____ and a light to my path."',
+            correctAnswer: 'feet',
+            explanation: 'God\'s Word guides us in daily life - it\'s a lamp to our feet and a light to our path.'
+          },
+          {
+            id: 3,
+            type: 'true-false',
+            question: 'The Bible is not just to be read - it\'s to be lived!',
+            correctAnswer: true,
+            explanation: 'Yes! Scripture should transform how we live - it\'s meant to change us and guide us in daily life.'
+          }
+        ],
+        completed: false
+      }
+    ];
+  }
 
   constructor(
     private route: ActivatedRoute,
@@ -1979,6 +3085,10 @@ The sacraments are channels of God's grace - use them regularly to stay close to
     private scoreboardService: ScoreboardService,
     private alertController: AlertController
   ) {}
+
+  goBack() {
+    this.router.navigate(['/courses']);
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -1990,19 +3100,41 @@ The sacraments are channels of God's grace - use them regularly to stay close to
   }
 
   loadLessons() {
+    // Get course title from courses list
+    const courses: { id: number; title: string }[] = [
+      { id: 1, title: 'Introduction to the Catholic Faith' },
+      { id: 2, title: 'Understanding the Holy Mass' },
+      { id: 3, title: 'The Sacraments: Channels of God\'s Grace' },
+      { id: 4, title: 'The Bible and How Catholics Read It' },
+      { id: 5, title: 'The Creed: What Catholics Believe' },
+      { id: 6, title: 'The Life and Teachings of Jesus Christ' },
+      { id: 7, title: 'Foundations of Christian Prayer' },
+      { id: 8, title: 'The Ten Commandments and Moral Living' },
+      { id: 9, title: 'The Holy Trinity Explained' },
+      { id: 10, title: 'Who Is the Blessed Virgin Mary?' },
+      { id: 11, title: 'The Church: One, Holy, Catholic, and Apostolic' },
+      { id: 12, title: 'The Saints and the Communion of Saints' }
+    ];
+
+    const course = courses.find(c => c.id === this.courseId);
+    this.courseTitle = course?.title || 'Course';
+
     if (this.courseId === 1) {
       this.lessons = this.getCourse1Lessons();
-      this.courseTitle = 'Introduction to the Catholic Faith';
+      this.hasContent = true;
     } else if (this.courseId === 2) {
       this.lessons = this.getCourse2Lessons();
-      this.courseTitle = 'Understanding the Holy Mass';
+      this.hasContent = true;
     } else if (this.courseId === 3) {
       this.lessons = this.getCourse3Lessons();
-      this.courseTitle = 'The Sacraments: Channels of God\'s Grace';
+      this.hasContent = true;
+    } else if (this.courseId === 4) {
+      this.lessons = this.getCourse4Lessons();
+      this.hasContent = true;
     } else {
-      // Default to course 1 if course not found
-      this.lessons = this.getCourse1Lessons();
-      this.courseTitle = 'Introduction to the Catholic Faith';
+      // Course doesn't have content yet
+      this.lessons = [];
+      this.hasContent = false;
     }
   }
 

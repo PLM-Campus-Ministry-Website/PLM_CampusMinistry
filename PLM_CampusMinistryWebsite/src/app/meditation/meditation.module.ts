@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MeditationPageRoutingModule } from './meditation-routing.module';
 
 import { MeditationPage } from './meditation.page';
+import { PdfReaderComponent } from './pdf-reader/pdf-reader.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { MeditationPage } from './meditation.page';
     IonicModule,
     MeditationPageRoutingModule
   ],
-  declarations: [MeditationPage]
+  declarations: [MeditationPage, PdfReaderComponent]
 })
 export class MeditationPageModule {}

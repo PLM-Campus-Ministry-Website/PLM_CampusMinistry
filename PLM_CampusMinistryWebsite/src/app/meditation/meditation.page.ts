@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RosaryDataService, RosaryPrayers } from '../rosary/rosary-data.service';
 
 interface Book {
@@ -110,12 +111,66 @@ export class MeditationPage implements OnInit {
   }
 
   books: Book[] = [
-    // Add books here when PDFs are ready
-    // Example format:
-    // { name: 'Book Title', description: 'Book description', filePath: 'assets/books/book-title.pdf' }
+    { 
+      name: 'Contemplating the Trinity', 
+      description: 'The Path to the Abundant Christian Life by Raniero Cantalamessa', 
+      filePath: 'assets/pdf/___Contemplating-the-Trinity-the-Path-to-the-Abundant-Christian-Life-Raniero-Cantalamessa.pdf' 
+    },
+    { 
+      name: 'The Trinity: An Introduction', 
+      description: 'Understanding the mystery of the Trinity by Emery & Levering', 
+      filePath: 'assets/pdf/___The Trinity_ An Introduction t - Emery, Gilles, O.P. & Levering.pdf' 
+    },
+    { 
+      name: 'Holy Trinity (DE DEO UNO ET TRINO)', 
+      description: 'Theological study on the Trinity', 
+      filePath: 'assets/pdf/__HOLY TRINITY (DE DEO UNO ET TRINO).pdf' 
+    },
+    { 
+      name: 'Beginning Apologetics', 
+      description: 'Introduction to Catholic apologetics', 
+      filePath: 'assets/pdf/Beginning-Apologetics-1-pdf (2).pdf' 
+    },
+    { 
+      name: 'Biblical Defense of Catholicism', 
+      description: 'Biblical foundations of Catholic faith by Dave Armstrong', 
+      filePath: 'assets/pdf/Biblical-Defense-of-Catholicism-Dave-Armstrong.pdf' 
+    },
+    { 
+      name: 'Catechism for Filipino Catholics', 
+      description: 'Catholic catechism for Filipino faithful', 
+      filePath: 'assets/pdf/Catechism for Filipino Catholics.pdf' 
+    },
+    { 
+      name: 'The Salvation Controversy', 
+      description: 'Understanding salvation in Catholic teaching by James Akin', 
+      filePath: 'assets/pdf/The Salvation Controversy by James Akin  Jimmy Akin [Akin, James] (z-lib.org).pdf' 
+    },
+    { 
+      name: 'The Woman Who Changed the Face', 
+      description: 'A study on Mary and her role', 
+      filePath: 'assets/pdf/The Woman Who Changed the Face of the Hemisphere.pdf' 
+    },
+    { 
+      name: 'The Divinity and Humanity of Christ', 
+      description: 'Understanding Christ\'s nature', 
+      filePath: 'assets/pdf/THE-DIVINITY-HUMANITY-OF-CHRIST.pdf' 
+    }
   ];
 
-  constructor(private rosaryData: RosaryDataService) { }
+  openPdfReader(book: Book): void {
+    if (book.filePath) {
+      // Angular router will handle encoding automatically
+      this.router.navigate(['/meditation/pdf-reader'], {
+        queryParams: { path: book.filePath }
+      });
+    }
+  }
+
+  constructor(
+    private rosaryData: RosaryDataService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     // Initialization logic can go here

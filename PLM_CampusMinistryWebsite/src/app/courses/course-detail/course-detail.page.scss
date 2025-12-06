@@ -4,6 +4,88 @@ ion-content {
   --color: #333;
 }
 
+// Coming Soon Styles
+.coming-soon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f4f1e1 0%, #e8e8ed 100%);
+}
+
+.coming-soon-card {
+  background: white;
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease-out;
+
+  .coming-soon-icon {
+    font-size: 80px;
+    color: #8D6E63;
+    margin-bottom: 20px;
+  }
+
+  .coming-soon-title {
+    color: #5D4037;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .coming-soon-message {
+    color: #6B4423;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .coming-soon-submessage {
+    color: #8D6E63;
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .back-button {
+    --border-color: #8D6E63;
+    --color: #8D6E63;
+    margin-top: 20px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .coming-soon-card {
+    padding: 40px 30px;
+
+    .coming-soon-icon {
+      font-size: 60px;
+    }
+
+    .coming-soon-title {
+      font-size: 1.5rem;
+    }
+
+    .coming-soon-message {
+      font-size: 1rem;
+    }
+  }
+}
+
 // Progress Header
 .progress-header {
   background: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
