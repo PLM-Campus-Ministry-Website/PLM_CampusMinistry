@@ -1,11 +1,15 @@
+<!-- Modern Header with Glassmorphism -->
 <ion-header class="modern-header">
   <ion-toolbar class="glass-toolbar">
-    <!-- Logo with animation -->
+    <!-- Logo Section -->
     <div class="logo-container" slot="start">
-      <img src="assets/logo.png" alt="PLM Campus Ministry" class="logo-image" />
+      <div class="logo-wrapper">
+        <img src="assets/logo.png" alt="PLM Campus Ministry" class="logo-image" />
+        <div class="logo-pulse"></div>
+      </div>
       <div class="logo-text">
-        <span class="ministry">Campus</span>
-        <span class="plm">Ministry</span>
+        <span class="ministry">Campus Ministry</span>
+        <span class="plm">PLM</span>
       </div>
     </div>
 
@@ -13,32 +17,44 @@
     <div class="nav-container">
       <nav class="desktop-nav">
         <a routerLink="/home" routerLinkActive="active" class="nav-item">
-          <ion-icon name="home-outline"></ion-icon>
+          <div class="nav-icon-wrapper">
+            <ion-icon name="home-outline"></ion-icon>
+          </div>
           <span class="nav-label">Home</span>
           <div class="nav-indicator"></div>
         </a>
         <a routerLink="/prayer" routerLinkActive="active" class="nav-item">
-          <ion-icon name="book-outline"></ion-icon>
+          <div class="nav-icon-wrapper">
+            <ion-icon name="book-outline"></ion-icon>
+          </div>
           <span class="nav-label">Prayer</span>
           <div class="nav-indicator"></div>
         </a>
         <a routerLink="/meditation" routerLinkActive="active" class="nav-item">
-          <ion-icon name="leaf-outline"></ion-icon>
+          <div class="nav-icon-wrapper">
+            <ion-icon name="leaf-outline"></ion-icon>
+          </div>
           <span class="nav-label">Meditation</span>
           <div class="nav-indicator"></div>
         </a>
         <a routerLink="/music" routerLinkActive="active" class="nav-item">
-          <ion-icon name="musical-notes-outline"></ion-icon>
+          <div class="nav-icon-wrapper">
+            <ion-icon name="musical-notes-outline"></ion-icon>
+          </div>
           <span class="nav-label">Music</span>
           <div class="nav-indicator"></div>
         </a>
         <a routerLink="/game" routerLinkActive="active" class="nav-item">
-          <ion-icon name="game-controller-outline"></ion-icon>
+          <div class="nav-icon-wrapper">
+            <ion-icon name="game-controller-outline"></ion-icon>
+          </div>
           <span class="nav-label">Games</span>
           <div class="nav-indicator"></div>
         </a>
         <a routerLink="/courses" routerLinkActive="active" class="nav-item">
-          <ion-icon name="school-outline"></ion-icon>
+          <div class="nav-icon-wrapper">
+            <ion-icon name="school-outline"></ion-icon>
+          </div>
           <span class="nav-label">Courses</span>
           <div class="nav-indicator"></div>
         </a>
@@ -47,92 +63,155 @@
 
     <!-- Mobile Menu Button -->
     <ion-buttons slot="end" class="mobile-menu-btn">
-      <ion-menu-button class="hamburger-modern">
-        <div class="hamburger-lines">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <ion-menu-button>
+        <ion-icon name="menu-outline"></ion-icon>
       </ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<!-- Modern Mobile Menu -->
+<!-- Beautiful Modern Sidebar Menu -->
 <ion-menu contentId="main-content" type="overlay" class="modern-menu">
+  <!-- Menu Header with Gradient -->
   <div class="menu-header">
-    <img src="assets/logo.png" alt="Logo" class="menu-logo" />
-    <h2>Campus Ministry</h2>
-    <p>PLM</p>
+    <div class="header-background"></div>
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo-circle">
+          <img src="assets/logo.png" alt="Logo" class="menu-logo" />
+          <div class="logo-ring"></div>
+        </div>
+      </div>
+      <h2 class="menu-title">Campus Ministry</h2>
+      <p class="menu-subtitle">PLM</p>
+    </div>
   </div>
   
+  <!-- Menu Content -->
   <ion-content class="menu-content">
     <div class="menu-items">
-      <ion-item routerLink="/home" class="menu-item">
-        <div class="menu-item-content">
-          <ion-icon name="home" class="menu-icon"></ion-icon>
-          <div class="menu-text">
-            <span class="menu-title">Home</span>
-            <span class="menu-subtitle">Welcome page</span>
+      <!-- Home -->
+      <ion-menu-toggle auto-hide="false">
+        <div routerLink="/home" routerLinkActive="active" class="menu-item">
+          <div class="item-background"></div>
+          <div class="item-content">
+            <div class="icon-wrapper home">
+              <ion-icon name="home"></ion-icon>
+            </div>
+            <div class="text-wrapper">
+              <span class="item-title">Home</span>
+              <span class="item-subtitle">Welcome page</span>
+            </div>
+            <ion-icon name="chevron-forward-outline" class="chevron"></ion-icon>
           </div>
         </div>
-      </ion-item>
+      </ion-menu-toggle>
       
-      <ion-item routerLink="/prayer" class="menu-item">
-        <div class="menu-item-content">
-          <ion-icon name="book" class="menu-icon"></ion-icon>
-          <div class="menu-text">
-            <span class="menu-title">Prayer</span>
-            <span class="menu-subtitle">Spiritual guidance</span>
+      <!-- Prayer -->
+      <ion-menu-toggle auto-hide="false">
+        <div routerLink="/prayer" routerLinkActive="active" class="menu-item">
+          <div class="item-background"></div>
+          <div class="item-content">
+            <div class="icon-wrapper prayer">
+              <ion-icon name="book"></ion-icon>
+            </div>
+            <div class="text-wrapper">
+              <span class="item-title">Prayer</span>
+              <span class="item-subtitle">Spiritual guidance</span>
+            </div>
+            <ion-icon name="chevron-forward-outline" class="chevron"></ion-icon>
           </div>
         </div>
-      </ion-item>
+      </ion-menu-toggle>
       
-      <ion-item routerLink="/meditation" class="menu-item">
-        <div class="menu-item-content">
-          <ion-icon name="leaf" class="menu-icon"></ion-icon>
-          <div class="menu-text">
-            <span class="menu-title">Meditation</span>
-            <span class="menu-subtitle">Mindful reflection</span>
+      <!-- Meditation -->
+      <ion-menu-toggle auto-hide="false">
+        <div routerLink="/meditation" routerLinkActive="active" class="menu-item">
+          <div class="item-background"></div>
+          <div class="item-content">
+            <div class="icon-wrapper meditation">
+              <ion-icon name="leaf"></ion-icon>
+            </div>
+            <div class="text-wrapper">
+              <span class="item-title">Meditation</span>
+              <span class="item-subtitle">Mindful reflection</span>
+            </div>
+            <ion-icon name="chevron-forward-outline" class="chevron"></ion-icon>
           </div>
         </div>
-      </ion-item>
+      </ion-menu-toggle>
       
-      <ion-item routerLink="/music" class="menu-item">
-        <div class="menu-item-content">
-          <ion-icon name="musical-notes" class="menu-icon"></ion-icon>
-          <div class="menu-text">
-            <span class="menu-title">Music</span>
-            <span class="menu-subtitle">Worship & praise</span>
+      <!-- Music -->
+      <ion-menu-toggle auto-hide="false">
+        <div routerLink="/music" routerLinkActive="active" class="menu-item">
+          <div class="item-background"></div>
+          <div class="item-content">
+            <div class="icon-wrapper music">
+              <ion-icon name="musical-notes"></ion-icon>
+            </div>
+            <div class="text-wrapper">
+              <span class="item-title">Music</span>
+              <span class="item-subtitle">Worship & praise</span>
+            </div>
+            <ion-icon name="chevron-forward-outline" class="chevron"></ion-icon>
           </div>
         </div>
-      </ion-item>
+      </ion-menu-toggle>
       
-      <ion-item routerLink="/game" class="menu-item">
-        <div class="menu-item-content">
-          <ion-icon name="game-controller" class="menu-icon"></ion-icon>
-          <div class="menu-text">
-            <span class="menu-title">Games</span>
-            <span class="menu-subtitle">Faith activities</span>
+      <!-- Games -->
+      <ion-menu-toggle auto-hide="false">
+        <div routerLink="/game" routerLinkActive="active" class="menu-item">
+          <div class="item-background"></div>
+          <div class="item-content">
+            <div class="icon-wrapper games">
+              <ion-icon name="game-controller"></ion-icon>
+            </div>
+            <div class="text-wrapper">
+              <span class="item-title">Games</span>
+              <span class="item-subtitle">Faith activities</span>
+            </div>
+            <ion-icon name="chevron-forward-outline" class="chevron"></ion-icon>
           </div>
         </div>
-      </ion-item>
+      </ion-menu-toggle>
       
-      <ion-item routerLink="/courses" class="menu-item">
-        <div class="menu-item-content">
-          <ion-icon name="school" class="menu-icon"></ion-icon>
-          <div class="menu-text">
-            <span class="menu-title">Courses</span>
-            <span class="menu-subtitle">Faith formation</span>
+      <!-- Courses -->
+      <ion-menu-toggle auto-hide="false">
+        <div routerLink="/courses" routerLinkActive="active" class="menu-item">
+          <div class="item-background"></div>
+          <div class="item-content">
+            <div class="icon-wrapper courses">
+              <ion-icon name="school"></ion-icon>
+            </div>
+            <div class="text-wrapper">
+              <span class="item-title">Courses</span>
+              <span class="item-subtitle">Faith formation</span>
+            </div>
+            <ion-icon name="chevron-forward-outline" class="chevron"></ion-icon>
           </div>
         </div>
-      </ion-item>
+      </ion-menu-toggle>
     </div>
     
+    <!-- Menu Footer -->
     <div class="menu-footer">
-      <p>Serving the PLM Community</p>
+      <div class="footer-divider"></div>
+      <div class="footer-content">
+        <ion-icon name="heart"></ion-icon>
+        <p>Serving the PLM Community</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/plmministryoncampus" target="_blank" class="social-link">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+      </div>
     </div>
   </ion-content>
 </ion-menu>
 
 <ion-router-outlet id="main-content"></ion-router-outlet>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" [class.show]="showScrollButton" (click)="scrollToTop()">
+  <ion-icon name="arrow-up-outline"></ion-icon>
+</button>

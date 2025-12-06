@@ -1,53 +1,79 @@
-// src/app/app.component.scss
 // Import Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-// Updated color variables - much darker and more visible
+// ===================================
+// COLOR VARIABLES
+// ===================================
 :root {
-  --nav-gradient: linear-gradient(135deg, rgba(69, 39, 19, 0.95) 0%, rgba(92, 51, 23, 0.95) 100%);
-  --nav-glass: rgba(0, 0, 0, 0.3);
-  --nav-border: rgba(0, 0, 0, 0.2);
-  --gold-accent: #FFD700;
-  --deep-burgundy: #722F37;
-  --warm-white: #FFF8DC;
+  --primary-burgundy: #722F37;
+  --dark-brown: #5D4037;
+  --warm-gold: #FFD700;
+  --gold-accent: #FFA500;
+  --cream-bg: #FFF8E7;
+  --light-cream: #F5E6D3;
 }
 
-// Make the header much more visible
+// ===================================
+// MODERN HEADER
+// ===================================
 .modern-header {
   --background: transparent;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 30px rgba(139, 69, 19, 0.15);
 }
 
 .glass-toolbar {
-  --background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #654321 100%);
+  --background: linear-gradient(135deg, #6B3E47 0%, #7D4E5A 50%, #6B3E47 100%);
   --color: white;
   --border-width: 0;
-  --min-height: 80px;
-  padding: 0 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --min-height: 70px;
+  padding: 0 30px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  
+  @media (max-width: 768px) {
+    --min-height: 60px;
+    padding: 0 20px;
+  }
 }
 
-// Logo Container
+// ===================================
+// LOGO SECTION
+// ===================================
 .logo-container {
   display: flex;
   align-items: center;
   gap: 12px;
   
-  .logo-image {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+  .logo-wrapper {
+    position: relative;
     
-    &:hover {
-      transform: rotate(10deg) scale(1.05);
+    .logo-image {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 215, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+      
+      @media (max-width: 768px) {
+        height: 42px;
+        width: 42px;
+      }
+    }
+    
+    .logo-pulse {
+      display: none;
+    }
+    
+    &:hover .logo-image {
+      transform: scale(1.05);
+      border-color: #FFD700;
     }
   }
   
@@ -56,88 +82,95 @@
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
     
+    @media (max-width: 768px) {
+      display: none;
+    }
+    
     .ministry {
       font-size: 18px;
-      font-weight: 600;
-      color: var(--gold-accent);
-      line-height: 1;
+      font-weight: 700;
+      color: #FFD700;
+      line-height: 1.1;
+      letter-spacing: 0.3px;
     }
     
     .plm {
-      font-size: 14px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.1;
+      letter-spacing: 1px;
     }
   }
 }
 
-// Desktop Navigation
+// ===================================
+// DESKTOP NAVIGATION
+// ===================================
 .nav-container {
   flex: 1;
   display: flex;
   justify-content: center;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .desktop-nav {
   display: flex;
-  gap: 30px;
+  gap: 10px;
   align-items: center;
 }
 
-// Enhanced nav items for better visibility
 .nav-item {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
-  padding: 12px 16px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 16px;
   border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   font-family: 'Poppins', sans-serif;
-  background: rgba(0, 0, 0, 0.1);
+  background: transparent;
+  cursor: pointer;
   
-  ion-icon {
-    font-size: 24px;
-    transition: all 0.3s ease;
-    color: white;
+  .nav-icon-wrapper {
+    position: relative;
+    
+    ion-icon {
+      font-size: 24px;
+      transition: all 0.3s ease;
+    }
   }
   
   .nav-label {
     font-size: 12px;
     font-weight: 500;
     transition: all 0.3s ease;
-    color: white;
   }
   
   .nav-indicator {
     position: absolute;
-    bottom: -8px;
+    bottom: -3px;
     left: 50%;
     transform: translateX(-50%) scaleX(0);
     width: 30px;
-    height: 3px;
-    background: var(--gold-accent);
+    height: 2px;
+    background: #FFD700;
     border-radius: 2px;
     transition: transform 0.3s ease;
   }
   
   &:hover {
-    color: var(--gold-accent);
+    color: #FFD700;
     background: rgba(255, 215, 0, 0.1);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
     
-    ion-icon {
-      transform: scale(1.1);
-      color: var(--gold-accent);
-    }
-    
-    .nav-label {
-      color: var(--gold-accent);
+    .nav-icon-wrapper ion-icon {
+      transform: translateY(-2px);
     }
     
     .nav-indicator {
@@ -146,192 +179,328 @@
   }
   
   &.active {
-    color: var(--gold-accent);
+    color: #FFD700;
     background: rgba(255, 215, 0, 0.15);
     
     .nav-indicator {
       transform: translateX(-50%) scaleX(1);
     }
-    
-    ion-icon {
-      color: var(--gold-accent);
-    }
-    
-    .nav-label {
-      color: var(--gold-accent);
-    }
   }
 }
 
-// Mobile Menu Button
+// ===================================
+// MOBILE MENU BUTTON
+// ===================================
 .mobile-menu-btn {
   display: none;
-}
-
-.hamburger-modern {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
   
-  &:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-  }
-}
-
-.hamburger-lines {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  gap: 4px;
-  
-  span {
-    width: 20px;
-    height: 2px;
-    background: white;
-    border-radius: 1px;
-    transition: all 0.3s ease;
-  }
-}
-
-// Modern Mobile Menu
-.modern-menu {
-  --width: 320px;
-  --background: linear-gradient(180deg, rgba(69, 39, 19, 0.98) 0%, rgba(92, 51, 23, 0.98) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-.menu-header {
-  background: rgba(0, 0, 0, 0.2);
-  padding: 40px 20px 30px;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  
-  .menu-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  h2 {
-    color: var(--gold-accent);
-    font-size: 22px;
-    font-weight: 600;
-    margin: 0 0 5px 0;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-  }
-}
-
-.menu-content {
-  --background: transparent;
-}
-
-.menu-items {
-  padding: 20px 0;
-}
-
-.menu-item {
-  --background: transparent;
-  --border-color: transparent;
-  margin: 8px 16px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    --background: rgba(255, 255, 255, 0.1);
-    transform: translateX(8px);
-  }
-}
-
-.menu-item-content {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 0;
-  width: 100%;
-}
-
-.menu-icon {
-  font-size: 24px;
-  color: var(--gold-accent);
-  min-width: 24px;
-}
-
-.menu-text {
-  display: flex;
-  flex-direction: column;
-  
-  .menu-title {
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .menu-subtitle {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 12px;
-    font-family: 'Poppins', sans-serif;
-  }
-}
-
-.menu-footer {
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 20px;
-  
-  p {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 12px;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-  }
-}
-
-// Responsive Design
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
-  
-  .mobile-menu-btn {
+  @media (max-width: 768px) {
     display: block;
   }
   
-  .logo-text {
-    display: none;
-  }
-  
-  .glass-toolbar {
-    --min-height: 60px;
-    padding: 0 16px;
-  }
-  
-  .logo-container .logo-image {
-    height: 40px;
-    width: 40px;
+  ion-menu-button {
+    --color: white;
+    font-size: 30px;
+    
+    ion-icon {
+      font-size: 32px;
+    }
   }
 }
 
-// Animation keyframes
+// ===================================
+// MODERN SIDEBAR MENU
+// ===================================
+.modern-menu {
+  --width: 340px;
+  --background: transparent;
+  
+  ion-content {
+    --background: transparent;
+  }
+}
+
+// Menu Header
+.menu-header {
+  position: relative;
+  padding: 45px 25px 30px;
+  overflow: hidden;
+  
+  .header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #6B3E47 0%, #7D4E5A 100%);
+    z-index: 0;
+  }
+  
+  .header-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  .logo-section {
+    margin-bottom: 18px;
+    
+    .logo-circle {
+      position: relative;
+      display: inline-block;
+      
+      .menu-logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 215, 0, 0.5);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease;
+      }
+      
+      .logo-ring {
+        display: none;
+      }
+    }
+  }
+  
+  .menu-title {
+    color: #FFD700;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.3px;
+  }
+  
+  .menu-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+  }
+}
+
+// Menu Content
+.menu-content {
+  --background: linear-gradient(180deg, #F8F4E8 0%, #FFF9ED 100%);
+}
+
+.menu-items {
+  padding: 25px 15px;
+}
+
+.menu-item {
+  position: relative;
+  margin: 0 0 10px 0;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  .item-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 18px;
+    transition: all 0.3s ease;
+  }
+  
+  .item-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 18px;
+    z-index: 1;
+  }
+  
+  .icon-wrapper {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    
+    ion-icon {
+      font-size: 24px;
+      color: white;
+    }
+    
+    &.home {
+      background: linear-gradient(135deg, #E57373 0%, #EF5350 100%);
+    }
+    
+    &.prayer {
+      background: linear-gradient(135deg, #64B5F6 0%, #42A5F5 100%);
+    }
+    
+    &.meditation {
+      background: linear-gradient(135deg, #81C784 0%, #66BB6A 100%);
+    }
+    
+    &.music {
+      background: linear-gradient(135deg, #BA68C8 0%, #AB47BC 100%);
+    }
+    
+    &.games {
+      background: linear-gradient(135deg, #FFB74D 0%, #FFA726 100%);
+    }
+    
+    &.courses {
+      background: linear-gradient(135deg, #4DB6AC 0%, #26A69A 100%);
+    }
+  }
+  
+  .text-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    
+    .item-title {
+      color: #2C1810;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .item-subtitle {
+      color: #8B7D6B;
+      font-size: 12px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+    }
+  }
+  
+  .chevron {
+    font-size: 18px;
+    color: #B0A090;
+    transition: all 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateX(5px);
+    
+    .item-background {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(212, 175, 55, 0.35);
+      box-shadow: 0 4px 15px rgba(139, 69, 19, 0.12);
+    }
+    
+    .icon-wrapper {
+      transform: scale(1.05);
+    }
+    
+    .chevron {
+      color: #FFD700;
+      transform: translateX(3px);
+    }
+  }
+  
+  &.active {
+    transform: translateX(5px);
+    
+    .item-background {
+      background: linear-gradient(135deg, rgba(255, 235, 180, 0.4) 0%, rgba(255, 245, 210, 0.3) 100%);
+      border-color: rgba(255, 215, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.15);
+    }
+    
+    .item-title {
+      color: #6B3E47;
+      font-weight: 700;
+    }
+    
+    .chevron {
+      color: #FFD700;
+    }
+  }
+}
+
+// Menu Footer
+.menu-footer {
+  padding: 20px 20px 25px;
+  
+  .footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.25), transparent);
+    margin-bottom: 18px;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    
+    ion-icon {
+      font-size: 16px;
+      color: #6B3E47;
+    }
+    
+    p {
+      color: #6B3E47;
+      font-size: 12px;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+  }
+  
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    
+    .social-link {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6B3E47 0%, #7D4E5A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 12px rgba(107, 62, 71, 0.25);
+      transition: all 0.3s ease;
+      
+      ion-icon {
+        font-size: 20px;
+        color: white;
+      }
+      
+      &:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 18px rgba(107, 62, 71, 0.35);
+      }
+    }
+  }
+}
+
+// ===================================
+// ANIMATIONS
+// ===================================
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 @keyframes slideInFromTop {
   from {
     transform: translateY(-100%);
@@ -346,4 +515,132 @@
 .modern-header {
   animation: slideInFromTop 0.6s ease-out;
 }
+
+// ===================================
+// RESPONSIVE DESIGN
+// ===================================
+@media (max-width: 992px) {
+  .nav-item {
+    padding: 6px 12px;
+    gap: 4px;
+    
+    .nav-icon-wrapper ion-icon {
+      font-size: 22px;
+    }
+    
+    .nav-label {
+      font-size: 11px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-menu {
+    --width: 300px;
+  }
   
+  .menu-header {
+    padding: 40px 20px 28px;
+    
+    .logo-section .logo-circle .menu-logo {
+      width: 65px;
+      height: 65px;
+    }
+    
+    .menu-title {
+      font-size: 22px;
+    }
+  }
+  
+  .menu-item {
+    .item-content {
+      padding: 14px 16px;
+    }
+    
+    .icon-wrapper {
+      width: 42px;
+      height: 42px;
+      
+      ion-icon {
+        font-size: 22px;
+      }
+    }
+    
+    .text-wrapper {
+      .item-title {
+        font-size: 15px;
+      }
+      
+      .item-subtitle {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+// ===================================
+// SCROLL TO TOP BUTTON
+// ===================================
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6B3E47 0%, #7D4E5A 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(107, 62, 71, 0.3);
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px);
+  transition: all 0.3s ease;
+  
+  ion-icon {
+    font-size: 24px;
+    color: white;
+  }
+  
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(107, 62, 71, 0.4);
+    background: linear-gradient(135deg, #7D4E5A 0%, #8B5A68 100%);
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+  }
+  
+  @media (max-width: 768px) {
+    bottom: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    
+    ion-icon {
+      font-size: 22px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    bottom: 15px;
+    left: 15px;
+    width: 42px;
+    height: 42px;
+    
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+}

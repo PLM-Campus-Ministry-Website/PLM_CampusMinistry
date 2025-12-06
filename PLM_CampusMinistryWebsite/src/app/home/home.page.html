@@ -1,5 +1,5 @@
 <!-- src/app/home/home.page.html -->
-<ion-content>
+<ion-content [scrollEvents]="true">
   <!-- Jumbotron Section -->
   <section class="jumbotron">
     <div class="container">
@@ -35,6 +35,11 @@
             <span class="stat-label">Ministries</span>
           </div>
         </div>
+        
+        <!-- Chapel Image -->
+        <div class="chapel-image-container">
+          <img src="assets/PLMChapel.png" alt="PLM Chapel" class="chapel-image" />
+        </div>
       </div>
     </div>
   </section>
@@ -43,11 +48,38 @@
 <!-- Quote Section -->
 <!---------------------->
 <section class="quote-section">
-  <div class="container">
-    <blockquote class="quote">
-      <p>"Joy is a net of love by which you can catch souls."</p>
-      <footer>- Mother Teresa</footer>
-    </blockquote>
+  <div class="quote-container">
+    <!-- Greeting Section -->
+    <div class="greeting-header">
+      <div class="greeting-icon">
+        <ion-icon name="sunny-outline"></ion-icon>
+      </div>
+      <h2 class="greeting-text">{{ greeting }}! 🙏</h2>
+      <p class="current-date">{{ currentDate }}</p>
+    </div>
+
+    <!-- Quote Card -->
+    <div class="quote-card">
+      <div class="quote-decoration">
+        <div class="quote-mark">"</div>
+      </div>
+      
+      <blockquote class="quote">
+        <p class="quote-text">{{ currentQuote.text }}</p>
+        <footer class="quote-author">— {{ currentQuote.author }}</footer>
+      </blockquote>
+
+      <div class="quote-explanation">
+        <div class="explanation-icon">
+          <ion-icon name="bulb-outline"></ion-icon>
+        </div>
+        <p class="explanation-text">{{ currentQuote.explanation }}</p>
+      </div>
+
+      <div class="quote-footer">
+        <span class="daily-badge">Today's Inspiration</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -133,220 +165,380 @@
 <!---------------------->
 <!-- Mass Schedule Request Form -->
 <!---------------------->
-<div class="form-title">
-  <h2>Mass Schedule Request</h2>
-</div>
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <label for="name">Name</label>
-    <input type="text" id="name" [(ngModel)]="request.name" name="name" required />
-  </div>
+<section class="mass-request-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="request-header">
+      <div class="header-icon">
+        <ion-icon name="calendar-outline"></ion-icon>
+      </div>
+      <h2>Request a Mass</h2>
+      <p>We're here to help you schedule a meaningful celebration. Fill out the form below and we'll get back to you soon.</p>
+    </div>
 
-  <div>
-    <label for="college">College/Office</label>
-    <select id="college" [(ngModel)]="request.college" name="college" required>
-      <option value="">Select College</option>
-      <!-- List of colleges -->
-      <option value="College of Architecture and Sustainable Built Environments (CASBE)">College of Architecture and Sustainable Built Environments (CASBE)</option>
-      <option value="College of Business Administration (CBA)">College of Business Administration (CBA)</option>
-      <option value="College of Accountancy">College of Accountancy</option>
-      <option value="College of Tourism and Hospitality Management">College of Tourism and Hospitality Management</option>
-      <option value="College of Education">College of Education</option>
-      <option value="College of Engineering">College of Engineering</option>
-      <option value="College of Information Systems & Technology Management">College of Information Systems & Technology Management</option>
-      <option value="College of Humanities, Arts and Social Sciences (CHASS)">College of Humanities, Arts and Social Sciences (CHASS)</option>
-      <option value="College of Nursing">College of Nursing</option>
-      <option value="College of Physical Therapy">College of Physical Therapy</option>
-      <option value="College of Science">College of Science</option>
-      <option value="College of Law">College of Law</option>
-      <option value="College of Medicine">College of Medicine</option>
-      <option value="College of Business School">College of Business School</option>
-      <option value="Graduate School of Law">Graduate School of Law</option>
-      <option value="College of Public Health">College of Public Health</option>
-      <option value="College of Public Administration">College of Public Administration</option>
-      <option value="Accounting Office">Accounting Office</option>
-      <option value="Office of Student Development Services">Office of Student Development Services</option>
-      <option value="Office of Graduate/Professional Studies">Office of Graduate/Professional Studies</option>
-      <option value="Office of the VP for Research">Office of the VP for Research</option>
-      <option value="University Health Services">University Health Services</option>
-      <option value="Office of NSTP">Office of NSTP</option>
-      <option value="Other">Other (Specify on the Note)</option>
-      <!-- Add more colleges as needed -->
-    </select>
-  </div>
+    <!-- Request Form -->
+    <form class="modern-form" (ngSubmit)="onSubmit()">
+      <!-- Name Field -->
+      <div class="input-group">
+        <label for="name">
+          <ion-icon name="person-outline"></ion-icon>
+          Full Name *
+        </label>
+        <input type="text" id="name" [(ngModel)]="request.name" name="name" 
+               placeholder="Enter your full name" required />
+      </div>
 
-  <div>
-    <label for="dateTime">Date and Time</label>
-    <input type="datetime-local" id="dateTime" [(ngModel)]="request.dateTime" name="dateTime" required />
-  </div>
+      <!-- College/Office Field -->
+      <div class="input-group">
+        <label for="college">
+          <ion-icon name="school-outline"></ion-icon>
+          College/Office *
+        </label>
+        <select id="college" [(ngModel)]="request.college" name="college" required>
+          <option value="">Select your college or office</option>
+          <option value="College of Architecture and Sustainable Built Environments (CASBE)">College of Architecture and Sustainable Built Environments (CASBE)</option>
+          <option value="College of Business Administration (CBA)">College of Business Administration (CBA)</option>
+          <option value="College of Accountancy">College of Accountancy</option>
+          <option value="College of Tourism and Hospitality Management">College of Tourism and Hospitality Management</option>
+          <option value="College of Education">College of Education</option>
+          <option value="College of Engineering">College of Engineering</option>
+          <option value="College of Information Systems & Technology Management">College of Information Systems & Technology Management</option>
+          <option value="College of Humanities, Arts and Social Sciences (CHASS)">College of Humanities, Arts and Social Sciences (CHASS)</option>
+          <option value="College of Nursing">College of Nursing</option>
+          <option value="College of Physical Therapy">College of Physical Therapy</option>
+          <option value="College of Science">College of Science</option>
+          <option value="College of Law">College of Law</option>
+          <option value="College of Medicine">College of Medicine</option>
+          <option value="College of Business School">College of Business School</option>
+          <option value="Graduate School of Law">Graduate School of Law</option>
+          <option value="College of Public Health">College of Public Health</option>
+          <option value="College of Public Administration">College of Public Administration</option>
+          <option value="Accounting Office">Accounting Office</option>
+          <option value="Office of Student Development Services">Office of Student Development Services</option>
+          <option value="Office of Graduate/Professional Studies">Office of Graduate/Professional Studies</option>
+          <option value="Office of the VP for Research">Office of the VP for Research</option>
+          <option value="University Health Services">University Health Services</option>
+          <option value="Office of NSTP">Office of NSTP</option>
+          <option value="Other">Other (Specify in Notes)</option>
+        </select>
+      </div>
 
-  <div>
-    <label for="event">Event</label>
-    <input type="text" id="event" [(ngModel)]="request.event" name="event" required />
-  </div>
+      <!-- Two Column Layout for Event and Date -->
+      <div class="form-row">
+        <div class="input-group">
+          <label for="event">
+            <ion-icon name="star-outline"></ion-icon>
+            Event Name *
+          </label>
+          <input type="text" id="event" [(ngModel)]="request.event" name="event" 
+                 placeholder="e.g., College Week Mass" required />
+        </div>
 
-  <div>
-    <label for="attendees">Number of Attendees</label>
-    <input type="number" id="attendees" [(ngModel)]="request.attendees" name="attendees" required min="1" />
-  </div>
+        <div class="input-group">
+          <label for="dateTime">
+            <ion-icon name="time-outline"></ion-icon>
+            Preferred Date & Time *
+          </label>
+          <input type="datetime-local" id="dateTime" [(ngModel)]="request.dateTime" name="dateTime" required />
+        </div>
+      </div>
 
-  <div>
-    <label for="place">Place</label>
-    <select id="place" [(ngModel)]="request.place" name="place" required>
-      <option value="">Select Place</option>
-      <option value="PLM Chapel">PLM Chapel</option>
-      <option value="The Manila Cathedral">The Manila Cathedral</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
+      <!-- Two Column Layout for Attendees and Place -->
+      <div class="form-row">
+        <div class="input-group">
+          <label for="attendees">
+            <ion-icon name="people-outline"></ion-icon>
+            Expected Attendees *
+          </label>
+          <input type="number" id="attendees" [(ngModel)]="request.attendees" name="attendees" 
+                 required min="1" placeholder="Number of people" />
+        </div>
 
-  <div *ngIf="request.place === 'Other'">
-    <label for="otherPlace">Please specify the place</label>
-    <input type="text" id="otherPlace" [(ngModel)]="request.otherPlace" name="otherPlace" />
-  </div>
+        <div class="input-group">
+          <label for="place">
+            <ion-icon name="location-outline"></ion-icon>
+            Venue *
+          </label>
+          <select id="place" [(ngModel)]="request.place" name="place" required>
+            <option value="">Select venue</option>
+            <option value="PLM Chapel">PLM Chapel</option>
+            <option value="The Manila Cathedral">The Manila Cathedral</option>
+            <option value="Other">Other Venue</option>
+          </select>
+        </div>
+      </div>
 
-  <div>
-    <label for="contactNumber">Contact Number</label>
-    <input type="tel" id="contactNumber" [(ngModel)]="request.contactNumber" name="contactNumber" pattern="^\d{10}$" placeholder="e.g. 09123456789" required />
-  </div>
+      <!-- Conditional Other Place Field -->
+      <div class="input-group" *ngIf="request.place === 'Other'">
+        <label for="otherPlace">
+          <ion-icon name="pin-outline"></ion-icon>
+          Specify Venue
+        </label>
+        <input type="text" id="otherPlace" [(ngModel)]="request.otherPlace" name="otherPlace" 
+               placeholder="Enter the venue name or address" />
+      </div>
 
-  <div>
-    <label for="notes">Additional Notes</label>
-    <textarea id="notes" [(ngModel)]="request.notes" placeholder="Mass Intentions, Other Requests/Instructions" name="notes"></textarea>
-  </div>
+      <!-- Contact Number -->
+      <div class="input-group">
+        <label for="contactNumber">
+          <ion-icon name="call-outline"></ion-icon>
+          Contact Number *
+        </label>
+        <input type="tel" id="contactNumber" [(ngModel)]="request.contactNumber" name="contactNumber" 
+               pattern="^\d{10,11}$" placeholder="09XX XXX XXXX" required />
+        <small class="input-hint">Please enter a valid 10 or 11-digit mobile number</small>
+      </div>
 
-  <button type="submit">Submit</button>
-</form>
+      <!-- Additional Notes -->
+      <div class="input-group">
+        <label for="notes">
+          <ion-icon name="document-text-outline"></ion-icon>
+          Additional Notes
+        </label>
+        <textarea id="notes" [(ngModel)]="request.notes" name="notes"
+                  placeholder="Mass intentions, special requests, or other important details..."></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button type="submit" class="submit-btn">
+          <ion-icon name="paper-plane-outline"></ion-icon>
+          Submit Request
+        </button>
+      </div>
+    </form>
+
+    <!-- Help Text -->
+    <div class="form-footer">
+      <p>
+        <ion-icon name="information-circle-outline"></ion-icon>
+        Questions? Contact us at 
+        <a href="mailto:plm.ministryoncampus&#64;gmail.com">plm.ministryoncampus&#64;gmail.com</a>
+      </p>
+    </div>
+  </div>
+</section>
 
 
 <!---------------------->
-<!-- Mission Section -->
- <!---------------------->
- <div class="mission-section">
-  <div class="team-header">
-    <h2>People Behind the Mission</h2>
-    <p>Meet the dedicated leaders and volunteers who make our ministry possible.</p>
-  </div>
-
-  <!-- Row for Main People -->
-  <div class="leadership-grid">
-    <div class="leader-card">
-      <div class="leader-image">
-        <div class="profile-pic" style="background-image: url('assets/cardinal.jpeg');"></div>
-      </div>
-      <div class="leader-info">
-        <h3>His Eminence Jose Cardinal Advincula</h3>
-        <p class="title">Archbishop of the Archdiocese of Manila</p>
-      </div>
-    </div>
-    <div class="leader-card">
-      <div class="leader-image">
-        <div class="profile-pic" style="background-image: url('assets/fr_rany.jpg');"></div>
-      </div>
-      <div class="leader-info">
-        <h3>Rev. Fr. Rany Geraldino</h3>
-        <p class="title">RCAM Campus Ministry Director</p>
-      </div>
-    </div>
-    <div class="leader-card">
-      <div class="leader-image">
-        <div class="profile-pic" style="background-image: url('assets/kuyamark.jpg');"></div>
-      </div>
-      <div class="leader-info">
-        <h3>Mr. Mark David Bastida</h3>
-        <p class="title">CM Program Coordinator</p>
-      </div>
-    </div>
-    <div class="leader-card">
-      <div class="leader-image">
-        <div class="profile-pic" style="background-image: url('assets/ateangel.jpg');"></div>
-      </div>
-      <div class="leader-info">
-        <h3>Ms. Angelica Aquino Macasaet</h3>
-        <p class="title">Minister on Campus</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Team Sections -->
-  <div class="team-sections">
-    <!-- Section for Collaborators -->
-    <div class="team-section-card">
-      <div class="section-icon">
+<!-- People Behind the Mission -->
+<!---------------------->
+<section class="mission-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="team-header">
+      <div class="header-decoration">
         <ion-icon name="people"></ion-icon>
       </div>
-      <h4>Collaborators Coordinator</h4>
-      <ul class="team-list">
-        <li>Ms. Angelita Dela Cruz</li>
-      </ul>
+      <h2>People Behind the Mission</h2>
+      <p>Meet the dedicated leaders and volunteers who make our ministry possible, serving with love and faith every day.</p>
     </div>
 
-    <!-- Section for Student Volunteers -->
-    <div class="team-section-card">
-      <div class="section-icon">
-        <ion-icon name="person"></ion-icon>
+    <!-- Leadership Cards -->
+    <div class="leadership-grid">
+      <div class="leader-card">
+        <div class="card-shine"></div>
+        <div class="leader-image">
+          <div class="profile-pic" style="background-image: url('assets/cardinal.jpeg');"></div>
+          <div class="leader-badge">
+            <ion-icon name="star"></ion-icon>
+          </div>
+        </div>
+        <div class="leader-info">
+          <h3>His Eminence Jose Cardinal Advincula</h3>
+          <p class="title">Archbishop of the Archdiocese of Manila</p>
+          <div class="leader-divider"></div>
+        </div>
       </div>
-      <h4>Student Volunteers Coordinators</h4>
-      <ul class="team-list">
-        <li>Joseph Pagulayan</li>
-        <li>Ace Jerald Pablo</li>
-      </ul>
+
+      <div class="leader-card">
+        <div class="card-shine"></div>
+        <div class="leader-image">
+          <div class="profile-pic" style="background-image: url('assets/fr_rany.jpg');"></div>
+          <div class="leader-badge">
+            <ion-icon name="shield-checkmark"></ion-icon>
+          </div>
+        </div>
+        <div class="leader-info">
+          <h3>Rev. Fr. Rany Geraldino</h3>
+          <p class="title">RCAM Campus Ministry Director</p>
+          <div class="leader-divider"></div>
+        </div>
+      </div>
+
+      <div class="leader-card">
+        <div class="card-shine"></div>
+        <div class="leader-image">
+          <div class="profile-pic" style="background-image: url('assets/kuyamark.jpg');"></div>
+          <div class="leader-badge">
+            <ion-icon name="briefcase"></ion-icon>
+          </div>
+        </div>
+        <div class="leader-info">
+          <h3>Mr. Mark David Bastida</h3>
+          <p class="title">CM Program Coordinator</p>
+          <div class="leader-divider"></div>
+        </div>
+      </div>
+
+      <div class="leader-card">
+        <div class="card-shine"></div>
+        <div class="leader-image">
+          <div class="profile-pic" style="background-image: url('assets/ateangel.jpg');"></div>
+          <div class="leader-badge">
+            <ion-icon name="heart"></ion-icon>
+          </div>
+        </div>
+        <div class="leader-info">
+          <h3>Ms. Angelica Aquino Macasaet</h3>
+          <p class="title">Minister on Campus</p>
+          <div class="leader-divider"></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Section for Sub-Ministries -->
-    <div class="team-section-card wide">
-      <div class="section-icon">
-        <ion-icon name="list"></ion-icon>
+    <!-- Team Sections with Enhanced Cards -->
+    <div class="team-sections">
+      <!-- Collaborators -->
+      <div class="team-section-card">
+        <div class="card-header">
+          <div class="section-icon">
+            <ion-icon name="people"></ion-icon>
+          </div>
+          <h4>Collaborators Coordinator</h4>
+        </div>
+        <ul class="team-list">
+          <li>
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <span>Ms. Angelita Dela Cruz</span>
+          </li>
+        </ul>
       </div>
-      <h4>Sub-Ministries Coordinators</h4>
-      <div class="ministries-grid">
-        <div class="ministry-item">
-          <span class="ministry-name">Social Communications Ministry</span>
-          <span class="coordinator-name">Denise Hazel Endaya</span>
+
+      <!-- Student Volunteers -->
+      <div class="team-section-card">
+        <div class="card-header">
+          <div class="section-icon">
+            <ion-icon name="person"></ion-icon>
+          </div>
+          <h4>Student Volunteers Coordinators</h4>
         </div>
-        <div class="ministry-item">
-          <span class="ministry-name">Ministry of Altar Servers</span>
-          <span class="coordinator-name">Ken Josh Cruz</span>
+        <ul class="team-list">
+          <li>
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <span>Joseph Pagulayan</span>
+          </li>
+          <li>
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <span>Ace Jerald Pablo</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sub-Ministries -->
+      <div class="team-section-card wide">
+        <div class="card-header">
+          <div class="section-icon">
+            <ion-icon name="list"></ion-icon>
+          </div>
+          <h4>Sub-Ministries Coordinators</h4>
         </div>
-        <div class="ministry-item">
-          <span class="ministry-name">Free Coffee Ministry</span>
-          <span class="coordinator-name">Sofia Nepomuceno</span>
+        <div class="ministries-grid">
+          <div class="ministry-item">
+            <div class="ministry-icon">
+              <ion-icon name="videocam-outline"></ion-icon>
+            </div>
+            <span class="ministry-name">Social Communications Ministry</span>
+            <span class="coordinator-name">Denise Hazel Endaya</span>
+          </div>
+          <div class="ministry-item">
+            <div class="ministry-icon">
+              <ion-icon name="flame-outline"></ion-icon>
+            </div>
+            <span class="ministry-name">Ministry of Altar Servers</span>
+            <span class="coordinator-name">Ken Josh Cruz</span>
+          </div>
+          <div class="ministry-item">
+            <div class="ministry-icon">
+              <ion-icon name="cafe-outline"></ion-icon>
+            </div>
+            <span class="ministry-name">Free Coffee Ministry</span>
+            <span class="coordinator-name">Sofia Nepomuceno</span>
+          </div>
+          <div class="ministry-item">
+            <div class="ministry-icon">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <span class="ministry-name">Ministry of Word</span>
+            <span class="coordinator-name">Kurt Andrei Faustino</span>
+          </div>
+          <div class="ministry-item">
+            <div class="ministry-icon">
+              <ion-icon name="hand-right-outline"></ion-icon>
+            </div>
+            <span class="ministry-name">Ministry of Greeters and Collectors</span>
+            <span class="coordinator-name">Dhana Crisostomo</span>
+          </div>
+          <div class="ministry-item">
+            <div class="ministry-icon">
+              <ion-icon name="musical-notes-outline"></ion-icon>
+            </div>
+            <span class="ministry-name">Ministry of Music</span>
+            <span class="coordinator-name">Mico Bicoy</span>
+          </div>
         </div>
-        <div class="ministry-item">
-          <span class="ministry-name">Ministry of Word</span>
-          <span class="coordinator-name">Kurt Andrei Faustino</span>
+      </div>
+    </div>
+
+    <!-- Impact Stats with Icons -->
+    <div class="team-stats">
+      <div class="stat-card">
+        <div class="stat-icon-wrapper">
+          <ion-icon name="people-outline" class="stat-icon"></ion-icon>
         </div>
-        <div class="ministry-item">
-          <span class="ministry-name">Ministry of Greeters and Collectors</span>
-          <span class="coordinator-name">Dhana Crisostomo</span>
+        <div class="stat-content">
+          <div class="stat-number" data-target="60">60+</div>
+          <div class="stat-label">Student Volunteers</div>
+          <div class="stat-description">Dedicated to serving</div>
         </div>
-        <div class="ministry-item">
-          <span class="ministry-name">Ministry of Music</span>
-          <span class="coordinator-name">Mico Bicoy</span>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon-wrapper">
+          <ion-icon name="checkmark-circle-outline" class="stat-icon"></ion-icon>
         </div>
+        <div class="stat-content">
+          <div class="stat-number" data-target="25">25+</div>
+          <div class="stat-label">Collaborators</div>
+          <div class="stat-description">Faculty partners</div>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon-wrapper">
+          <ion-icon name="list-outline" class="stat-icon"></ion-icon>
+        </div>
+        <div class="stat-content">
+          <div class="stat-number" data-target="6">6</div>
+          <div class="stat-label">Sub-Ministries</div>
+          <div class="stat-description">Active programs</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="team-cta">
+      <div class="cta-content">
+        <h3>Join Our Community</h3>
+        <p>Be part of something bigger. Serve, grow, and make a difference.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeU7HDRKxvR9cwpx_ynR-Jv7c8DdBeTBsFn0GUpcXYne_pPtA/viewform" target="_blank" class="cta-button">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          Become a Volunteer
+        </a>
       </div>
     </div>
   </div>
-
-  <!-- Volunteer Stats -->
-  <div class="team-stats">
-    <div class="stat-card">
-      <ion-icon name="people-outline" class="stat-icon"></ion-icon>
-      <div class="stat-number">60+</div>
-      <div class="stat-label">Student Volunteers</div>
-    </div>
-    <div class="stat-card">
-      <ion-icon name="checkmark-circle-outline" class="stat-icon"></ion-icon>
-      <div class="stat-number">25+</div>
-      <div class="stat-label">Collaborators</div>
-    </div>
-    <div class="stat-card">
-      <ion-icon name="list-outline" class="stat-icon"></ion-icon>
-      <div class="stat-number">6</div>
-      <div class="stat-label">Sub-Ministries</div>
-    </div>
-  </div>
-</div>
+</section>
 
 
 
@@ -354,85 +546,141 @@
 <!-- FAQ Section -->
  <!---------------------->
 <section class="faq-section">
-  <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
-
-  <div class="faq-item">
-    <button class="faq-question" (click)="toggleAnswer(1)">What is Ministry on Campus?</button>
-    <div class="faq-answer" *ngIf="isAnswerVisible(1)">
-      <p>… an extension of the ministry of the Archdiocese of Manila to educational institutions</p>
-      <p>… to provide pastoral care and nurturance of the spiritual life and moral development of the students and adults on campus</p>
-      <p>… one of the five (5) sectors of the Archdiocesan Commission on Youth</p>
+  <div class="faq-header">
+    <div class="faq-icon-circle">
+      <span class="faq-icon-mark">?</span>
     </div>
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <p class="faq-subtitle">Everything you need to know about Campus Ministry at PLM.</p>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" (click)="toggleAnswer(2)">What are the Public state colleges and Universities under Campus Ministry in RCAM?</button>
-    <div class="faq-answer" *ngIf="isAnswerVisible(2)">
-      <p>Pamantasan ng Lungsod ng Maynila</p>
-      <p>Polytechnic University of the Philippines</p>
-      <p>Philippine Normal University</p>
-      <p>Universidad De Manila</p>
-      <p>Technological University of the Philippines</p>
-      <p>Eulogio "Amang" Rodriguez Institute of Science and Technology</p>
-      <p>University of Makati</p>
+  <div class="faq-container">
+    <div class="faq-item" [class.active]="isAnswerVisible(1)">
+      <button class="faq-question" (click)="toggleAnswer(1)">
+        <span class="faq-question-text">What is Ministry on Campus?</span>
+        <span class="faq-toggle-icon">
+          <span class="faq-plus" *ngIf="!isAnswerVisible(1)">+</span>
+          <span class="faq-close" *ngIf="isAnswerVisible(1)">×</span>
+        </span>
+      </button>
+      <div class="faq-answer" *ngIf="isAnswerVisible(1)">
+        <p>… an extension of the ministry of the Archdiocese of Manila to educational institutions</p>
+        <p>… to provide pastoral care and nurturance of the spiritual life and moral development of the students and adults on campus</p>
+        <p>… one of the five (5) sectors of the Archdiocesan Commission on Youth</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question" (click)="toggleAnswer(3)">Private non-sectarian colleges</button>
-    <div class="faq-answer" *ngIf="isAnswerVisible(3)">
-      <p>Philippine College of Criminology</p>
-      <p>Far Eastern University</p>
-      <p>Lyceum of the Philippines University</p>
-      <p>Mapua University</p>
-      <p>Centro Escolar University</p>
-      <p>University of the East</p>
-      <p>Jose Rizal University</p>
-      <p>National University</p>
-      <p>Philippine School of Business Administration</p>
-      <p>Philippine Women’s University</p>
-      <p>FEATI University</p>
+    <div class="faq-item" [class.active]="isAnswerVisible(2)">
+      <button class="faq-question" (click)="toggleAnswer(2)">
+        <span class="faq-question-text">What are the Public state colleges and Universities under Campus Ministry in RCAM?</span>
+        <span class="faq-toggle-icon">
+          <span class="faq-plus" *ngIf="!isAnswerVisible(2)">+</span>
+          <span class="faq-close" *ngIf="isAnswerVisible(2)">×</span>
+        </span>
+      </button>
+      <div class="faq-answer" *ngIf="isAnswerVisible(2)">
+        <p>Pamantasan ng Lungsod ng Maynila</p>
+        <p>Polytechnic University of the Philippines</p>
+        <p>Philippine Normal University</p>
+        <p>Universidad De Manila</p>
+        <p>Technological University of the Philippines</p>
+        <p>Eulogio "Amang" Rodriguez Institute of Science and Technology</p>
+        <p>University of Makati</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question" (click)="toggleAnswer(4)">Catholic colleges and universities in partnership with the Ministry</button>
-    <div class="faq-answer" *ngIf="isAnswerVisible(4)">
-      <p>Colegio de San Juan de Letran</p>
-      <p>St. Scholastica’s College Manila</p>
-      <p>San Beda University</p>
+    <div class="faq-item" [class.active]="isAnswerVisible(3)">
+      <button class="faq-question" (click)="toggleAnswer(3)">
+        <span class="faq-question-text">Private non-sectarian colleges</span>
+        <span class="faq-toggle-icon">
+          <span class="faq-plus" *ngIf="!isAnswerVisible(3)">+</span>
+          <span class="faq-close" *ngIf="isAnswerVisible(3)">×</span>
+        </span>
+      </button>
+      <div class="faq-answer" *ngIf="isAnswerVisible(3)">
+        <p>Philippine College of Criminology</p>
+        <p>Far Eastern University</p>
+        <p>Lyceum of the Philippines University</p>
+        <p>Mapua University</p>
+        <p>Centro Escolar University</p>
+        <p>University of the East</p>
+        <p>Jose Rizal University</p>
+        <p>National University</p>
+        <p>Philippine School of Business Administration</p>
+        <p>Philippine Women's University</p>
+        <p>FEATI University</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question" (click)="toggleAnswer(5)">Who is the current RCAM Campus Ministry Director?</button>
-    <div class="faq-answer" *ngIf="isAnswerVisible(5)">
-      <p>Rev. Fr. Rany Geraldino</p>
+    <div class="faq-item" [class.active]="isAnswerVisible(4)">
+      <button class="faq-question" (click)="toggleAnswer(4)">
+        <span class="faq-question-text">Catholic colleges and universities in partnership with the Ministry</span>
+        <span class="faq-toggle-icon">
+          <span class="faq-plus" *ngIf="!isAnswerVisible(4)">+</span>
+          <span class="faq-close" *ngIf="isAnswerVisible(4)">×</span>
+        </span>
+      </button>
+      <div class="faq-answer" *ngIf="isAnswerVisible(4)">
+        <p>Colegio de San Juan de Letran</p>
+        <p>St. Scholastica's College Manila</p>
+        <p>San Beda University</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question" (click)="toggleAnswer(6)">What is the role of Student in Campus Ministry?</button>
-    <div class="faq-answer" *ngIf="isAnswerVisible(6)">
-      <p>Assists in forming a faith-community on campus, specifically in the peacemaking activities and programs of Campus Ministry.</p>
-      <p>Assists in campus-wide programs of Campus Ministry in peace information, prayer groups, liturgical celebrations, interfaith programs and orientation to the Campus Ministry.</p>
-      <p>Forms, supports, and nurtures at least one prayer community on campus.</p>
-      <p>Plans, coordinates, and executes all assigned functions in collaboration with the Campus Minister.</p>
+    <div class="faq-item" [class.active]="isAnswerVisible(5)">
+      <button class="faq-question" (click)="toggleAnswer(5)">
+        <span class="faq-question-text">Who is the current RCAM Campus Ministry Director?</span>
+        <span class="faq-toggle-icon">
+          <span class="faq-plus" *ngIf="!isAnswerVisible(5)">+</span>
+          <span class="faq-close" *ngIf="isAnswerVisible(5)">×</span>
+        </span>
+      </button>
+      <div class="faq-answer" *ngIf="isAnswerVisible(5)">
+        <p>Rev. Fr. Rany Geraldino</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question" (click)="toggleAnswer(7)">Can a Professor/Instructor/University Employee be Part of campus ministry?</button>
-    <div class="faq-answer" *ngIf="isAnswerVisible(7)">
-      <p>Yes. A Collaborator is an employee of PLM. Under the guidance and supervision of the Campus Minister, they are tasked with aiding in the building of a faith-community on campus and assisting in campus ministry programs.</p>
-      <p>They are commissioned by the Campus Ministry Office and the Archdiocese of Manila to serve as a catalyst within his/her school community, ensuring the fulfillment of the Vision, Mission, and Goals of the Campus Ministry, so that presence of God may be magnified.</p>
+    <div class="faq-item" [class.active]="isAnswerVisible(6)">
+      <button class="faq-question" (click)="toggleAnswer(6)">
+        <span class="faq-question-text">What is the role of Student in Campus Ministry?</span>
+        <span class="faq-toggle-icon">
+          <span class="faq-plus" *ngIf="!isAnswerVisible(6)">+</span>
+          <span class="faq-close" *ngIf="isAnswerVisible(6)">×</span>
+        </span>
+      </button>
+      <div class="faq-answer" *ngIf="isAnswerVisible(6)">
+        <p>Assists in forming a faith-community on campus, specifically in the peacemaking activities and programs of Campus Ministry.</p>
+        <p>Assists in campus-wide programs of Campus Ministry in peace information, prayer groups, liturgical celebrations, interfaith programs and orientation to the Campus Ministry.</p>
+        <p>Forms, supports, and nurtures at least one prayer community on campus.</p>
+        <p>Plans, coordinates, and executes all assigned functions in collaboration with the Campus Minister.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question" (click)="toggleAnswer(8)">How Can I Join Campus Ministry in PLM?</button>
-    <div class="faq-answer" *ngIf="isAnswerVisible(8)">
-      <p>You can answer the membership form above this website or go to the Ministry on Campus Office in PLM beside the PLM Chapel. Just find Ms. Angel Macasaet or ask the volunteers there. Welcome to the Fam!</p>
+    <div class="faq-item" [class.active]="isAnswerVisible(7)">
+      <button class="faq-question" (click)="toggleAnswer(7)">
+        <span class="faq-question-text">Can a Professor/Instructor/University Employee be Part of campus ministry?</span>
+        <span class="faq-toggle-icon">
+          <span class="faq-plus" *ngIf="!isAnswerVisible(7)">+</span>
+          <span class="faq-close" *ngIf="isAnswerVisible(7)">×</span>
+        </span>
+      </button>
+      <div class="faq-answer" *ngIf="isAnswerVisible(7)">
+        <p>Yes. A Collaborator is an employee of PLM. Under the guidance and supervision of the Campus Minister, they are tasked with aiding in the building of a faith-community on campus and assisting in campus ministry programs.</p>
+        <p>They are commissioned by the Campus Ministry Office and the Archdiocese of Manila to serve as a catalyst within his/her school community, ensuring the fulfillment of the Vision, Mission, and Goals of the Campus Ministry, so that presence of God may be magnified.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" [class.active]="isAnswerVisible(8)">
+      <button class="faq-question" (click)="toggleAnswer(8)">
+        <span class="faq-question-text">How Can I Join Campus Ministry in PLM?</span>
+        <span class="faq-toggle-icon">
+          <span class="faq-plus" *ngIf="!isAnswerVisible(8)">+</span>
+          <span class="faq-close" *ngIf="isAnswerVisible(8)">×</span>
+        </span>
+      </button>
+      <div class="faq-answer" *ngIf="isAnswerVisible(8)">
+        <p>You can answer the membership form above this website or go to the Ministry on Campus Office in PLM beside the PLM Chapel. Just find Ms. Angel Macasaet or ask the volunteers there. Welcome to the Fam!</p>
+      </div>
     </div>
   </div>
 </section>
@@ -543,14 +791,9 @@
   </div>
 </footer>
 
-
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" (click)="scrollToTop()" [class.show]="showScrollButton">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </button>
 
 </ion-content>
-
-
-
-
-
-
-
-
