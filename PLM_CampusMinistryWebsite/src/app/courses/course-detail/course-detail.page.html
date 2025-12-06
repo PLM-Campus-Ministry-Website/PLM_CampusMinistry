@@ -1,0 +1,179 @@
+<ion-content>
+  <!-- Progress Header -->
+  <div class="progress-header">
+    <div class="progress-info">
+      <div class="xp-display">
+        <ion-icon name="flame-outline"></ion-icon>
+        <span class="xp-value">{{ totalXP }}</span>
+        <span class="xp-label">XP</span>
+      </div>
+      <div class="streak-display" *ngIf="streak > 0">
+        <ion-icon name="flash-outline"></ion-icon>
+        <span>{{ streak }} day streak!</span>
+      </div>
+    </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width]="progressPercentage + '%'"></div>
+      </div>
+      <span class="progress-text">{{ progressPercentage }}% Complete</span>
+    </div>
+  </div>
+
+  <!-- Lesson Content -->
+  <div class="lesson-container" *ngIf="currentLesson">
+    <!-- Lesson Header -->
+    <div class="lesson-header">
+      <h2 class="lesson-title">{{ currentLesson.title }}</h2>
+      <div class="lesson-number">Lesson {{ currentLessonIndex + 1 }} of {{ lessons.length }}</div>
+    </div>
+
+    <!-- Lesson Content (shown before questions) -->
+    <div class="lesson-content" *ngIf="!hasStartedLesson">
+      <div class="content-text" [innerHTML]="formatContent(currentLesson.content)"></div>
+      <ion-button expand="block" class="start-questions-btn" (click)="startLesson()">
+        Start Practice
+        <ion-icon name="arrow-forward" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Question Section -->
+    <div class="question-section" *ngIf="hasStartedLesson">
+      <div class="question-header">
+        <span class="question-number">Question {{ currentQuestionIndex + 1 }} of {{ currentLesson.questions.length }}</span>
+      </div>
+
+      <div class="question-card">
+        <h3 class="question-text">{{ currentQuestion.question }}</h3>
+
+        <!-- Multiple Choice -->
+        <div class="answer-options" *ngIf="currentQuestion.type === 'multiple-choice'">
+          <ion-button 
+            *ngFor="let option of currentQuestion.options; let i = index"
+            [class.correct]="showResult && i === currentQuestion.correctAnswer"
+            [class.incorrect]="showResult && currentQuestion.userAnswer === i && !currentQuestion.isCorrect"
+            [class.selected]="currentQuestion.userAnswer === i"
+            expand="block"
+            class="option-button"
+            [disabled]="showResult"
+            (click)="submitAnswer(i)">
+            {{ option }}
+          </ion-button>
+        </div>
+
+        <!-- True/False -->
+        <div class="answer-options" *ngIf="currentQuestion.type === 'true-false'">
+          <ion-button 
+            [class.correct]="showResult && currentQuestion.correctAnswer === true"
+            [class.incorrect]="showResult && currentQuestion.userAnswer === true && !currentQuestion.isCorrect"
+            [class.selected]="currentQuestion.userAnswer === true"
+            expand="block"
+            class="option-button"
+            [disabled]="showResult"
+            (click)="submitAnswer(true)">
+            True
+          </ion-button>
+          <ion-button 
+            [class.correct]="showResult && currentQuestion.correctAnswer === false"
+            [class.incorrect]="showResult && currentQuestion.userAnswer === false && !currentQuestion.isCorrect"
+            [class.selected]="currentQuestion.userAnswer === false"
+            expand="block"
+            class="option-button"
+            [disabled]="showResult"
+            (click)="submitAnswer(false)">
+            False
+          </ion-button>
+        </div>
+
+        <!-- Fill in the Blank -->
+        <div class="fill-blank-container" *ngIf="currentQuestion.type === 'fill-blank'">
+          <ion-input
+            type="text"
+            placeholder="Type your answer"
+            [(ngModel)]="currentQuestion.userAnswer"
+            [disabled]="showResult"
+            class="fill-blank-input"
+            (keyup.enter)="handleEnterKey()">
+          </ion-input>
+          <ion-button 
+            expand="block"
+            class="submit-btn"
+            [disabled]="showResult || !currentQuestion.userAnswer"
+            (click)="submitAnswer(currentQuestion.userAnswer)">
+            Check Answer
+          </ion-button>
+        </div>
+
+        <!-- Result Display -->
+        <div class="result-display" *ngIf="showResult">
+          <div class="result-icon" [class.correct]="currentQuestion.isCorrect" [class.incorrect]="!currentQuestion.isCorrect">
+            <ion-icon [name]="currentQuestion.isCorrect ? 'checkmark-circle' : 'close-circle'"></ion-icon>
+          </div>
+          <div class="result-message" [class.correct]="currentQuestion.isCorrect" [class.incorrect]="!currentQuestion.isCorrect">
+            <h4>{{ currentQuestion.isCorrect ? 'Correct! 🎉' : 'Not quite' }}</h4>
+            <p *ngIf="currentQuestion.explanation">{{ currentQuestion.explanation }}</p>
+            <div class="xp-gained" *ngIf="currentQuestion.isCorrect">
+              +{{ xpGained }} XP
+              <span *ngIf="streakBonus > 0"> + {{ streakBonus }} streak bonus!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons" *ngIf="showResult">
+          <ion-button 
+            *ngIf="!currentQuestion.isCorrect"
+            expand="block"
+            fill="outline"
+            class="retry-btn"
+            (click)="retryQuestion()">
+            Try Again
+          </ion-button>
+          <ion-button 
+            expand="block"
+            class="next-btn"
+            (click)="nextQuestion()">
+            {{ currentQuestionIndex < currentLesson.questions.length - 1 ? 'Next Question' : 'Complete Lesson' }}
+            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-navigation">
+      <ion-button 
+        fill="outline"
+        [disabled]="currentLessonIndex === 0"
+        (click)="goToPreviousLesson()">
+        <ion-icon name="arrow-back" slot="start"></ion-icon>
+        Previous
+      </ion-button>
+      <ion-button 
+        fill="outline"
+        [disabled]="currentLessonIndex === lessons.length - 1"
+        (click)="goToNextLesson()">
+        Next
+        <ion-icon name="arrow-forward" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Lesson List Sidebar -->
+    <div class="lessons-sidebar">
+      <h4>Lessons</h4>
+      <div 
+        class="lesson-item"
+        *ngFor="let lesson of lessons; let i = index"
+        [class.active]="i === currentLessonIndex"
+        [class.completed]="isLessonCompleted(lesson.id)"
+        (click)="selectLesson(i)">
+        <ion-icon 
+          [name]="isLessonCompleted(lesson.id) ? 'checkmark-circle' : 'ellipse-outline'"
+          class="lesson-icon">
+        </ion-icon>
+        <span class="lesson-item-title">{{ lesson.title }}</span>
+      </div>
+    </div>
+  </div>
+</ion-content>
+

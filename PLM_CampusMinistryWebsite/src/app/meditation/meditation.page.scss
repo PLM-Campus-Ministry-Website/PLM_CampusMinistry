@@ -391,60 +391,588 @@ ion-col {
 }
 
 // --------------------------------------
-// BibleViewer Section Styles
+// Meditation Library Section Styles
 // --------------------------------------
 
-.bible-viewer {
-  background-color: #f7f1e1;  // Soft light brown background
-  padding: 50px 20px;
-  text-align: center;
-
-  .title-container {
-    margin-bottom: 30px;
-    
-    h1 {
-      font-size: 40px;
-      font-weight: bold;
-      color: #4e4c45;  // Dark brown color for title
-      letter-spacing: 10px;
-      margin: 0;
-      text-align: center;
-      text-transform: uppercase;
-    }
-  }
-
-  .iframe-container {
+.meditation-library-section {
+  background: linear-gradient(135deg, #f4f1e1 0%, #e8e8ed 100%);
+  padding: 80px 20px;
+  
+  .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;  // White background for iframe container
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #5D4037;
+    font-weight: 700;
+    margin-bottom: 15px;
     
-    iframe {
-      width: 100%;
-      height: 600px;  // Default height for video iframe
-      border: none;
-      border-radius: 8px;
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
     }
   }
+  
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6B4423;
+    margin-bottom: 40px;
+  }
+}
 
-  // Responsiveness for smaller screens
-  @media (max-width: 768px) {
-    .bible-viewer {
-      padding: 20px;
+// Folder Container
+.folder-container {
+  margin-bottom: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// Folder Header
+.folder-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 25px;
+  background: linear-gradient(135deg, #f4f1e1 0%, #e8e8ed 100%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+  
+  &:hover {
+    background: linear-gradient(135deg, #e8e8ed 0%, #d4af37 100%);
+  }
+  
+  .folder-icon {
+    margin-right: 15px;
+    color: #5D4037;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    
+    ion-icon {
+      transition: transform 0.3s ease;
     }
-
-    .iframe-container iframe {
-      height: 400px;  // Adjust height for mobile devices
+  }
+  
+  h3 {
+    flex: 1;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #5D4037;
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
     }
+  }
+  
+  .chevron {
+    color: #4e4c45;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+}
 
-    .title-container h1 {
-      font-size: 40px;  // Adjust font size for smaller screens
-      letter-spacing: 8px;
+// Folder Content
+.folder-content {
+  background: #ffffff;
+  padding: 20px 25px;
+  animation: slideDown 0.3s ease-out;
+  
+  ion-grid {
+    padding: 0;
+    margin: 0;
+  }
+  
+  ion-row {
+    margin: 0;
+  }
+  
+  .card-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    @media (max-width: 768px) {
+      margin-bottom: 15px;
+    }
+  }
+  
+  .small-card {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    min-height: 300px;
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      max-width: 100%;
+      min-height: 250px;
     }
   }
 }
+
+// Book List
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.book-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  border-left: 3px solid #d4af37;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  gap: 15px;
+  
+  &:hover {
+    background: rgba(212, 175, 55, 0.05);
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-icon:first-child {
+    color: #d4af37;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .book-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    .book-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4e4c45;
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+    
+    .book-description {
+      font-size: 0.9rem;
+      color: #6B4423;
+      font-style: italic;
+      
+      @media (max-width: 768px) {
+        font-size: 0.85rem;
+      }
+    }
+  }
+  
+  .read-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #722F37 0%, #8B4513 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(114, 47, 55, 0.3);
+    }
+    
+    ion-icon {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .coming-soon {
+    font-size: 0.85rem;
+    color: #6B4423;
+    font-style: italic;
+    padding: 6px 12px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 12px;
+    white-space: nowrap;
+    
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+    }
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6B4423;
+  
+  ion-icon {
+    font-size: 4rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin: 0;
+  }
+}
+
+// Animations
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+  }
+}
+
+// --------------------------------------
+// Rosary Section Styles
+// --------------------------------------
+
+.rosary-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  
+  ion-button {
+    --border-color: #5D4037;
+    --color: #5D4037;
+    font-size: 0.9rem;
+  }
+}
+
+.mystery-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mystery-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+}
+
+.mystery-card-header {
+  background: linear-gradient(135deg, #722F37 0%, #8B4513 100%);
+  padding: 20px;
+  color: white;
+  
+  h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.mystery-card-content {
+  padding: 20px;
+}
+
+.language-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e8e8ed;
+  padding-bottom: 10px;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px 16px;
+  background: #f4f1e1;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: #5D4037;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #e8e8ed;
+  }
+  
+  &.active {
+    background: linear-gradient(135deg, #722F37 0%, #8B4513 100%);
+    color: white;
+    border-color: #d4af37;
+  }
+}
+
+.prayer-guide-content {
+  color: #5D4037;
+}
+
+.guide-section {
+  h4 {
+    color: #722F37;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+}
+
+.prayer-steps {
+  list-style: none;
+  padding: 0;
+  counter-reset: step-counter;
+  
+  li {
+    counter-increment: step-counter;
+    margin-bottom: 20px;
+    padding-left: 40px;
+    position: relative;
+    
+    &::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: linear-gradient(135deg, #d4af37 0%, #F4D03F 100%);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    
+    strong {
+      color: #722F37;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    
+    p {
+      color: #6B4423;
+      line-height: 1.8;
+      margin: 8px 0 0 0;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.complete-guide-card {
+  margin-top: 30px;
+}
+
+.complete-guide-text {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #5D4037;
+  margin: 0;
+  padding: 16px;
+  background: #f4f1e1;
+  border-radius: 8px;
+}
+
+// Mystery Selector Modal Styles
+.mystery-selector-modal {
+  --width: 90%;
+  --max-width: 500px;
+  --border-radius: 16px;
+}
+
+.mystery-modal-toolbar {
+  --background: linear-gradient(135deg, #722F37 0%, #8B4513 100%);
+  --color: white;
+  
+  ion-title {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  
+  .close-button {
+    --color: white;
+  }
+}
+
+.mystery-modal-content {
+  --background: #f4f1e1;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+.mystery-list-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mystery-option {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+  
+  &.active {
+    background: linear-gradient(135deg, rgba(114, 47, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+    border-color: #722F37;
+    box-shadow: 0 4px 16px rgba(114, 47, 55, 0.2);
+  }
+}
+
+.mystery-option-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.mystery-icon {
+  font-size: 2rem;
+  color: #722F37;
+  flex-shrink: 0;
+}
+
+.mystery-text {
+  flex: 1;
+  
+  h3 {
+    margin: 0 0 6px 0;
+    color: #5D4037;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  p {
+    margin: 0;
+    color: #6B4423;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    font-style: italic;
+  }
+}
+
+.check-icon {
+  font-size: 1.8rem;
+  color: #722F37;
+  flex-shrink: 0;
+}
+
+// Responsive design for mystery cards
+@media (max-width: 768px) {
+  .mystery-selector-modal {
+    --width: 95%;
+  }
+  
+  .mystery-option {
+    padding: 16px;
+  }
+  
+  .mystery-icon {
+    font-size: 1.5rem;
+  }
+  
+  .mystery-text {
+    h3 {
+      font-size: 1rem;
+    }
+    
+    p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .mystery-card {
+    margin-bottom: 16px;
+  }
+  
+  .mystery-card-header h3 {
+    font-size: 1rem;
+  }
+  
+  .language-tabs {
+    flex-direction: column;
+  }
+  
+  .tab-button {
+    width: 100%;
+  }
+  
+  .prayer-steps li {
+    padding-left: 35px;
+    
+    &::before {
+      width: 24px;
+      height: 24px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .rosary-controls {
+    flex-direction: column;
+    align-items: stretch;
+    
+    ion-button {
+      width: 100%;
+    }
+  }
+}
+
 
 
 // --------------------------------------

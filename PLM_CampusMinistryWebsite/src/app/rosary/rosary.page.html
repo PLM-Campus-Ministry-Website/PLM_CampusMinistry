@@ -1,0 +1,189 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Interactive Rosary</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="showLanguageSelector = !showLanguageSelector">
+        <ion-icon name="language" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="showMysterySelector = !showMysterySelector">
+        <ion-icon name="list" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="rosary-content">
+  <!-- Language Selector Modal -->
+  <ion-modal [isOpen]="showLanguageSelector" (willDismiss)="showLanguageSelector = false">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Select Language</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="showLanguageSelector = false">
+              <ion-icon name="close" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item button (click)="changeLanguage('english')">
+            <ion-label>English</ion-label>
+            <ion-icon *ngIf="currentLanguage === 'english'" name="checkmark" slot="end" color="primary"></ion-icon>
+          </ion-item>
+          <ion-item button (click)="changeLanguage('tagalog')">
+            <ion-label>Tagalog</ion-label>
+            <ion-icon *ngIf="currentLanguage === 'tagalog'" name="checkmark" slot="end" color="primary"></ion-icon>
+          </ion-item>
+          <ion-item button (click)="changeLanguage('latin')">
+            <ion-label>Latin</ion-label>
+            <ion-icon *ngIf="currentLanguage === 'latin'" name="checkmark" slot="end" color="primary"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Mystery Selector Modal -->
+  <ion-modal [isOpen]="showMysterySelector" (willDismiss)="showMysterySelector = false">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Select Mystery</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="showMysterySelector = false">
+              <ion-icon name="close" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item button (click)="changeMysteryType('joyful')">
+            <ion-label>Joyful Mysteries</ion-label>
+            <ion-icon *ngIf="currentMysteryType === 'joyful'" name="checkmark" slot="end" color="primary"></ion-icon>
+          </ion-item>
+          <ion-item button (click)="changeMysteryType('luminous')">
+            <ion-label>Luminous Mysteries</ion-label>
+            <ion-icon *ngIf="currentMysteryType === 'luminous'" name="checkmark" slot="end" color="primary"></ion-icon>
+          </ion-item>
+          <ion-item button (click)="changeMysteryType('sorrowful')">
+            <ion-label>Sorrowful Mysteries</ion-label>
+            <ion-icon *ngIf="currentMysteryType === 'sorrowful'" name="checkmark" slot="end" color="primary"></ion-icon>
+          </ion-item>
+          <ion-item button (click)="changeMysteryType('glorious')">
+            <ion-label>Glorious Mysteries</ion-label>
+            <ion-icon *ngIf="currentMysteryType === 'glorious'" name="checkmark" slot="end" color="primary"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-info">
+      <span class="language-badge">{{ getLanguageLabel(currentLanguage) }}</span>
+      <span class="mystery-badge">{{ getMysteryLabel(currentMysteryType) }}</span>
+      <span class="progress-text">{{ currentBeadIndex + 1 }} / {{ beads.length }}</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="getProgress()"></div>
+    </div>
+  </div>
+
+  <!-- Rosary Beads Container -->
+  <div class="rosary-container">
+    <div class="rosary-beads">
+      <!-- Cross -->
+      <div 
+        *ngFor="let bead of beads; let i = index"
+        class="bead"
+        [class.cross]="bead.type === 'cross'"
+        [class.our-father]="bead.type === 'our-father'"
+        [class.hail-mary]="bead.type === 'hail-mary'"
+        [class.glory-be]="bead.type === 'glory-be'"
+        [class.mystery]="bead.type === 'mystery'"
+        [class.center]="bead.type === 'center'"
+        [class.active]="bead.isActive"
+        [class.completed]="bead.isCompleted"
+        (click)="onBeadClick(bead)">
+        <div class="bead-inner">
+          <div *ngIf="bead.type === 'cross'" class="bead-icon">✝</div>
+          <div *ngIf="bead.type === 'our-father'" class="bead-icon">P</div>
+          <div *ngIf="bead.type === 'hail-mary'" class="bead-icon">M</div>
+          <div *ngIf="bead.type === 'glory-be'" class="bead-icon">G</div>
+          <div *ngIf="bead.type === 'mystery'" class="bead-icon">★</div>
+          <div *ngIf="bead.type === 'center'" class="bead-icon">⛪</div>
+        </div>
+        <div class="bead-label">{{ bead.title }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Controls -->
+  <div class="navigation-controls">
+    <ion-button 
+      fill="outline" 
+      (click)="previousBead()" 
+      [disabled]="currentBeadIndex === 0">
+      <ion-icon name="chevron-back" slot="start"></ion-icon>
+      Previous
+    </ion-button>
+    <ion-button 
+      fill="solid" 
+      color="primary" 
+      (click)="nextBead()" 
+      [disabled]="currentBeadIndex >= beads.length - 1">
+      Next
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Reset Button -->
+  <div class="reset-container">
+    <ion-button fill="clear" color="medium" (click)="resetRosary()">
+      <ion-icon name="refresh" slot="start"></ion-icon>
+      Reset Rosary
+    </ion-button>
+  </div>
+
+  <!-- Instructions -->
+  <div class="instructions">
+    <h3>How to Use</h3>
+    <p>Tap on the beads to view prayers. Use the Next/Previous buttons to navigate through the rosary. The active bead is highlighted in gold.</p>
+  </div>
+</ion-content>
+
+<!-- Prayer Modal -->
+<ion-modal [isOpen]="showPrayerModal" (willDismiss)="closePrayerModal()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>{{ currentPrayerTitle }}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closePrayerModal()">
+            <ion-icon name="close" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="prayer-modal-content">
+      <div class="prayer-text">
+        <pre>{{ currentPrayerText }}</pre>
+      </div>
+      <div class="prayer-actions">
+        <ion-button fill="outline" (click)="previousBead(); showPrayerModal = true" [disabled]="currentBeadIndex === 0">
+          <ion-icon name="chevron-back" slot="start"></ion-icon>
+          Previous
+        </ion-button>
+        <ion-button fill="solid" color="primary" (click)="nextBead()" [disabled]="currentBeadIndex >= beads.length - 1">
+          Next
+          <ion-icon name="chevron-forward" slot="end"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+

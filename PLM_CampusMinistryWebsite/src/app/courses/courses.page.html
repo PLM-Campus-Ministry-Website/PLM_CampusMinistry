@@ -1,0 +1,120 @@
+<ion-content>
+  <!-- Jumbotron Section -->
+  <section class="jumbotron">
+    <div class="container">
+      <div class="left-column">
+        <img src="assets/EveryoneYouthCamp.jpg" alt="Courses" />
+      </div>
+      
+      <div class="right-column">
+        <h1>FAITH FORMATION <BR> COURSES</h1>
+        <p class="subtitle">Deepen your understanding of the Catholic Faith</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scoreboard Section -->
+  <section class="scoreboard-section" *ngIf="showScoreboard">
+    <div class="container">
+      <div class="scoreboard-header">
+        <h2 class="section-title">🏆 Your Scoreboard</h2>
+        <ion-button fill="clear" (click)="toggleScoreboard()">
+          <ion-icon name="close" slot="end"></ion-icon>
+          Close
+        </ion-button>
+      </div>
+      
+      <!-- My Score Stats -->
+      <div class="my-score-card">
+        <h3>Your Progress</h3>
+        <div class="score-stats">
+          <div class="stat">
+            <ion-icon name="flame" class="stat-icon"></ion-icon>
+            <span class="stat-label">Total XP</span>
+            <span class="stat-value">{{ totalXP }}</span>
+          </div>
+          <div class="stat">
+            <ion-icon name="trophy" class="stat-icon"></ion-icon>
+            <span class="stat-label">Courses Completed</span>
+            <span class="stat-value">{{ coursesCompleted }}</span>
+          </div>
+          <div class="stat">
+            <ion-icon name="flash" class="stat-icon"></ion-icon>
+            <span class="stat-label">Current Streak</span>
+            <span class="stat-value">{{ streak }} days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed Courses List -->
+      <div class="completed-courses-section">
+        <h3>Completed Courses</h3>
+        <div class="completed-courses-list" *ngIf="completedCourses.length > 0">
+          <div class="completed-course-item" *ngFor="let course of completedCourses">
+            <ion-icon name="checkmark-circle" class="completed-icon"></ion-icon>
+            <div class="course-info">
+              <h4>{{ course.title }}</h4>
+              <p>Completed: {{ course.completedDate | date:'short' }}</p>
+              <span class="course-xp">{{ course.xp }} XP earned</span>
+            </div>
+          </div>
+        </div>
+        <div class="no-courses" *ngIf="completedCourses.length === 0">
+          <ion-icon name="book-outline"></ion-icon>
+          <p>No courses completed yet. Start learning to earn XP and certificates!</p>
+        </div>
+      </div>
+
+      <!-- Certificates -->
+      <div class="certificates-section" *ngIf="certificates.length > 0">
+        <h3>Your Certificates</h3>
+        <div class="certificates-grid">
+          <div class="certificate-card" *ngFor="let cert of certificates">
+            <ion-icon name="trophy"></ion-icon>
+            <div class="cert-info">
+              <h4>{{ cert.courseTitle }}</h4>
+              <p>{{ cert.completionDate | date:'short' }}</p>
+            </div>
+            <ion-button fill="clear" (click)="downloadCertificate(cert)">
+              <ion-icon name="download"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Grid Section -->
+  <section class="courses-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Available Courses</h2>
+        <p class="section-description">Explore our comprehensive collection of Catholic faith formation courses</p>
+        <ion-button fill="outline" class="scoreboard-btn" (click)="toggleScoreboard()">
+          <ion-icon name="trophy" slot="start"></ion-icon>
+          View Scoreboard
+        </ion-button>
+      </div>
+
+      <div class="courses-grid">
+        <div 
+          class="course-card" 
+          *ngFor="let course of courses; let i = index"
+          (click)="openCourse(course)"
+        >
+          <div class="course-number">{{ course.id }}</div>
+          <div class="course-content">
+            <h3 class="course-title">{{ course.title }}</h3>
+            <div class="course-actions">
+              <ion-button fill="clear" class="course-button">
+                <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+                Learn More
+              </ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>
+

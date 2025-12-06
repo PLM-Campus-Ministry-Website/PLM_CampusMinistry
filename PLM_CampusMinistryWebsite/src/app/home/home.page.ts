@@ -1,3 +1,4 @@
+// src/app/home/home.page.ts
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
@@ -154,12 +155,5 @@ export class HomePage {
       hour12: true,  // Use 12-hour format (AM/PM)
     };
     return date.toLocaleString('en-US', options);
-  }
-
-  // Add this function to handle loading more photos
-  loadMorePhotos() {
-    // You can implement logic to show more photos or navigate to a dedicated gallery page
-    console.log('Loading more photos...');
-    // For now, you could scroll to a different section or show more images
   }
 }

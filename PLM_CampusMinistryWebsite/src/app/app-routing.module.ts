@@ -26,6 +26,14 @@ const routes: Routes = [
   {
     path: 'game',  // Add route for the game page
     loadChildren: () => import('./game/game.module').then(m => m.GameModule)
+  },
+  {
+    path: 'rosary',
+    loadChildren: () => import('./rosary/rosary.module').then(m => m.RosaryPageModule)
+  },
+  {
+    path: 'courses',
+    loadChildren: () => import('./courses/courses.module').then(m => m.CoursesPageModule)
   }
 ];
 

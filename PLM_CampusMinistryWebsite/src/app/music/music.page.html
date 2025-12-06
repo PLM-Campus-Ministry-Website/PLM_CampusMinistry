@@ -2,222 +2,132 @@
   <section class="quote-section">
     <div class="container">
       <blockquote class="quote">
-        <p>“I will praise the name of God with a song, and will magnify him with thanksgiving.”</p>
+        <p>"I will praise the name of God with a song, and will magnify him with thanksgiving."</p>
         <footer>- Psalm 69:30</footer>
       </blockquote>
     </div>
   </section>
-  <br>
 
-  <section class="petron">
+  <section class="music-library-section">
     <div class="container">
-      <!-- Left Column (Image) -->
-      <ion-card class="small-card">
-        <ion-card-header>
-          <ion-card-title>AMAZING GRACE</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <!-- Spotify Embed for Card 1 -->
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5m0bbbwZxwcH8nSxFhnUKm?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </ion-card-content>
-      </ion-card>
-      <!-- Right Column (Text) -->
-      <div class="right-column">
-        <h1>AMAZING GRACE</h1>
-        <p>1
-          Amazing grace! how sweet the sound,
-            That saved a wretch; like me!
-          I once was lost, but now am found,
-            Was blind, but now I see.
-        </p>
-        <p>
-          2
-          ’Twas grace that taught my heart to fear,
-            And grace my fears relieved;
-          How precious did that grace appear
-            The hour I first believed!
-        </p>
-        <p>
-          3
-          The Lord hath promised good to me,
-            His word my hope secures;
-          He will my shield and portion be
-            As long as life endures.
-          </p>
-          <p>
-          4
-          When we’ve been there ten thousand years,
-            Bright shining as the sun,
-          We’ve no less days to sing God’s praise
-            Than when we first begun.</p>
+      <h2 class="section-title">Liturgical Music Library</h2>
+      <p class="section-subtitle">Browse music by season and category</p>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="search-box">
+          <ion-icon name="search" class="search-icon"></ion-icon>
+          <input 
+            type="text" 
+            [(ngModel)]="searchQuery" 
+            (input)="onSearch()"
+            (keyup.enter)="onSearch()"
+            placeholder="Search for songs..." 
+            class="search-input"
+          />
+          <button class="search-button" (click)="onSearch()">
+            <ion-icon name="search-outline"></ion-icon>
+            Search
+          </button>
+          <button class="clear-button" *ngIf="searchQuery" (click)="clearSearch()">
+            <ion-icon name="close-circle"></ion-icon>
+          </button>
+        </div>
+        <div class="search-results-info" *ngIf="searchQuery && filteredSongs.length > 0">
+          <p>Found {{ filteredSongs.length }} result(s) for "{{ searchQuery }}"</p>
+        </div>
+        <div class="search-results-info no-results" *ngIf="searchQuery && filteredSongs.length === 0">
+          <p>No results found for "{{ searchQuery }}"</p>
+        </div>
       </div>
-    </div>
-  </section>
-  
-  <ion-grid>
-<!-- Row 2 -->
-<ion-row>
-  <ion-col size="12" size-md="4" class="card-col">
-    <ion-card class="small-card">
-      <ion-card-header>
-        <ion-card-title>LORD WE GATHER TODAY</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/5xpYnaQ7J9HHQityBNtDdR?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-  <ion-col size="12" size-md="4" class="card-col">
-    <ion-card class="small-card">
-      <ion-card-header>
-        <ion-card-title>JUST AS I AM</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/25aqJRjDJ321qamzy71sK3?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-  <ion-col size="12" size-md="4" class="card-col">
-    <ion-card class="small-card">
-      <ion-card-header>
-        <ion-card-title>HESUS NG AKING BUHAY</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/5VCFkR5xedaFlJRoSz3uEd?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </ion-card-content>
-    </ion-card>
-  </ion-col>
-</ion-row>
-  
-    <!-- Row 2 -->
-    <ion-row>
-      <ion-col size="12" size-md="4" class="card-col">
-        <ion-card class="small-card">
-          <ion-card-header>
-            <ion-card-title>OCEANS</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/5SDcksP8En1l6RtTY1wzHc?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" size-md="4" class="card-col">
-        <ion-card class="small-card">
-          <ion-card-header>
-            <ion-card-title>LEAD ME LORD</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/31Z8a8TVSOK5qMtkCfp05m?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" size-md="4" class="card-col">
-        <ion-card class="small-card">
-          <ion-card-header>
-            <ion-card-title>ON EAGLE'S WINGS</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/0leneXML0z4Si2hqSDBHKw?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  
-    <!-- Row 3 -->
-    <ion-row>
-      <ion-col size="12" size-md="4" class="card-col">
-        <ion-card class="small-card">
-          <ion-card-header>
-            <ion-card-title>HERE I AM LORD</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/5IAMr5o8fOUxaiuy4hKuVR?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" size-md="4" class="card-col">
-        <ion-card class="small-card">
-          <ion-card-header>
-            <ion-card-title>TANGING YAMAN</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/1v0HUgBF7z2FYphiDh81Jy?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" size-md="4" class="card-col">
-        <ion-card class="small-card">
-          <ion-card-header>
-            <ion-card-title>WHAT A BEAUTIFUL NAME</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5XCtjnFMKtCT7ycDwV3Kdh?utm_source=generator&theme=1" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  
-  
-  
-<section class="quote-section">
-  <div class="container">
-    <blockquote class="quote">
-      <p>"We get nearer to the Lord through music than perhaps through any other thing except prayer".</p>
-      <footer>PRAYER MUSIC</footer>
-    </blockquote>
+
+      <!-- Search Results -->
+      <div class="search-results" *ngIf="searchQuery && filteredSongs.length > 0">
+        <div class="song-item" *ngFor="let song of filteredSongs">
+          <ion-icon name="musical-notes"></ion-icon>
+          <div class="song-info">
+            <span class="song-name">{{ song.name }}</span>
+            <span class="song-category">{{ song.category }} - {{ song.season }}</span>
+          </div>
+          <div class="song-actions">
+            <audio controls *ngIf="song.filePath" class="audio-player">
+              <source [src]="song.filePath" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <span class="coming-soon" *ngIf="!song.filePath">MP3 Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regular Folder View (hidden when searching with results) -->
+      <div class="folder-view" *ngIf="!searchQuery || (searchQuery && filteredSongs.length === 0)">
+
+      <!-- General Mass Parts Folder -->
+      <div class="folder-container">
+        <div class="folder-header" (click)="toggleFolder('general')">
+          <div class="folder-icon">
+            <ion-icon [name]="isOpen('general') ? 'folder-open' : 'folder'"></ion-icon>
+          </div>
+          <h3>GENERAL MASS PARTS (All Seasons)</h3>
+          <ion-icon [name]="isOpen('general') ? 'chevron-up' : 'chevron-down'" class="chevron"></ion-icon>
+        </div>
+        <div class="folder-content" *ngIf="isOpen('general')">
+          <div class="subfolder" *ngFor="let category of generalMassParts">
+            <div class="subfolder-header" (click)="toggleSubfolder('general', category.key)">
+              <ion-icon [name]="isSubfolderOpen('general', category.key) ? 'folder-open' : 'folder'"></ion-icon>
+              <span>{{ category.name }}</span>
+              <ion-icon [name]="isSubfolderOpen('general', category.key) ? 'chevron-up' : 'chevron-down'" class="chevron"></ion-icon>
+            </div>
+            <div class="subfolder-content" *ngIf="isSubfolderOpen('general', category.key)">
+              <div class="song-item" *ngFor="let song of category.songs">
+                <ion-icon name="musical-notes"></ion-icon>
+                <span>{{ getSongName(song) }}</span>
+                <div class="song-actions">
+                  <audio controls *ngIf="getSongFilePath(song)" class="audio-player">
+                    <source [src]="getSongFilePath(song)" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <span class="coming-soon" *ngIf="!getSongFilePath(song)">MP3 Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
   </div>
-</section>
-
-<!-- 3 columns-->
-<ion-grid>
-  <ion-row>
-    <ion-col size="12" size-md="4" class="card-col">
-      <ion-card class="small-card">
-        <ion-card-header>
-          <ion-card-title>ANIMA CHRISTI</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/7ugjOxjIyZS9wsPhDbfsq0?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-    <ion-col size="12" size-md="4" class="card-col">
-      <ion-card class="small-card">
-        <ion-card-header>
-          <ion-card-title>AWIT NG PAGHAHANGAD</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/1D06ExjtJYJGH34X9MOu61?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-    <ion-col size="12" size-md="4" class="card-col">
-      <ion-card class="small-card">
-        <ion-card-header>
-          <ion-card-title>IN HIM ALONE</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <iframe class="spotify-iframe" src="https://open.spotify.com/embed/track/3Y0NQ0XMscgChoT0NutRQB?utm_source=generator&theme=1" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
-<section class="jumbotron">
-  <div class="container">
-    <!-- Left Column (Image) -->
-    <div class="left-column">
-      <img src="assets/pray.jpg" alt="Image" />
     </div>
     
-    <!-- Right Column (Text) -->
-    <div class="right-column">
-      <h1>PRAYER SONGS</h1>
-      <p>Prayer songs help us grow closer to God by allowing us to express our thoughts, emotions, and desires through music. These songs create a peaceful and reflective atmosphere, where we can open our hearts to God in worship and gratitude. As we sing, we are reminded of His love, grace, and presence in our lives. Prayer songs often serve as a powerful way to connect with the divine, allowing us to communicate not just with words, but through the rhythm and melody that stir our spirits. In this way, prayer songs become a form of spiritual practice, deepening our relationship with God and drawing us nearer to His presence.</p>
-      <a href="https://open.spotify.com/playlist/4JjJDV7LScCkr3b2993pcK?si=J3UQk8DtQDmscVptAScU0g" target="_blank" class="cta-button">Hear More</a>
-    </div>
+      <!-- Seasonal Folders -->
+      <div class="folder-container" *ngFor="let season of seasons">
+        <div class="folder-header" (click)="toggleFolder(season.key)">
+          <div class="folder-icon">
+            <ion-icon [name]="isOpen(season.key) ? 'folder-open' : 'folder'"></ion-icon>
+          </div>
+          <h3>{{ season.name }}</h3>
+          <ion-icon [name]="isOpen(season.key) ? 'chevron-up' : 'chevron-down'" class="chevron"></ion-icon>
+        </div>
+        <div class="folder-content" *ngIf="isOpen(season.key)">
+          <div class="subfolder" *ngFor="let category of season.categories">
+            <div class="subfolder-header" (click)="toggleSubfolder(season.key, category.key)">
+              <ion-icon [name]="isSubfolderOpen(season.key, category.key) ? 'folder-open' : 'folder'"></ion-icon>
+              <span>{{ category.name }}</span>
+              <ion-icon [name]="isSubfolderOpen(season.key, category.key) ? 'chevron-up' : 'chevron-down'" class="chevron"></ion-icon>
+            </div>
+            <div class="subfolder-content" *ngIf="isSubfolderOpen(season.key, category.key)">
+              <div class="song-item" *ngFor="let song of category.songs">
+                <ion-icon name="musical-notes"></ion-icon>
+                <span>{{ getSongName(song) }}</span>
+                <div class="song-actions">
+                  <audio controls *ngIf="getSongFilePath(song)" class="audio-player">
+                    <source [src]="getSongFilePath(song)" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <span class="coming-soon" *ngIf="!getSongFilePath(song)">MP3 Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
   </div>
 </section>
 
@@ -267,8 +177,4 @@
     </div>
   </div>
 </footer>
-
 </ion-content>
-
-
-
